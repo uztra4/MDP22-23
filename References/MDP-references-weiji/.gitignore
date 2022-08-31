@@ -1,0 +1,15 @@
+*.pyc
+*_pycache_/
+Pathfinding/__pycache__/pathfind.cpython-310.pyc
+.venv/
+*.code-workspace
+*Python3.7/
+Pathfinding/__pycache__/GUI_temp.cpython-310.pyc
+Pathfinding/__pycache__/GUI_temp.cpython-310.pyc
+Pathfinding/scratch.py
+STM/**/Debug
+STM/**/Release
+Pathfinding/tempCodeRunnerFile.py
+tempCodeRunnerFile.python
+*.egg-info/
+mdp_comm/Pathfinding/tempCodeRunnerFile.py

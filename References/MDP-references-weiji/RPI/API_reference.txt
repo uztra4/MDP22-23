@@ -1,0 +1,54 @@
+RPI <-> Android Bluetooth connection
+All messages sent in JSON format
+
+================================================================
+message type: test-connection (implements C1 The Android application (AA) is able to transmit and receive text strings over the Bluetooth serial communication link. )
+Android -> RPI
+-------------
+contents:
+{
+    'test': str
+}
+
+================================================================
+message type: move_command(implements C3 Functional GUI that provides interactive control of the robot movement via the Bluetooth link )
+Android -> RPI
+-------------
+contents:
+{
+    'move': str enum LEFT/RIGHT/FORWARD/REVERSE
+}
+
+================================================================
+message type: arena_update (implements C6 Interactive movement and placement of obstacles in map. 
+                            and C7 Interactive annotation of the face of the obstacle where the target image is located
+                            and Fastest Car Task)
+Android -> RPI
+-------------
+contents:
+{
+    'arena':{
+        'obstacle': {
+            'location': (x<int>, y<int>),
+            'id': int<id>,
+            'image': str enum N/S/E/W
+        },
+    },
+    'start_location': (x<int>, y<int>),
+    'final_location': (x<int>, y<int>),
+    'path': [(x,y), ]
+}
+
+
+================================================================
+message type: status_update (implements C4 Functional GUI that shows remote update & status messages 
+                            and C10 Updating Position and Facing Direction of Robot in the Map)
+RPI -> Android
+-------------
+contents (at least one key):
+{
+    'status'  : str enum READY TO START/LOOKING FOR TARGET N (1,2,3,4,5),
+    'location': (x<int>, y<int>),
+    'direction: str enum N/S/E/W
+}
+
