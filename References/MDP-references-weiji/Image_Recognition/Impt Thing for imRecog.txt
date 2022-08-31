@@ -1,0 +1,55 @@
+python C:\Users\micha\OneDrive\Desktop\PRED\content\PRED\MainModule.py --weights C:\Users\micha\OneDrive\Desktop\PRED\content\PRED\best.pt --conf 0.5 --source C:\Users\micha\OneDrive\Desktop\PRED\content\PRED\images
+
+
+def main(opt):
+    while True:
+        try:
+            client_socket = socket.socket()
+            client_socket.connect(('192.168.10.1', 5001))
+            print('Connected to RPi...')
+            connection = client_socket.makefile('rb')
+            try:
+                while True:
+                    image_len = struct.unpack('<L', connection.read(struct.calcsize('<L')))[0]
+                    if not image_len:
+                        continue
+                    image_stream = io.BytesIO()
+                    image_stream.write(connection.read(image_len))
+                    image_stream.seek(0)
+                    image = Image.open(image_stream)
+                    image.save('from_rpi.jpg')
+                    label = run(**vars(opt))
+                    client_socket.send(f'{label}'.encode())
+                    try:
+                        i = 0
+                        ims = []
+                        while os.path.exists("img%s.jpg" % i):
+                            ims.append(f'img{i}.jpg')
+                            i += 1
+                        if len(ims) >= 2:
+                            collage(640, 480, ims)
+                        if ims[-1] == 'black.jpg':
+                            ims = ims[:-1]
+                        num_of_obs = int(opt.obs)
+                        # and ims[(num_of_obs - 1)] == f'img{(num_of_obs - 1)}.jpg'
+                        if len(ims) == num_of_obs:
+                            for img in ims:
+                                os.remove(img)
+                            os.rename('collage.jpg', f'collage_{datetime.now().strftime("%Y%m%d%H%M%S")}.jpg')
+                    except (ValueError, Exception):
+                        pass
+            except (ValueError, Exception) as e:
+                print(e)
+                print('Restarting connection... (Except Case 1)')
+                connection.close()
+                client_socket.close()
+                continue
+        except (ValueError, Exception) as e:
+            print(e)
+            print('Restarting connection... (Except Case 2)')
+            continue
+
+
+if __name__ == "__main__":
+    opt = parse_opt()
+    main(opt)
