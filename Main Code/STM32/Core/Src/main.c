@@ -591,11 +591,51 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
+// For own reference, this function seems to be called after
+// interrupt from the HAL_UART_Receive_IT function
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {
 	//Prevent unused argument(s) compilation warning
 	UNUSED(huart);
-	HAL_UART_Transmit(&huart3, (uint8_t *)aRxBuffer, 10, 0xFFFF);
+	// Not sure whether this HAL_UART_Transmit is needed here
+	// but I suspect maybe no need for now, so commenting it out.
+
+	// HAL_UART_Transmit(&huart3, (uint8_t *)aRxBuffer, 10, 0xFFFF);
+}
+
+/**
+  * @brief send msg to RPI through UART after execute command
+  * @param msg[] for the message to be sent
+  * @retval None
+  */
+void sendToRPI(uint8_t msg[])
+{
+	HAL_UART_Transmit(&huart3,msg,sizeof(msg),10);
+}
+
+void moveForward()
+{
+	return;
+}
+
+void moveReverse()
+{
+	return;
+}
+
+void turnLeft()
+{
+	return;
+}
+
+void turnRight()
+{
+	return;
+}
+
+void shortestPath()
+{
+	return;
 }
 /* USER CODE END 4 */
 
@@ -609,19 +649,56 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 void StartDefaultTask(void *argument)
 {
   /* USER CODE BEGIN 5 */
-  uint8_t ch = 'A';
-
+  // uint8_t ch = 'A';
+	uint8_t instrBuffer[20];
   /* Infinite loop */
   for(;;)
   {
-	HAL_UART_Transmit(&huart3, (uint8_t *)&ch, 1, 0xFFFF); //send a character up
+	// HAL_UART_Transmit(&huart3, (uint8_t *)&ch, 1, 0xFFFF); //send a character up
 
 	//If ch reaches Z goes back to A
-	if (ch < 'Z')
-		ch++;
-	else
-		ch = 'A';
+//	if (ch < 'Z')
+//		ch++;
+//	else
+//		ch = 'A';
+
+	HAL_UART_Receive_IT(&huart3,(uint8_t *) aRxBuffer, 20);
 	HAL_GPIO_TogglePin(LED3_GPIO_Port, LED3_Pin);
+	sprintf(instrBuffer, "%s\0", aRxBuffer);
+
+	// assume
+	// 1: forward
+	// 2: left
+	// 3: right
+	// 4: reverse
+	// 5: shortest path
+	switch(instrBuffer[0])
+	{
+	case '1':
+		moveForward();
+		sendToRPI("Forward done!\0");
+		break;
+	case '2':
+		turnLeft();
+		sendToRPI("Left done!\0");
+		break;
+	case '3':
+		turnRight();
+		sendToRPI("Right done!\0");
+		break;
+	case '4':
+		moveReverse();
+		sendToRPI("Reverse done!\0");
+		break;
+	case '5':
+		shortestPath();
+		sendToRPI("SP done!\0");
+		break;
+	default:
+		sendToRPI("Unrecognized instruction\0");
+		break;
+	}
+
     osDelay(1000);
   }
   /* USER CODE END 5 */
