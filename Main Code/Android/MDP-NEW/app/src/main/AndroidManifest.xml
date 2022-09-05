@@ -17,12 +17,13 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="MDP Group 29"
+        android:label="MDP Group 45"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MDPNEW">
         <activity
         android:name=".MainActivity"
+        android:label="Home"
         android:exported="true">
         <intent-filter>
             <action android:name="android.intent.action.MAIN" />
@@ -32,14 +33,17 @@
         </activity>
             <activity
                 android:name=".Bluetooth"
+                android:label="Bluetooth"
                 android:exported="true"
                 android:parentActivityName=".MainActivity"/>
             <activity
                 android:name=".Communication"
+                android:label="Communication"
                 android:exported="true"
                 android:parentActivityName=".MainActivity"/>
             <activity
             android:name=".Arena"
+            android:label="Arena"
             android:exported="true"
             android:parentActivityName=".MainActivity"/>
     </application>
