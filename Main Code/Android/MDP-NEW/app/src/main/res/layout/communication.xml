@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#252836">
+    android:background="#E5D3B3">
 
     <TextView
         android:id="@+id/textView"
@@ -13,7 +13,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
         android:text="Communications"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/black"
         android:textSize="28dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -24,25 +24,25 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="4dp"
-        android:text="MDP Group 29"
-        android:textColor="#FFFFFF"
+        android:text="MDP Group 45"
+        android:textColor="@color/black"
         android:textSize="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <TextView
         android:id="@+id/chatlog_tv"
-        android:background="@drawable/bg"
         android:layout_width="match_parent"
         android:layout_height="300dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="28dp"
         android:layout_marginEnd="24dp"
-        android:padding="24dp"
-        android:textColor="#FFFFFF"
-        android:scrollbars="vertical"
+        android:background="#ce9a72"
         android:gravity="bottom"
+        android:padding="24dp"
+        android:scrollbars="vertical"
         android:text=""
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
@@ -53,9 +53,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="24dp"
-        android:backgroundTint="#EA7C69"
-        android:paddingVertical="14dp"
+        android:backgroundTint="#965A3A"
         android:paddingHorizontal="34dp"
+        android:paddingVertical="14dp"
         android:text="Send"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
@@ -68,11 +68,11 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="24dp"
+        android:background="#ce9a72"
         android:hint="Type message here"
-        android:background="@drawable/chatbox_bg"
         android:paddingHorizontal="24dp"
         android:paddingVertical="12dp"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/chatlog_tv" />

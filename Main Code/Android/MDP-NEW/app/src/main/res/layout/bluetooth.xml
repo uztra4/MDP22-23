@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#252836">
+    android:background="#E5D3B3">
 
 
     <TextView
@@ -18,11 +17,11 @@
         android:gravity="center"
         android:onClick="toggleButtonScan"
         android:text="Disconnected"
+        android:textAlignment="viewEnd"
         android:textAllCaps="true"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/black"
         android:textSize="16dp"
         android:textStyle="bold"
-        android:textAlignment="viewEnd"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView"
         app:layout_constraintTop_toTopOf="parent" />
@@ -34,19 +33,19 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
         android:text="Bluetooth"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/black"
         android:textSize="28dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="109dp"
+        android:layout_height="23dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="4dp"
-        android:text="MDP Group 29"
-        android:textColor="#FFFFFF"
+        android:text="MDP Group 45"
+        android:textColor="@color/black"
         android:textSize="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
@@ -58,7 +57,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="28dp"
         android:text="On"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
@@ -68,11 +67,11 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="104dp"
         android:layout_marginEnd="24dp"
-        android:backgroundTint="#EA7C69"
+        android:backgroundTint="#965A3A"
         android:paddingHorizontal="34dp"
         android:paddingVertical="14dp"
-        android:textColor="#FFFFFF"
         android:text="Scan"
+        android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -83,7 +82,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="10dp"
         android:text="Paired Devices"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/black"
         android:textSize="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/scanButton" />
@@ -95,14 +94,14 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="24dp"
-        android:background="@drawable/bg"
-        android:listSelector="#bdb9b9"
+        android:background="#CEAF92"
+        android:listSelector="#ce9a72"
+        android:padding="10dp"
         android:scrollbars="vertical"
         android:text=""
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
-        android:padding="10dp"/>
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <TextView
         android:id="@+id/textView5"
@@ -111,7 +110,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="20dp"
         android:text="Devices Found"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/black"
         android:textSize="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/pairedDevicesListView" />
@@ -123,11 +122,11 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="24dp"
-        android:background="@drawable/bg"
+        android:background="#CEAF92"
+        android:padding="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5"
-        android:padding="10dp">
+        app:layout_constraintTop_toBottomOf="@+id/textView5">
 
     </ListView>
 
@@ -137,7 +136,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="24dp"
-        android:backgroundTint="#EA7C69"
+        android:backgroundTint="#965A3A"
         android:paddingHorizontal="34dp"
         android:paddingVertical="14dp"
         android:text="Connect"
