@@ -23,7 +23,7 @@
         android:theme="@style/Theme.MDPNEW">
         <activity
         android:name=".MainActivity"
-        android:label="Home"
+        android:label="MDP Group 45"
         android:exported="true">
         <intent-filter>
             <action android:name="android.intent.action.MAIN" />
