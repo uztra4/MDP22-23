@@ -23,6 +23,9 @@ class Obstacle:
         # Translate given coordinates to be in PyGame coordinates.
         self.pos = Position(x * settings.SCALING_FACTOR, y * settings.SCALING_FACTOR, direction)
 
+        # Target position for permutation
+        self.target_pos = self.get_robot_target_pos()
+
         # Arrow to draw at the target coordinate.
         self.target_image = pygame.transform.scale(pygame.image.load("entities/assets/target-arrow.png"),
                                                    (50, 50))

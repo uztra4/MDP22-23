@@ -24,8 +24,9 @@ def parse_obstacle_data(data) -> List[Obstacle]:
 def run_simulator():
     # Fill in obstacle positions with respect to lower bottom left corner.
     # (x-coordinate, y-coordinate, Direction)
-    obstacles = [[105, 75, 180, 0], [135, 25, 0, 1], [195, 95, 180, 2], [175, 185, -90, 3], [75, 125, 90, 4], [15, 185, -90, 5]]
-    obs = parse_obstacle_data(obstacles)
+    # obstacles = [[15, 75, 0, 0]]
+    # obs = parse_obstacle_data(obstacles)
+    obs = parse_obstacle_data([])
     app = AlgoSimulator(obs)
     app.init()
     app.execute()
@@ -90,3 +91,4 @@ def run_rpi():
 
 if __name__ == '__main__':
     run_simulator()
+    # run_rpi()

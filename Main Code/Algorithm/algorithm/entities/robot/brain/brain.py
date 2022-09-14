@@ -34,7 +34,7 @@ class Brain:
             # Create all target points, including the start.
             targets = [self.robot.pos.xy_pygame()]
             for obstacle in path:
-                targets.append(obstacle.pos.xy_pygame())
+                targets.append(obstacle.target_pos.xy_pygame())
 
             dist = 0
             for i in range(len(targets) - 1):
