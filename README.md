@@ -4,7 +4,7 @@ For Android
 
 Change obstacle number to target id:
 
-TARGET,(obstacle number),(targetid)
+"TARGET,(obstacle number),(targetid)"
 
 obstacle number=[1-8]
 
@@ -14,7 +14,7 @@ TargetID:
 
 Update position and direction of robot on map:
 
-ROBOT,<x>,<y>,<direction>
+"ROBOT,<x>,<y>,<direction>"
 
 x=[0-19]
 y=[0-19]
