@@ -4,7 +4,7 @@ from typing import List
 
 import settings
 from app import AlgoSimulator, AlgoMinimal
-from entities.assets.direction import Direction
+from entities.effects.direction import Direction
 from entities.connection.rpi_client import RPiClient
 from entities.connection.rpi_server import RPiServer
 from entities.grid.obstacle import Obstacle

@@ -8,7 +8,7 @@ class Command(ABC):
     def __init__(self, time):
         self.time = time  # Time in seconds in which this command is carried out.
         self.ticks = math.ceil(time * settings.FRAMES)  # Number of frame ticks that this command will take.
-        self.total_ticks = self.ticks  # Keep track of original total ticks.
+        self.total_ticks = self.ticks  # Keep track of total ticks.
 
     def tick(self):
         self.ticks -= 1

@@ -1,8 +1,8 @@
 import pygame
 
 import settings
-from entities.assets import colors
-from entities.assets.direction import Direction
+from entities.effects import colors
+from entities.effects.direction import Direction
 from entities.grid.position import Position, RobotPosition
 
 
@@ -27,8 +27,8 @@ class Obstacle:
         self.target_pos = self.get_robot_target_pos()
 
         # Arrow to draw at the target coordinate.
-        self.target_image = pygame.transform.scale(pygame.image.load("entities/assets/target-arrow.png"),
-                                                   (50, 50))
+        self.target_image = pygame.transform.scale(pygame.image.load("entities/effects/target-pointer.png"),
+                                                   (25, 25))
 
         self.index = index
 
@@ -108,20 +108,20 @@ class Obstacle:
             rect.centerx += settings.OBSTACLE_LENGTH / 4
 
         # Draw the picture place
-        pygame.draw.rect(screen, colors.RED, rect)
+        pygame.draw.rect(screen, colors.GREEN, rect)
 
     def draw_virtual_boundary(self, screen):
         # Get the boundary points
         points = self.get_boundary_points()
 
         # Draw left border
-        pygame.draw.line(screen, colors.BLUE, points[0].xy_pygame(), points[2].xy_pygame())
+        pygame.draw.line(screen, colors.RED, points[0].xy_pygame(), points[2].xy_pygame())
         # Draw right border
-        pygame.draw.line(screen, colors.BLUE, points[1].xy_pygame(), points[3].xy_pygame())
+        pygame.draw.line(screen, colors.RED, points[1].xy_pygame(), points[3].xy_pygame())
         # Draw upper border
-        pygame.draw.line(screen, colors.BLUE, points[2].xy_pygame(), points[3].xy_pygame())
+        pygame.draw.line(screen, colors.RED, points[2].xy_pygame(), points[3].xy_pygame())
         # Draw lower border
-        pygame.draw.line(screen, colors.BLUE, points[0].xy_pygame(), points[1].xy_pygame())
+        pygame.draw.line(screen, colors.RED, points[0].xy_pygame(), points[1].xy_pygame())
 
     def draw_robot_target(self, screen):
         target = self.get_robot_target_pos()

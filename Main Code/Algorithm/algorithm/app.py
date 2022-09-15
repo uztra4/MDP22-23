@@ -4,11 +4,12 @@ from abc import ABC, abstractmethod
 import pygame
 
 import settings
-from entities.assets import colors
-from entities.assets.direction import Direction
+from entities.effects import colors
+from entities.effects.direction import Direction
 from entities.grid.grid import Grid
 from entities.grid.obstacle import Obstacle
 from entities.robot.robot import Robot
+from entities.grid.position import Position
 
 
 class AlgoApp(ABC):
@@ -59,7 +60,7 @@ class AlgoSimulator(AlgoApp):
         pygame.display.flip()
 
         # Calculate the path.
-        self.robot.brain.plan_path()
+        self.robot.hamiltonian.plan_path()
         pygame.display.set_caption("Simulating path!")  # Update the caption once done.
 
     def settle_events(self):
@@ -70,6 +71,7 @@ class AlgoSimulator(AlgoApp):
             # On quit, stop the game loop. This will stop the app.
             if event.type == pygame.QUIT:
                 self.running = False
+
             elif event.type == pygame.MOUSEBUTTONDOWN:
                 pos = pygame.mouse.get_pos()
                 x = pos[0] // settings.GRID_CELL_LENGTH * 10 + 5
@@ -98,14 +100,14 @@ class AlgoSimulator(AlgoApp):
                     # Inform user that it is finding path...
                     pygame.display.set_caption("Calculating path...")
                     font = pygame.font.SysFont("arial", 35)
-                    text = font.render("Calculating path...", True, colors.WHITE)
+                    text = font.render("Calculating path...", True, colors.BLACK)
                     text_rect = text.get_rect()
                     text_rect.center = settings.WINDOW_SIZE[0] / 2, settings.WINDOW_SIZE[1] / 2
                     self.screen.blit(text, text_rect)
                     pygame.display.flip()
                     self.robot = Robot(self.grid)
                     # Calculate the path.
-                    self.robot.brain.plan_path()
+                    self.robot.hamiltonian.plan_path()
                     pygame.display.set_caption("Simulating path!")
 
     def parse_obstacle_data(self) -> List[Obstacle]:
@@ -148,7 +150,6 @@ class AlgoSimulator(AlgoApp):
 
             self.clock.tick(settings.FRAMES)
 
-
 class AlgoMinimal(AlgoApp):
     """
     Minimal app to just calculate a path and then send the commands over.
@@ -163,5 +164,6 @@ class AlgoMinimal(AlgoApp):
     def execute(self):
         # Calculate path
         print("Calculating path...")
-        self.robot.brain.plan_path()
+        self.robot.hamiltonian.plan_path()
         print("Done!")
+

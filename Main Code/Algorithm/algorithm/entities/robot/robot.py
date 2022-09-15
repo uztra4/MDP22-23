@@ -2,13 +2,13 @@ import pygame
 import datetime
 
 import settings
-from entities.assets import colors
-from entities.assets.direction import Direction
+from entities.effects import colors
+from entities.effects.direction import Direction
 from entities.commands.command import Command
 from entities.commands.straight_command import StraightCommand
 from entities.commands.turn_command import TurnCommand
 from entities.grid.position import RobotPosition
-from entities.robot.brain.brain import Brain
+from entities.robot.Algorithm.Hamiltonian import Hamiltonian
 
 
 class Robot:
@@ -22,10 +22,11 @@ class Robot:
                                  90)
         self._start_copy = self.pos.copy()
 
-        self.brain = Brain(self, grid)
+        self.hamiltonian = Hamiltonian(self, grid)
 
-        self.__image = pygame.transform.scale(pygame.image.load("entities/assets/left-arrow.png"),
-                                              (settings.ROBOT_LENGTH / 2, settings.ROBOT_LENGTH / 2))
+        self.__image = pygame.transform.scale(pygame.image.load("entities/effects/car-top.png"),
+                                              (settings.ROBOT_LENGTH / 2, settings.ROBOT_LENGTH))
+                                              #(settings.ROBOT_LENGTH / 2, settings.ROBOT_LENGTH / 2))
 
         self.path_hist = []  # Stores the history of the path taken by the robot.
 
@@ -40,7 +41,7 @@ class Robot:
         Convert the list of command objects to corresponding list of messages.
         """
         print("Converting commands to string...", end="")
-        string_commands = [command.convert_to_message() for command in self.brain.commands]
+        string_commands = [command.convert_to_message() for command in self.hamiltonian.commands]
         print("Done!")
         return string_commands
 
@@ -75,7 +76,7 @@ class Robot:
 
     def draw_simple_hamiltonian_path(self, screen):
         prev = self._start_copy.xy_pygame()
-        for obs in self.brain.simple_hamiltonian:
+        for obs in self.hamiltonian.simple_hamiltonian:
             target = obs.get_robot_target_pos().xy_pygame()
             pygame.draw.line(screen, colors.DARK_GREEN, prev, target)
             prev = target
@@ -89,7 +90,7 @@ class Robot:
 
     def draw_historic_path(self, screen):
         for dot in self.path_hist:
-            pygame.draw.circle(screen, colors.BLACK, dot, 3)
+            pygame.draw.circle(screen, colors.BLACK, dot, 2)
 
     def draw(self, screen):
         # Draw the robot itself.
@@ -106,18 +107,18 @@ class Robot:
             self.path_hist.append(self.pos.xy_pygame())
 
         # If no more commands to execute, then return.
-        if self.__current_command >= len(self.brain.commands):
+        if self.__current_command >= len(self.hamiltonian.commands):
             return
 
         # Check current command has non-null ticks.
         # Needed to check commands that have 0 tick execution time.
-        if self.brain.commands[self.__current_command].total_ticks == 0:
+        if self.hamiltonian.commands[self.__current_command].total_ticks == 0:
             self.__current_command += 1
-            if self.__current_command >= len(self.brain.commands):
+            if self.__current_command >= len(self.hamiltonian.commands):
                 return
 
         # If not, the first command in the list is always the command to execute.
-        command: Command = self.brain.commands[self.__current_command]
+        command: Command = self.hamiltonian.commands[self.__current_command]
         command.process_one_tick(self)
         # If there are no more ticks to do, then we can assume that we have
         # successfully completed this command, and so we can remove it.
@@ -125,9 +126,9 @@ class Robot:
         if command.ticks <= 0:
             print(f"Finished processing {command}, {self.pos}")
             self.__current_command += 1
-            if self.__current_command == len(self.brain.commands) and not self.printed:
+            if self.__current_command == len(self.hamiltonian.commands) and not self.printed:
                 total_time = 0
-                for command in self.brain.commands:
+                for command in self.hamiltonian.commands:
                     total_time += command.time
                     total_time = round(total_time)
                 # Calculate time for all commands

@@ -1,7 +1,7 @@
 import pygame
 
 import settings
-from entities.assets import colors
+from entities.effects import colors
 from entities.grid.position import Position
 
 
@@ -34,7 +34,7 @@ class Node:
         if self.occupied:  # If current node is not permissible to the robot
             rect = pygame.Rect(0, 0, settings.GRID_CELL_LENGTH, settings.GRID_CELL_LENGTH)
             rect.center = self.pos.xy_pygame()
-            pygame.draw.rect(screen, colors.ORANGE, rect)
+            pygame.draw.rect(screen, colors.WHITE, rect)
 
     def draw_boundary(self, screen):
         x_pygame, y_pygame = self.pos.xy_pygame()
@@ -45,10 +45,10 @@ class Node:
         bottom = y_pygame + settings.GRID_CELL_LENGTH // 2
 
         # Draw
-        pygame.draw.line(screen, colors.GREY, (left, top), (left, bottom))  # Left border
-        pygame.draw.line(screen, colors.GREY, (left, top), (right, top))  # Top border
-        pygame.draw.line(screen, colors.GREY, (right, top), (right, bottom))  # Right border
-        pygame.draw.line(screen, colors.GREY, (left, bottom), (right, bottom))  # Bottom border
+        pygame.draw.line(screen, colors.SILVER, (left, top), (left, bottom))  # Left border
+        pygame.draw.line(screen, colors.SILVER, (left, top), (right, top))  # Top border
+        pygame.draw.line(screen, colors.SILVER, (right, top), (right, bottom))  # Right border
+        pygame.draw.line(screen, colors.SILVER, (left, bottom), (right, bottom))  # Bottom border
 
     def draw(self, screen):
         # Draw self

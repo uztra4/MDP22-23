@@ -7,10 +7,10 @@ import settings
 from entities.commands.scan_command import ScanCommand
 from entities.commands.straight_command import StraightCommand
 from entities.grid.obstacle import Obstacle
-from entities.robot.brain.mod_a_star import ModifiedAStar
+from entities.robot.Algorithm.mod_a_star import ModifiedAStar
 
 
-class Brain:
+class Hamiltonian:
     def __init__(self, robot, grid):
         self.robot = robot
         self.grid = grid

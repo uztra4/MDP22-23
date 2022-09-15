@@ -5,7 +5,7 @@ from typing import List
 import pygame
 
 import settings
-from entities.assets import colors
+from entities.effects import colors
 from entities.grid.node import Node
 from entities.grid.obstacle import Obstacle
 from entities.grid.position import Position

@@ -1,5 +1,5 @@
 import settings
-from entities.assets.direction import Direction
+from entities.effects.direction import Direction
 
 
 class Position:
