@@ -95,31 +95,130 @@ public class Arena extends AppCompatActivity {
         put("o8w", R.drawable.obstacle_8_w);
 
         put("11", R.drawable.number_1);
+        put("11n", R.drawable.number_1_n);
+        put("11e", R.drawable.number_1_e);
+        put("11s",R.drawable.number_1_s);
+        put("11w",R.drawable.number_1_w);
         put("12", R.drawable.number_2);
+        put("12n", R.drawable.number_2_n);
+        put("12e", R.drawable.number_2_e);
+        put("12s",R.drawable.number_2_s);
+        put("12w",R.drawable.number_2_w);
         put("13", R.drawable.number_3);
+        put("13n", R.drawable.number_3_n);
+        put("13e", R.drawable.number_3_e);
+        put("13s",R.drawable.number_3_s);
+        put("13w",R.drawable.number_3_w);
         put("14", R.drawable.number_4);
+        put("14n", R.drawable.number_4_n);
+        put("14e", R.drawable.number_4_e);
+        put("14s",R.drawable.number_4_s);
+        put("14w",R.drawable.number_4_w);
         put("15", R.drawable.number_5);
+        put("15n", R.drawable.number_5_n);
+        put("15e", R.drawable.number_5_e);
+        put("15s",R.drawable.number_5_s);
+        put("15w",R.drawable.number_5_w);
         put("16", R.drawable.number_6);
+        put("16n", R.drawable.number_6_n);
+        put("16e", R.drawable.number_6_e);
+        put("16s",R.drawable.number_6_s);
+        put("16w",R.drawable.number_6_w);
         put("17", R.drawable.number_7);
+        put("17n", R.drawable.number_7_n);
+        put("17e", R.drawable.number_7_e);
+        put("17s",R.drawable.number_7_s);
+        put("17w",R.drawable.number_7_w);
         put("18", R.drawable.number_8);
+        put("18n", R.drawable.number_8_n);
+        put("18e", R.drawable.number_8_e);
+        put("18s",R.drawable.number_8_s);
+        put("18w",R.drawable.number_8_w);
         put("19", R.drawable.number_9);
-
+        put("19n", R.drawable.number_9_n);
+        put("19e", R.drawable.number_9_e);
+        put("19s",R.drawable.number_9_s);
+        put("19w",R.drawable.number_9_w);
         put("20", R.drawable.alphabet_a);
+        put("20n", R.drawable.alphabet_a_n);
+        put("20e", R.drawable.alphabet_a_e);
+        put("20s",R.drawable.alphabet_a_s);
+        put("20w",R.drawable.alphabet_a_w);
         put("21", R.drawable.alphabet_b);
+        put("21n", R.drawable.alphabet_b_n);
+        put("21e", R.drawable.alphabet_b_e);
+        put("21s",R.drawable.alphabet_b_s);
+        put("21w",R.drawable.alphabet_b_w);
         put("22", R.drawable.alphabet_c);
+        put("22n", R.drawable.alphabet_c_n);
+        put("22e", R.drawable.alphabet_c_e);
+        put("22s",R.drawable.alphabet_c_s);
+        put("22w",R.drawable.alphabet_c_w);
         put("23", R.drawable.alphabet_d);
+        put("23n", R.drawable.alphabet_d_n);
+        put("23e", R.drawable.alphabet_d_e);
+        put("23s",R.drawable.alphabet_d_s);
+        put("23w",R.drawable.alphabet_d_w);
         put("24", R.drawable.alphabet_e);
+        put("24n", R.drawable.alphabet_e_n);
+        put("24e", R.drawable.alphabet_e_e);
+        put("24s",R.drawable.alphabet_e_s);
+        put("24w",R.drawable.alphabet_e_w);
         put("25", R.drawable.alphabet_f);
+        put("25n", R.drawable.alphabet_f_n);
+        put("25e", R.drawable.alphabet_f_e);
+        put("25s",R.drawable.alphabet_f_s);
+        put("25w",R.drawable.alphabet_f_w);
         put("26", R.drawable.alphabet_g);
+        put("26n", R.drawable.alphabet_g_n);
+        put("26e", R.drawable.alphabet_g_e);
+        put("26s",R.drawable.alphabet_g_s);
+        put("26w",R.drawable.alphabet_g_w);
         put("27", R.drawable.alphabet_h);
+        put("27n", R.drawable.alphabet_h_n);
+        put("27e", R.drawable.alphabet_h_e);
+        put("27s",R.drawable.alphabet_h_s);
+        put("27w",R.drawable.alphabet_h_w);
         put("28", R.drawable.alphabet_s);
+        put("28n", R.drawable.alphabet_s_n);
+        put("28e", R.drawable.alphabet_s_e);
+        put("28s",R.drawable.alphabet_s_s);
+        put("28w",R.drawable.alphabet_s_w);
         put("29", R.drawable.alphabet_t);
+        put("29n", R.drawable.alphabet_t_n);
+        put("29e", R.drawable.alphabet_t_e);
+        put("29s",R.drawable.alphabet_t_s);
+        put("29w",R.drawable.alphabet_t_w);
         put("30", R.drawable.alphabet_u);
+        put("30n", R.drawable.alphabet_u_n);
+        put("30e", R.drawable.alphabet_u_e);
+        put("30s",R.drawable.alphabet_u_s);
+        put("30w",R.drawable.alphabet_u_w);
         put("31", R.drawable.alphabet_v);
+        put("31n", R.drawable.alphabet_v_n);
+        put("31e", R.drawable.alphabet_v_e);
+        put("31s",R.drawable.alphabet_v_s);
+        put("31w",R.drawable.alphabet_v_w);
         put("32", R.drawable.alphabet_w);
+        put("32n", R.drawable.alphabet_w_n);
+        put("32e", R.drawable.alphabet_w_e);
+        put("32s",R.drawable.alphabet_w_s);
+        put("32w",R.drawable.alphabet_w_w);
         put("33", R.drawable.alphabet_x);
+        put("33n", R.drawable.alphabet_x_n);
+        put("33e", R.drawable.alphabet_x_e);
+        put("33s",R.drawable.alphabet_x_s);
+        put("33w",R.drawable.alphabet_x_w);
         put("34", R.drawable.alphabet_y);
+        put("34n", R.drawable.alphabet_y_n);
+        put("34e", R.drawable.alphabet_y_e);
+        put("34s",R.drawable.alphabet_y_s);
+        put("34w",R.drawable.alphabet_y_w);
         put("35", R.drawable.alphabet_z);
+        put("35n", R.drawable.alphabet_z_n);
+        put("35e", R.drawable.alphabet_z_e);
+        put("35s",R.drawable.alphabet_z_s);
+        put("35w",R.drawable.alphabet_z_w);
 
         put("36", R.drawable.arrow_up);
         put("37", R.drawable.arrow_down);
@@ -737,7 +836,7 @@ public class Arena extends AppCompatActivity {
                     case 2:
                         new_y = (int) car.getY() + SNAP_GRID_INTERVAL;
                         car.setY(new_y);
-                        animator = ObjectAnimator.ofFloat(car, "y", car.getY() + SNAP_GRID_INTERVAL);
+                        animator = ObjectAnimator.ofFloat(car, "y", new_y);
                         animator.setDuration(ANIMATOR_DURATION);
                         animator.start();
                         updateXYDirText();
@@ -878,9 +977,26 @@ public class Arena extends AppCompatActivity {
     }
 
     private void setObstacleImage(int obstacleNumber, String image) {
-        obstacles.get(obstacleNumber).setImageResource(resources.get(image));
-        obstacles.get(obstacleNumber).setRotation(0);
-    }
+        int orientation = (int) obstacles.get(obstacleNumber).getRotation();
+
+        if(orientation==0) {
+            obstacles.get(obstacleNumber).setImageResource(resources.get(image+"n"));
+        }
+        else if(orientation==90) {
+            obstacles.get(obstacleNumber).setImageResource(resources.get(image+"e"));
+        }
+        else if(orientation==180) {
+            obstacles.get(obstacleNumber).setImageResource(resources.get(image+"s"));
+        }
+        else if(orientation==270) {
+            obstacles.get(obstacleNumber).setImageResource(resources.get(image+"w"));
+        }
+        else{
+            obstacles.get(obstacleNumber).setImageResource(resources.get(image));
+            obstacles.get(obstacleNumber).setRotation(0);
+        }
+        }
+
 
     TextView messageBox;
 
@@ -965,13 +1081,21 @@ public class Arena extends AppCompatActivity {
         updateXYDirText();
 
         obstacle1.setImageResource(resources.get("o1n"));
+        obstacle1.setTag(resources.get("o1n"));
         obstacle2.setImageResource(resources.get("o2n"));
+        obstacle2.setTag(resources.get("o2n"));
         obstacle3.setImageResource(resources.get("o3n"));
+        obstacle3.setTag(resources.get("o3n"));
         obstacle4.setImageResource(resources.get("o4n"));
+        obstacle4.setTag(resources.get("o4n"));
         obstacle5.setImageResource(resources.get("o5n"));
+        obstacle5.setTag(resources.get("o5n"));
         obstacle6.setImageResource(resources.get("o6n"));
+        obstacle6.setTag(resources.get("o6n"));
         obstacle7.setImageResource(resources.get("o7n"));
+        obstacle7.setTag(resources.get("o7n"));
         obstacle8.setImageResource(resources.get("o8n"));
+        obstacle1.setTag(resources.get("o8n"));
 
         obstacle1.setRotation(0);
         obstacle2.setRotation(0);
@@ -1180,7 +1304,37 @@ public class Arena extends AppCompatActivity {
 
                     Log.d("ROBOT", "(x: " + x + ") (y: " + y + ") (direction: " + direction + ")");
 
-                    updateRobotPosition(Integer.parseInt(x), Integer.parseInt(y), Integer.parseInt(direction));
+                    int direction_int=0;
+                    switch(direction){
+                        case "N":
+                            direction_int=0;
+                            break;
+                        case "NE":
+                            direction_int=1;
+                            break;
+                        case "E":
+                            direction_int=2;
+                            break;
+                        case "SE":
+                            direction_int=3;
+                            break;
+                        case "S":
+                            direction_int=4;
+                            break;
+                        case "SW":
+                            direction_int=5;
+                            break;
+                        case "W":
+                            direction_int=6;
+                            break;
+                        case "NW":
+                            direction_int=7;
+                            break;
+                        default:
+                            break;
+                    }
+
+                    updateRobotPosition(Integer.parseInt(x), Integer.parseInt(y), direction_int);
                     break;
                 case "TARGET":
                     int obstacleNumber = Character.getNumericValue(message.charAt(7));
