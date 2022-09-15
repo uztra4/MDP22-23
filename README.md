@@ -14,7 +14,7 @@ TargetID:
 
 Update position and direction of robot on map:
 
-"ROBOT,<x>,<y>,<direction>"
+![image](https://user-images.githubusercontent.com/70562873/190410575-96e7829e-a70d-4e8d-a21a-9d36a79df559.png)
 
 x=[0-19]
 y=[0-19]
