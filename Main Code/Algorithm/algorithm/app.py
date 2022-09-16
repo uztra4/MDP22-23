@@ -31,7 +31,7 @@ class AlgoApp(ABC):
 
 class AlgoSimulator(AlgoApp):
     """
-    Run the algorithm using a GUI simulator.
+     Run the algorithm using a GUI simulator.
     """
     def __init__(self, obstacles: List[Obstacle]):
         super().__init__(obstacles)
@@ -84,6 +84,16 @@ class AlgoSimulator(AlgoApp):
                 self.grid = Grid(obs)
 
             elif event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_BACKSPACE:
+                    self.obstacles.clear()
+                    self.index = 0
+                    obs = self.parse_obstacle_data()
+                    self.grid = Grid(obs)
+                    print("reset Obstacles")
+                    pygame.display.flip()
+                    self.robot = Robot(self.grid)
+                    # Calculate the path.
+                    self.robot.hamiltonian.plan_path()
                 if event.key == pygame.K_DOWN:
                     self.direction = Direction.BOTTOM
                     print(self.direction)
