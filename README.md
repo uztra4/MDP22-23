@@ -20,3 +20,10 @@ x=[0-19]
 y=[0-19]
 direction=[N,NE,E,SE,S,SW,W,NW]
 
+Status Update:
+
+"STATUS,(any string)"
+
+Stop Timer:
+
+"Stop,"
