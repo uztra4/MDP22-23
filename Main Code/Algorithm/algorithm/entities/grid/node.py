@@ -31,10 +31,16 @@ class Node:
         return Node(self.pos.x, self.pos.y, self.occupied, self.pos.direction)
 
     def draw_self(self, screen):
-        if self.occupied:  # If current node is not permissible to the robot
-            rect = pygame.Rect(0, 0, settings.GRID_CELL_LENGTH, settings.GRID_CELL_LENGTH)
+        # if self.occupied:  # If current node is not permissible to the robot
+        #     rect = pygame.Rect(0, 0, settings.GRID_CELL_LENGTH, settings.GRID_CELL_LENGTH)
+        #     rect.center = self.pos.xy_pygame()
+        #     pygame.draw.rect(screen, colors.WHITE, rect)
+
+        if (0 <= self.pos.x <= 4 * settings.GRID_CELL_LENGTH) and (0 <= self.pos.y <= 4 * settings.GRID_CELL_LENGTH):
+            rect = pygame.Rect(self.pos.x, self.pos.y, settings.GRID_CELL_LENGTH, settings.GRID_CELL_LENGTH)
             rect.center = self.pos.xy_pygame()
-            pygame.draw.rect(screen, colors.WHITE, rect)
+            pygame.draw.rect(screen, colors.LIGHT_YELLOW, rect)
+
 
     def draw_boundary(self, screen):
         x_pygame, y_pygame = self.pos.xy_pygame()

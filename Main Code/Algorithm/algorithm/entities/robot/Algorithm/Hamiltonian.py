@@ -40,10 +40,12 @@ class Hamiltonian:
             for i in range(len(targets) - 1):
                 dist += math.sqrt(((targets[i][0] - targets[i + 1][0]) ** 2) +
                                   ((targets[i][1] - targets[i + 1][1]) ** 2))
+            print("Path = ", path, "\nTotal distance = ", dist)
             return dist
 
+        print("Calculating Distance for all possible permutation\n")
         simple = min(perms, key=calc_distance)
-        print("Found a simple hamiltonian path:")
+        print("\nFound a simple hamiltonian path:")
         for ob in simple:
             print(f"\t{ob}")
         return simple
