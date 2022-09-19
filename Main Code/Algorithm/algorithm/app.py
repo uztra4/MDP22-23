@@ -84,7 +84,7 @@ class AlgoSimulator(AlgoApp):
                 self.grid = Grid(obs)
 
             elif event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_BACKSPACE:
+                if event.key == pygame.K_c:
                     self.obstacles.clear()
                     self.index = 0
                     obs = self.parse_obstacle_data()
@@ -94,6 +94,16 @@ class AlgoSimulator(AlgoApp):
                     self.robot = Robot(self.grid)
                     # Calculate the path.
                     self.robot.hamiltonian.plan_path()
+                elif event.key == pygame.K_BACKSPACE:
+                    if len(self.obstacles) > 0:
+                        self.obstacles.pop()
+                        self.index -= 1
+                        obs = self.parse_obstacle_data()
+                        self.grid = Grid(obs)
+                        print("Remove most recent Obstacle")
+                        pygame.display.flip()
+                        self.robot = Robot(self.grid)
+
                 if event.key == pygame.K_DOWN:
                     self.direction = Direction.BOTTOM
                     print(self.direction)
