@@ -1345,6 +1345,7 @@ public class Arena extends AppCompatActivity {
                 case "STATUS":
                     String msg = message.substring(message.indexOf(',')+1);
                     messageBox.setText("\n[ROBOT]: " + msg);
+                    updateStatusWindow(msg);
                 case "STOP":
                     Chronometer IRTimer = (Chronometer) findViewById(R.id.IRTimer);
                     IRTimer.stop();
