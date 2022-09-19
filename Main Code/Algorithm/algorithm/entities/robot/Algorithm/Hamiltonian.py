@@ -44,6 +44,7 @@ class Hamiltonian:
             return dist
 
         print("Calculating Distance for all possible permutation\n")
+        # If asked how to know whether it is min dist, can just change to max to show
         simple = min(perms, key=calc_distance)
         print("\nFound a simple hamiltonian path:")
         for ob in simple:

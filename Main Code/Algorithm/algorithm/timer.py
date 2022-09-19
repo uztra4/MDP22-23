@@ -3,6 +3,7 @@ import pygame
 
 
 class Timer:
+    # Instantiate as class variables
     ticks = 0
     start = 0
     end = 0
