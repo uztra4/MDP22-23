@@ -1049,6 +1049,9 @@ public class Arena extends AppCompatActivity {
     }
 
     private void resetObstaclesButton() {
+        Chronometer IRTimer = (Chronometer) findViewById(R.id.IRTimer);  // Reset Timer
+        IRTimer.setBase(SystemClock.elapsedRealtime());
+        IRTimer.stop();
         updateStatusWindow("Ready To Start");
         // Hard coded
         obstacle1.setX(320);
@@ -1212,6 +1215,7 @@ public class Arena extends AppCompatActivity {
 
     private void updateStatusWindow(String msg) {
         statusWindow.setText(msg);
+        Log.d("status Window is ",msg);
     }
 
     private void updateRobotPosition(int x, int y, int direction) {
@@ -1340,16 +1344,24 @@ public class Arena extends AppCompatActivity {
                     int obstacleNumber = Character.getNumericValue(message.charAt(7));
                     String solution = message.substring(9);
                     setObstacleImage(obstacleNumber,solution);
+                    Toast.makeText(Arena.this, "Obstacle "+obstacleNumber+"changed to Target ID: "+ solution, Toast.LENGTH_SHORT).show();
 
                     break;
                 case "STATUS":
-                    String msg = message.substring(message.indexOf(',')+1);
-                    messageBox.setText("\n[ROBOT]: " + msg);
+                    String msg = " ";
+                    if(message.contains("\n")){
+                        msg = message.substring(message.indexOf(',')+1, message.indexOf('\n'));
+                }else{
+                        msg=message.substring(message.indexOf(',')+1);
+                    }
                     updateStatusWindow(msg);
+
+                    break;
                 case "STOP":
                     Chronometer IRTimer = (Chronometer) findViewById(R.id.IRTimer);
                     IRTimer.stop();
                     updateStatusWindow("Ready To Start");
+
 
                 default:
                     break;
