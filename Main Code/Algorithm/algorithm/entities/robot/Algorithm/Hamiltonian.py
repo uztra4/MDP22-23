@@ -1,5 +1,6 @@
 import itertools
 import math
+import sys
 from collections import deque
 from typing import Tuple
 
@@ -40,15 +41,18 @@ class Hamiltonian:
             for i in range(len(targets) - 1):
                 dist += math.sqrt(((targets[i][0] - targets[i + 1][0]) ** 2) +
                                   ((targets[i][1] - targets[i + 1][1]) ** 2))
-            print("Path = ", path, "\nTotal distance = ", dist)
+            print("Path = ", targets, "\nTotal distance = ", dist)
             return dist
 
         print("Calculating Distance for all possible permutation\n")
-        # If asked how to know whether it is min dist, can just change to max to show
+        # Change to max to show paths change
         simple = min(perms, key=calc_distance)
-        print("\nFound a simple hamiltonian path:")
+        print("\nFound a simple hamiltonian path: ")
         for ob in simple:
             print(f"\t{ob}")
+        print()
+        print("Found Shortest Hamiltonian Path")
+        calc_distance(simple)
         return simple
 
     def compress_paths(self):
