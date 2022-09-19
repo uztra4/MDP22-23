@@ -4,6 +4,7 @@ from abc import ABC, abstractmethod
 import pygame
 
 import settings
+from entities.effects import preGrid
 from entities.effects import colors
 from entities.effects.direction import Direction
 from entities.grid.grid import Grid
@@ -71,7 +72,7 @@ class AlgoSimulator(AlgoApp):
             # On quit, stop the game loop. This will stop the app.
             if event.type == pygame.QUIT:
                 self.running = False
-
+            # Mouse inputs
             elif event.type == pygame.MOUSEBUTTONDOWN:
                 pos = pygame.mouse.get_pos()
                 x = pos[0] // settings.GRID_CELL_LENGTH * 10 + 5
@@ -82,7 +83,7 @@ class AlgoSimulator(AlgoApp):
                 self.obstacles.append(obstacle)
                 obs = self.parse_obstacle_data()
                 self.grid = Grid(obs)
-
+            # Keyboard inputs
             elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_c:
                     self.obstacles.clear()
@@ -92,8 +93,7 @@ class AlgoSimulator(AlgoApp):
                     print("reset Obstacles")
                     pygame.display.flip()
                     self.robot = Robot(self.grid)
-                    # Calculate the path.
-                    self.robot.hamiltonian.plan_path()
+
                 elif event.key == pygame.K_BACKSPACE:
                     if len(self.obstacles) > 0:
                         self.obstacles.pop()
@@ -104,6 +104,7 @@ class AlgoSimulator(AlgoApp):
                         pygame.display.flip()
                         self.robot = Robot(self.grid)
 
+            # Set Direction of Obstacle before placing
                 if event.key == pygame.K_DOWN:
                     self.direction = Direction.BOTTOM
                     print(self.direction)
@@ -129,6 +130,40 @@ class AlgoSimulator(AlgoApp):
                     # Calculate the path.
                     self.robot.hamiltonian.plan_path()
                     pygame.display.set_caption("Simulating path!")
+
+                # Initalise with fixed Obstacles
+                if event.key == pygame.K_1:
+                    self.print_caption("Initialise World 1")
+                    self.obstacles = preGrid.getObsWorld(1)
+                    obs = self.parse_obstacle_data()
+                    self.grid = Grid(obs)
+                    self.robot = Robot(self.grid)
+                elif event.key == pygame.K_2:
+                    self.print_caption("Initialise World 2")
+                    self.obstacles = preGrid.getObsWorld(2)
+                    obs = self.parse_obstacle_data()
+                    self.grid = Grid(obs)
+                    self.robot = Robot(self.grid)
+                elif event.key == pygame.K_3:
+                    self.print_caption("Initialise World 3")
+                    self.obstacles = preGrid.getObsWorld(3)
+                    obs = self.parse_obstacle_data()
+                    self.grid = Grid(obs)
+                    self.robot = Robot(self.grid)
+                elif event.key == pygame.K_4:
+                    self.print_caption("Initialise World 4")
+                    self.obstacles = preGrid.getObsWorld(4)
+                    obs = self.parse_obstacle_data()
+                    self.grid = Grid(obs)
+                    self.robot = Robot(self.grid)
+
+    def print_caption(self, message):
+        font = pygame.font.SysFont("arial", 35)
+        text = font.render(message, True, colors.BLACK)
+        text_rect = text.get_rect()
+        text_rect.center = settings.WINDOW_SIZE[0] / 2, settings.WINDOW_SIZE[1] / 2
+        self.screen.blit(text, text_rect)
+        pygame.display.flip()
 
     def parse_obstacle_data(self) -> List[Obstacle]:
         obs = []
