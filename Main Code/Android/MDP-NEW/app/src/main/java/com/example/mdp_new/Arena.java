@@ -502,9 +502,15 @@ public class Arena extends AppCompatActivity {
                     case MotionEvent.ACTION_UP:
                         int snapToX = ((int) ((obstacle1.getX() + SNAP_GRID_INTERVAL / 2) / SNAP_GRID_INTERVAL)) * SNAP_GRID_INTERVAL;
                         int snapToY = ((int) ((obstacle1.getY() + SNAP_GRID_INTERVAL / 2) / SNAP_GRID_INTERVAL)) * SNAP_GRID_INTERVAL;
+                        Log.d("current location","obstacle is at "+ snapToX + "," +snapToY);
                         obstacle1.setX(snapToX);
                         obstacle1.setY(snapToY);
                         isObstacle1LongClicked = false;
+                        // Bluetooth message
+                        if (BluetoothConnectionService.BluetoothConnectionStatus) {
+                            byte[] bytes = String.format("Obstacle 1 moved to %d, %d",snapToX/40,snapToY/40).getBytes(Charset.defaultCharset());
+                            BluetoothConnectionService.write(bytes);
+                        }
                         break;
                     default:
                         break;
@@ -542,6 +548,11 @@ public class Arena extends AppCompatActivity {
                         obstacle2.setX(snapToX);
                         obstacle2.setY(snapToY);
                         isObstacle2LongClicked = false;
+                        // Bluetooth message
+                        if (BluetoothConnectionService.BluetoothConnectionStatus) {
+                            byte[] bytes = String.format("Obstacle 2 moved to %d, %d",snapToX/40,snapToY/40).getBytes(Charset.defaultCharset());
+                            BluetoothConnectionService.write(bytes);
+                        }
                         break;
                     default:
                         break;
@@ -579,6 +590,11 @@ public class Arena extends AppCompatActivity {
                         obstacle3.setX(snapToX);
                         obstacle3.setY(snapToY);
                         isObstacle3LongClicked = false;
+                        // Bluetooth message
+                        if (BluetoothConnectionService.BluetoothConnectionStatus) {
+                            byte[] bytes = String.format("Obstacle 3 moved to %d, %d",snapToX/40,snapToY/40).getBytes(Charset.defaultCharset());
+                            BluetoothConnectionService.write(bytes);
+                        }
                         break;
                     default:
                         break;
@@ -616,6 +632,11 @@ public class Arena extends AppCompatActivity {
                         obstacle4.setX(snapToX);
                         obstacle4.setY(snapToY);
                         isObstacle4LongClicked = false;
+                        // Bluetooth message
+                        if (BluetoothConnectionService.BluetoothConnectionStatus) {
+                            byte[] bytes = String.format("Obstacle 4 moved to %d, %d",snapToX/40,snapToY/40).getBytes(Charset.defaultCharset());
+                            BluetoothConnectionService.write(bytes);
+                        }
                         break;
                     default:
                         break;
@@ -653,6 +674,11 @@ public class Arena extends AppCompatActivity {
                         obstacle5.setX(snapToX);
                         obstacle5.setY(snapToY);
                         isObstacle5LongClicked = false;
+                        // Bluetooth message
+                        if (BluetoothConnectionService.BluetoothConnectionStatus) {
+                            byte[] bytes = String.format("Obstacle 5 moved to %d, %d",snapToX/40,snapToY/40).getBytes(Charset.defaultCharset());
+                            BluetoothConnectionService.write(bytes);
+                        }
                         break;
                     default:
                         break;
@@ -690,6 +716,11 @@ public class Arena extends AppCompatActivity {
                         obstacle6.setX(snapToX);
                         obstacle6.setY(snapToY);
                         isObstacle5LongClicked = false;
+                        // Bluetooth message
+                        if (BluetoothConnectionService.BluetoothConnectionStatus) {
+                            byte[] bytes = String.format("Obstacle 6 moved to %d, %d",snapToX/40,snapToY/40).getBytes(Charset.defaultCharset());
+                            BluetoothConnectionService.write(bytes);
+                        }
                         break;
                     default:
                         break;
@@ -727,6 +758,11 @@ public class Arena extends AppCompatActivity {
                         obstacle7.setX(snapToX);
                         obstacle7.setY(snapToY);
                         isObstacle5LongClicked = false;
+                        // Bluetooth message
+                        if (BluetoothConnectionService.BluetoothConnectionStatus) {
+                            byte[] bytes = String.format("Obstacle 7 moved to %d, %d",snapToX/40,snapToY/40).getBytes(Charset.defaultCharset());
+                            BluetoothConnectionService.write(bytes);
+                        }
                         break;
                     default:
                         break;
@@ -764,6 +800,11 @@ public class Arena extends AppCompatActivity {
                         obstacle8.setX(snapToX);
                         obstacle8.setY(snapToY);
                         isObstacle5LongClicked = false;
+                        // Bluetooth message
+                        if (BluetoothConnectionService.BluetoothConnectionStatus) {
+                            byte[] bytes = String.format("Obstacle 8 moved to %d, %d",snapToX/40,snapToY/40).getBytes(Charset.defaultCharset());
+                            BluetoothConnectionService.write(bytes);
+                        }
                         break;
                     default:
                         break;
@@ -863,7 +904,7 @@ public class Arena extends AppCompatActivity {
 
                 // Bluetooth message
                 if (BluetoothConnectionService.BluetoothConnectionStatus) {
-                    byte[] bytes = "STM:x".getBytes(Charset.defaultCharset());
+                    byte[] bytes = "STM:s".getBytes(Charset.defaultCharset());
                     BluetoothConnectionService.write(bytes);
                 }
 

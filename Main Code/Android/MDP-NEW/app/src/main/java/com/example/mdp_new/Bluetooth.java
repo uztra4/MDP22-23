@@ -159,7 +159,7 @@ public class Bluetooth extends AppCompatActivity {
                 Log.d(TAG, "onItemClick: DEVICE NAME: " + deviceName);
                 Log.d(TAG, "onItemClick: DEVICE ADDRESS: " + deviceAddress);
                 BluetoothConnectionService.mBTDevice=mPairedBTDevices.get(i);
-                Toast.makeText(Bluetooth.this, deviceName, Toast.LENGTH_LONG).show();
+                Toast.makeText(Bluetooth.this, deviceName, Toast.LENGTH_SHORT).show();
                 mBluetoothConnection = new BluetoothConnectionService(Bluetooth.this);
                 mBTDevice = mPairedBTDevices.get(i);
             }
