@@ -2,6 +2,7 @@ import pygame
 import datetime
 
 import settings
+import timer
 from entities.effects import colors
 from entities.effects.direction import Direction
 from entities.commands.command import Command
@@ -135,3 +136,4 @@ class Robot:
                 # Then print it out.
                 print(f"All commands took {datetime.timedelta(seconds=total_time)}")
                 self.printed = True
+                timer.Timer.end_timer()

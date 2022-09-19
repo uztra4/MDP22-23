@@ -4,6 +4,7 @@ from abc import ABC, abstractmethod
 import pygame
 
 import settings
+import timer
 from entities.effects import preGrid
 from entities.effects import colors
 from entities.effects.direction import Direction
@@ -11,6 +12,7 @@ from entities.grid.grid import Grid
 from entities.grid.obstacle import Obstacle
 from entities.robot.robot import Robot
 from entities.grid.position import Position
+
 
 
 class AlgoApp(ABC):
@@ -117,19 +119,15 @@ class AlgoSimulator(AlgoApp):
                 elif event.key == pygame.K_RIGHT:
                     self.direction = Direction.RIGHT
                     print(self.direction)
+
                 elif event.key == pygame.K_SPACE:
                     # Inform user that it is finding path...
-                    pygame.display.set_caption("Calculating path...")
-                    font = pygame.font.SysFont("arial", 35)
-                    text = font.render("Calculating path...", True, colors.BLACK)
-                    text_rect = text.get_rect()
-                    text_rect.center = settings.WINDOW_SIZE[0] / 2, settings.WINDOW_SIZE[1] / 2
-                    self.screen.blit(text, text_rect)
-                    pygame.display.flip()
+                    self.print_caption("Calculating path...")
                     self.robot = Robot(self.grid)
                     # Calculate the path.
                     self.robot.hamiltonian.plan_path()
                     pygame.display.set_caption("Simulating path!")
+                    timer.Timer.start_timer()
 
                 # Initalise with fixed Obstacles
                 if event.key == pygame.K_1:
@@ -186,6 +184,7 @@ class AlgoSimulator(AlgoApp):
 
         self.grid.draw(self.screen)
         self.robot.draw(self.screen)
+        timer.Timer.print_timer(self.screen)
 
         # Really render now.
         pygame.display.flip()
