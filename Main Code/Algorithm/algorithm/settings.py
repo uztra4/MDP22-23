@@ -6,8 +6,8 @@ FRAMES = 50
 WINDOW_SIZE = 800, 650
 
 # Connection to RPi
-RPI_HOST: str = "192.168.8.8"
-RPI_PORT: int = 4160
+RPI_HOST: str = "192.168.45.45"
+RPI_PORT: int = 5180
 
 # Connection to PC
 PC_HOST: str = socket.gethostbyname(socket.gethostname())
@@ -15,9 +15,11 @@ PC_PORT: int = 4161
 
 # Robot Attributes
 ROBOT_LENGTH = 20 * SCALING_FACTOR
-ROBOT_TURN_RADIUS = 20 * SCALING_FACTOR
+ROBOT_X_TURN_RADIUS = 20 * SCALING_FACTOR
+ROBOT_Y_TURN_RADIUS = 20 * SCALING_FACTOR
+ROBOT_AVERAGE_TURN_RADIUS = (ROBOT_X_TURN_RADIUS+ROBOT_Y_TURN_RADIUS)/2
 ROBOT_SPEED_PER_SECOND = 100 * SCALING_FACTOR
-ROBOT_S_FACTOR = ROBOT_LENGTH / ROBOT_TURN_RADIUS  # Please read briefing notes from Imperial
+ROBOT_S_FACTOR = ROBOT_LENGTH / ROBOT_AVERAGE_TURN_RADIUS  # Please read briefing notes from Imperial
 ROBOT_SAFETY_DISTANCE = 15 * SCALING_FACTOR
 ROBOT_SCAN_TIME = 0.25  # Time provided for scanning an obstacle image in seconds.
 
@@ -32,7 +34,7 @@ OBSTACLE_LENGTH = 10 * SCALING_FACTOR
 OBSTACLE_SAFETY_WIDTH = ROBOT_SAFETY_DISTANCE // 3 * 4  # With respect to the center of the obstacle
 
 # Path Finding Attributes
-PATH_TURN_COST = 999 * ROBOT_SPEED_PER_SECOND * ROBOT_TURN_RADIUS
+PATH_TURN_COST = 999 * ROBOT_SPEED_PER_SECOND * ROBOT_AVERAGE_TURN_RADIUS
 # NOTE: Higher number == Lower Granularity == Faster Checking.
 # Must be an integer more than 0! Number higher than 3 not recommended.
 PATH_TURN_CHECK_GRANULARITY = 1

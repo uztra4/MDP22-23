@@ -7,6 +7,7 @@ from entities.grid.position import Position, RobotPosition
 
 
 class Obstacle:
+
     def __init__(self, x, y, direction, index):
         """
         x -> x-coordinate of the obstacle.
@@ -76,14 +77,16 @@ class Obstacle:
 
         The object will also store the angle that the robot should face.
         """
+        offset = 0 * settings.SCALING_FACTOR
+
         if self.pos.direction == Direction.TOP:
-            return RobotPosition(self.pos.x, self.pos.y + settings.OBSTACLE_SAFETY_WIDTH + settings.OBSTACLE_LENGTH, Direction.BOTTOM)
+            return RobotPosition(self.pos.x, self.pos.y + settings.OBSTACLE_SAFETY_WIDTH + settings.OBSTACLE_LENGTH + offset, Direction.BOTTOM)
         elif self.pos.direction == Direction.BOTTOM:
-            return RobotPosition(self.pos.x, self.pos.y - settings.OBSTACLE_SAFETY_WIDTH - settings.OBSTACLE_LENGTH, Direction.TOP)
+            return RobotPosition(self.pos.x, self.pos.y - settings.OBSTACLE_SAFETY_WIDTH - settings.OBSTACLE_LENGTH - offset, Direction.TOP)
         elif self.pos.direction == Direction.LEFT:
-            return RobotPosition(self.pos.x - settings.OBSTACLE_SAFETY_WIDTH - settings.OBSTACLE_LENGTH, self.pos.y, Direction.RIGHT)
+            return RobotPosition(self.pos.x - settings.OBSTACLE_SAFETY_WIDTH - settings.OBSTACLE_LENGTH - offset, self.pos.y, Direction.RIGHT)
         else:
-            return RobotPosition(self.pos.x + settings.OBSTACLE_SAFETY_WIDTH + settings.OBSTACLE_LENGTH, self.pos.y, Direction.LEFT)
+            return RobotPosition(self.pos.x + settings.OBSTACLE_SAFETY_WIDTH + settings.OBSTACLE_LENGTH + offset, self.pos.y, Direction.LEFT)
 
     def draw_self(self, screen):
         # Draw the obstacle onto the grid.

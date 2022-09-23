@@ -204,6 +204,10 @@ class AlgoSimulator(AlgoApp):
 
             self.clock.tick(settings.FRAMES)
 
+        # pygame.quit()
+        # exit()
+
+
 class AlgoMinimal(AlgoApp):
     """
     Minimal app to just calculate a path and then send the commands over.

@@ -49,9 +49,9 @@ class TurnCommand(Command):
         assert isinstance(curr_pos, RobotPosition), print("Cannot apply turn command on non-robot positions!")
 
         # Get change in (x, y) coordinate.
-        x_change = settings.ROBOT_TURN_RADIUS * (math.sin(math.radians(curr_pos.angle + self.angle)) -
+        x_change = settings.ROBOT_X_TURN_RADIUS * (math.sin(math.radians(curr_pos.angle + self.angle)) -
                                                  math.sin(math.radians(curr_pos.angle)))
-        y_change = settings.ROBOT_TURN_RADIUS * (math.cos(math.radians(curr_pos.angle + self.angle)) -
+        y_change = settings.ROBOT_Y_TURN_RADIUS * (math.cos(math.radians(curr_pos.angle + self.angle)) -
                                                  math.cos(math.radians(curr_pos.angle)))
 
         if self.angle < 0 and not self.rev:  # Wheels to right moving forward.
@@ -85,13 +85,13 @@ class TurnCommand(Command):
     def convert_to_message(self):
         if self.angle > 0 and not self.rev:
             # This is going forward left.
-            return "l0090"  # Note the smaller case L.
+            return "STM:l\n"  # Note the smaller case L.
         elif self.angle > 0 and self.rev:
             # This is going backward and with the wheels to the right.
-            return "R0090"
+            return "STM:R\n"
         elif self.angle < 0 and not self.rev:
             # This is going forward right.
-            return "r0090"
+            return "STM:r\n"
         else:
             # This is going backward and with the wheels to the left.
-            return "L0090"
+            return "STM:L\n"

@@ -33,6 +33,7 @@ class RPiServer:
                     break
                 self.__data.append(d)
 
+        print(self.__data)
         # This may allow arbitrary code execution. Only connect to trusted connections!!!
         return pickle.loads(b''.join(self.__data))
 

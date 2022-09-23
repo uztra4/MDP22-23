@@ -22,4 +22,5 @@ class ScanCommand(Command):
 
     def convert_to_message(self):
         # Just return a string of s's
-        return f"s{self.obj_index:04}"
+        return "STM:p\n"
+        # return f"s{self.obj_index:04}"
