@@ -81,6 +81,10 @@ void Error_Handler(void);
 #define PWMA_GPIO_Port GPIOC
 #define PWMB_Pin GPIO_PIN_7
 #define PWMB_GPIO_Port GPIOC
+#define GYRO_SCL_Pin GPIO_PIN_8
+#define GYRO_SCL_GPIO_Port GPIOB
+#define GYRO_SDA_Pin GPIO_PIN_9
+#define GYRO_SDA_GPIO_Port GPIOB
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */
