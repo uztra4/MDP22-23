@@ -849,7 +849,7 @@ public class Arena extends AppCompatActivity {
 
                 // Bluetooth message
                 if (BluetoothConnectionService.BluetoothConnectionStatus) {
-                    byte[] bytes = "STM:w".getBytes(Charset.defaultCharset());
+                    byte[] bytes = "STM:w10n".getBytes(Charset.defaultCharset());
                     BluetoothConnectionService.write(bytes);
                 }
 
@@ -904,7 +904,7 @@ public class Arena extends AppCompatActivity {
 
                 // Bluetooth message
                 if (BluetoothConnectionService.BluetoothConnectionStatus) {
-                    byte[] bytes = "STM:s".getBytes(Charset.defaultCharset());
+                    byte[] bytes = "STM:s10n".getBytes(Charset.defaultCharset());
                     BluetoothConnectionService.write(bytes);
                 }
 
