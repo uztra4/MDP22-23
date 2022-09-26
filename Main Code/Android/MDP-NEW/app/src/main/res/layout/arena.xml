@@ -10,7 +10,7 @@
         android:id="@+id/grid"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:backgroundTint="#E5D3B3"
+        android:backgroundTint="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,219 +23,240 @@
         app:srcCompat="@drawable/robot"
         tools:ignore="MissingConstraints" />
 
-    <ImageView
-        android:id="@+id/obstacle1"
-        android:layout_width="40px"
-        android:layout_height="40px"
-        android:layout_marginLeft="240dp"
-        android:layout_marginTop="620dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/obstacle_1_n" />
 
-    <ImageView
-        android:id="@+id/obstacle2"
-        android:layout_width="40px"
-        android:layout_height="40px"
-        android:layout_marginLeft="280dp"
-        android:layout_marginTop="620dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/obstacle_2_n" />
-
-    <ImageView
-        android:id="@+id/obstacle3"
-        android:layout_width="40px"
-        android:layout_height="40px"
-        android:layout_marginLeft="320dp"
-        android:layout_marginTop="620dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/obstacle_3_n" />
-
-    <ImageView
-        android:id="@+id/obstacle4"
-        android:layout_width="40px"
-        android:layout_height="40px"
-        android:layout_marginLeft="360dp"
-        android:layout_marginTop="620dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/obstacle_4_n" />
-
-    <ImageView
-        android:id="@+id/obstacle5"
-        android:layout_width="40px"
-        android:layout_height="40px"
-        android:layout_marginLeft="400dp"
-        android:layout_marginTop="620dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/obstacle_5_n" />
-
-    <ImageView
-        android:id="@+id/obstacle6"
-        android:layout_width="40px"
-        android:layout_height="40px"
-        android:layout_marginLeft="440dp"
-        android:layout_marginTop="620dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/obstacle_6_n" />
-
-    <ImageView
-        android:id="@+id/obstacle7"
-        android:layout_width="40px"
-        android:layout_height="40px"
-        android:layout_marginLeft="480dp"
-        android:layout_marginTop="620dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/obstacle_7_n" />
-
-    <ImageView
-        android:id="@+id/obstacle8"
-        android:layout_width="40px"
-        android:layout_height="40px"
-        android:layout_marginLeft="520dp"
-        android:layout_marginTop="620dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/obstacle_8_n" />
 
 
     <!-- Forward button -->
-    <ImageButton
-        android:id="@+id/forwardButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="70dp"
-        android:layout_marginTop="620dp"
-        android:backgroundTint="#965A3A"
-        android:paddingHorizontal="34dp"
-        android:paddingVertical="14dp"
-        android:src="@drawable/up_icon"
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/grid">
 
-    <!-- Reverse button -->
-    <ImageButton
-        android:id="@+id/reverseButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="70dp"
-        android:backgroundTint="#965A3A"
-        android:paddingHorizontal="34dp"
-        android:paddingVertical="14dp"
-        android:src="@drawable/down_icon"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/leftButton" />
+        <ImageView
+            android:id="@+id/obstacle1"
+            android:layout_width="40px"
+            android:layout_height="40px"
+            android:layout_marginLeft="178dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/IRButton"
+            app:layout_constraintStart_toStartOf="@+id/guideline2"
+            app:srcCompat="@drawable/obstacle_1_n" />
 
-    <!-- Left button -->
-    <ImageButton
-        android:id="@+id/leftButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:backgroundTint="#965A3A"
-        android:paddingHorizontal="34dp"
-        android:paddingVertical="14dp"
-        android:src="@drawable/left_icon"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/forwardButton" />
+        <ImageView
+            android:id="@+id/obstacle2"
+            android:layout_width="40px"
+            android:layout_height="40px"
+            android:layout_marginStart="9dp"
+            app:layout_constraintStart_toEndOf="@+id/obstacle1"
+            app:layout_constraintTop_toTopOf="@+id/obstacle1"
+            app:srcCompat="@drawable/obstacle_2_n" />
 
-    <!-- Right button -->
-    <ImageButton
-        android:id="@+id/rightButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#965A3A"
-        android:paddingHorizontal="34dp"
-        android:paddingVertical="14dp"
-        android:src="@drawable/right_icon"
-        app:layout_constraintStart_toEndOf="@id/leftButton"
-        app:layout_constraintTop_toBottomOf="@id/forwardButton" />
+        <ImageView
+            android:id="@+id/obstacle3"
+            android:layout_width="40px"
+            android:layout_height="40px"
+            android:layout_marginStart="9dp"
+            app:layout_constraintStart_toEndOf="@+id/obstacle2"
+            app:layout_constraintTop_toTopOf="@+id/obstacle2"
+            app:srcCompat="@drawable/obstacle_3_n" />
 
-    <Button
-        android:id="@+id/IRButton"
-        android:layout_width="95dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="270dp"
-        android:layout_marginTop="660dp"
-        android:backgroundTint="#965A3A"
-        android:paddingHorizontal="15dp"
-        android:paddingVertical="12dp"
-        android:text="IR"
-        android:textColor="#FFFFFF"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <ImageView
+            android:id="@+id/obstacle4"
+            android:layout_width="40px"
+            android:layout_height="40px"
+            android:layout_marginStart="9dp"
+            app:layout_constraintStart_toEndOf="@+id/obstacle3"
+            app:layout_constraintTop_toTopOf="@+id/obstacle3"
+            app:srcCompat="@drawable/obstacle_4_n" />
 
-    <Button
-        android:id="@+id/resetButton"
-        android:layout_width="95dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="660dp"
-        android:backgroundTint="#965A3A"
-        android:paddingHorizontal="15dp"
-        android:paddingVertical="12dp"
-        android:text="Reset"
-        android:textColor="#FFFFFF"
-        app:layout_constraintStart_toEndOf="@+id/SPBtn"
-        app:layout_constraintTop_toTopOf="parent" />
+        <ImageView
+            android:id="@+id/obstacle5"
+            android:layout_width="40px"
+            android:layout_height="40px"
+            android:layout_marginStart="9dp"
+            app:layout_constraintStart_toEndOf="@+id/obstacle4"
+            app:layout_constraintTop_toTopOf="@+id/obstacle4"
+            app:srcCompat="@drawable/obstacle_5_n" />
 
-    <Button
-        android:id="@+id/SPBtn"
-        android:layout_width="95dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="660dp"
-        android:backgroundTint="#965A3A"
-        android:paddingHorizontal="15dp"
-        android:paddingVertical="12dp"
-        android:text="SP"
-        android:textColor="#FFFFFF"
-        app:layout_constraintStart_toEndOf="@+id/IRButton"
-        app:layout_constraintTop_toTopOf="parent" />
+        <ImageView
+            android:id="@+id/obstacle6"
+            android:layout_width="40px"
+            android:layout_height="40px"
+            android:layout_marginStart="9dp"
+            app:layout_constraintStart_toEndOf="@+id/obstacle5"
+            app:layout_constraintTop_toTopOf="@+id/obstacle5"
+            app:srcCompat="@drawable/obstacle_6_n" />
 
-    <Button
-        android:id="@+id/preset1Button"
-        android:layout_width="95dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="270dp"
-        android:backgroundTint="#965A3A"
-        android:paddingHorizontal="15dp"
-        android:paddingVertical="12dp"
-        android:text="1"
-        android:textColor="#FFFFFF"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/IRButton" />
+        <ImageView
+            android:id="@+id/obstacle7"
+            android:layout_width="40px"
+            android:layout_height="40px"
+            android:layout_marginStart="9dp"
+            app:layout_constraintStart_toEndOf="@+id/obstacle6"
+            app:layout_constraintTop_toTopOf="@+id/obstacle6"
+            app:srcCompat="@drawable/obstacle_7_n" />
 
-    <Button
-        android:id="@+id/preset2Button"
-        android:layout_width="95dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:backgroundTint="#965A3A"
-        android:paddingHorizontal="15dp"
-        android:paddingVertical="12dp"
-        android:text="2"
-        android:textColor="#FFFFFF"
-        app:layout_constraintStart_toEndOf="@+id/preset1Button"
-        app:layout_constraintTop_toBottomOf="@+id/SPBtn" />
+        <ImageView
+            android:id="@+id/obstacle8"
+            android:layout_width="40px"
+            android:layout_height="40px"
+            android:layout_marginStart="9dp"
+            app:layout_constraintStart_toEndOf="@+id/obstacle7"
+            app:layout_constraintTop_toTopOf="@+id/obstacle7"
+            app:srcCompat="@drawable/obstacle_8_n" />
 
-    <Button
-        android:id="@+id/preset3Button"
-        android:layout_width="95dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:backgroundTint="#965A3A"
-        android:paddingHorizontal="15dp"
-        android:paddingVertical="12dp"
-        android:text="3"
-        android:textColor="#FFFFFF"
-        app:layout_constraintStart_toEndOf="@+id/preset2Button"
-        app:layout_constraintTop_toBottomOf="@+id/resetButton" />
+        <!-- Reverse button -->
+
+        <!-- Left button -->
+
+        <!-- Right button -->
+
+        <ImageButton
+            android:id="@+id/forwardButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="44dp"
+            android:backgroundTint="#965A3A"
+            android:paddingHorizontal="34dp"
+            android:paddingVertical="14dp"
+            android:src="@drawable/up_icon"
+            app:layout_constraintBottom_toBottomOf="@+id/rightButton"
+            app:layout_constraintStart_toStartOf="@+id/guideline2" />
+
+        <ImageButton
+            android:id="@+id/reverseButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/forwardButton"
+            android:layout_marginTop="44dp"
+            android:backgroundTint="#965A3A"
+            android:paddingHorizontal="34dp"
+            android:paddingVertical="14dp"
+            android:src="@drawable/down_icon"
+            app:layout_constraintStart_toStartOf="@+id/forwardButton"
+            app:layout_constraintTop_toTopOf="@+id/guideline3" />
+
+        <ImageButton
+            android:id="@+id/leftButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/forwardButton"
+            android:layout_marginRight="15dp"
+            android:backgroundTint="#965A3A"
+            android:paddingHorizontal="34dp"
+            android:paddingVertical="14dp"
+            android:src="@drawable/left_icon"
+            app:layout_constraintEnd_toStartOf="@+id/rightButton"
+            app:layout_constraintTop_toTopOf="@+id/guideline3" />
+
+        <ImageButton
+            android:id="@+id/rightButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="52dp"
+            android:layout_marginTop="-40dp"
+            android:layout_toRightOf="@id/leftButton"
+            android:backgroundTint="#965A3A"
+            android:paddingHorizontal="34dp"
+            android:paddingVertical="14dp"
+            android:src="@drawable/right_icon"
+            app:layout_constraintStart_toStartOf="@+id/guideline2"
+            app:layout_constraintTop_toTopOf="@+id/guideline3" />
+
+        <Button
+            android:id="@+id/IRButton"
+            android:layout_width="95dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#965A3A"
+            android:paddingHorizontal="15dp"
+            android:paddingVertical="12dp"
+            android:text="IR"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toTopOf="@id/preset1Button"
+            app:layout_constraintStart_toStartOf="@+id/preset1Button" />
+
+        <Button
+            android:id="@+id/resetButton"
+            android:layout_width="95dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:backgroundTint="#965A3A"
+            android:paddingHorizontal="15dp"
+            android:paddingVertical="12dp"
+            android:text="Reset"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="@+id/SPBtn"
+            app:layout_constraintStart_toEndOf="@+id/SPBtn" />
+
+        <Button
+            android:id="@+id/SPBtn"
+            android:layout_width="95dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:backgroundTint="#965A3A"
+            android:paddingHorizontal="15dp"
+            android:paddingVertical="12dp"
+            android:text="SP"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="@+id/IRButton"
+            app:layout_constraintStart_toEndOf="@+id/IRButton" />
+
+        <Button
+            android:id="@+id/preset1Button"
+            android:layout_width="95dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="180dp"
+            android:layout_marginTop="30dp"
+            android:backgroundTint="#965A3A"
+            android:paddingHorizontal="15dp"
+            android:paddingVertical="12dp"
+            android:text="1"
+            android:textColor="#FFFFFF"
+            app:layout_constraintStart_toStartOf="@+id/guideline2"
+            app:layout_constraintTop_toTopOf="@+id/guideline3" />
+
+        <Button
+            android:id="@+id/preset2Button"
+            android:layout_width="95dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:backgroundTint="#965A3A"
+            android:paddingHorizontal="15dp"
+            android:paddingVertical="12dp"
+            android:text="2"
+            android:textColor="#FFFFFF"
+            app:layout_constraintStart_toEndOf="@+id/preset1Button"
+            app:layout_constraintTop_toBottomOf="@+id/IRButton" />
+
+        <Button
+            android:id="@+id/preset3Button"
+            android:layout_width="95dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:backgroundTint="#965A3A"
+            android:paddingHorizontal="15dp"
+            android:paddingVertical="12dp"
+            android:text="3"
+            android:textColor="#FFFFFF"
+            app:layout_constraintStart_toEndOf="@+id/preset2Button"
+            app:layout_constraintTop_toBottomOf="@+id/SPBtn" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="80dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="679dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
         android:id="@+id/textView3"
