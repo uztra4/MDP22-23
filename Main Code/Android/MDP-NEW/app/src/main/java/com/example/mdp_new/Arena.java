@@ -1415,4 +1415,4 @@ public class Arena extends AppCompatActivity {
     };
 }
 
-  //TODO: Add different status messages dynamically to robot during test, and when to change robot status to reset after reaching last objective
+  //TODO: Check if bluetooth switch crashes app

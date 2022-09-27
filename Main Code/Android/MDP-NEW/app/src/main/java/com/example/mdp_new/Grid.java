@@ -20,10 +20,12 @@ public class Grid extends View {
     public Grid(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
 
+        String uiWhite = "#F3F4F8";
         blackPaint.setColor(Color.BLACK);
-        gridBackground.setColor(Color.WHITE);
+        gridBackground.setColor(Color.parseColor(uiWhite));
         whitePaint.setColor(Color.WHITE);
     }
+
 
     @Override
     public void onDraw(Canvas canvas) {
