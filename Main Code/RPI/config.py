@@ -1,0 +1,26 @@
+LOCALE = 'utf-8'
+LOGGING_MODE = True
+IMAGE_PROCESSING_MODE = True
+
+# Arduino USB connection settings
+SERIAL_PORT = '/dev/ttyUSB0'
+BAUD_RATE = 115200
+
+# Algorithm (PC) Wifi connection settings
+WIFI_IP = '192.168.45.45'
+WIFI_PORT = 5180
+ALGORITHM_SOCKET_BUFFER_SIZE = 2048
+
+# Android BT connection settings
+RFCOMM_CHANNEL = 1
+UUID = '00001101-0000-1000-8000-00805F9B34FB'
+ANDROID_SOCKET_BUFFER_SIZE = 2048
+
+# Image Recognition settings
+IMAGE_PROCESSING_SERVER_URL_LIST = [
+    'tcp://192.168.45.208:5555' #Shu Hui
+    ]
+
+
+MESSAGE_SEPARATOR = ':'
+NEWLINE = '\n'
