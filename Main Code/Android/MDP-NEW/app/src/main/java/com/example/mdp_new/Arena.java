@@ -1412,7 +1412,6 @@ public class Arena extends AppCompatActivity {
 
                     break;
                 case "STATUS":
-                    forwardButtonCommand();
                     String msg = " ";
                     if(message.contains("\n")){
                         msg = message.substring(message.indexOf(',')+1, message.indexOf('\n'));
@@ -1428,7 +1427,7 @@ public class Arena extends AppCompatActivity {
                     break;
 
                 case "MOVE":
-                    String moveCommand = message.substring(message.indexOf(',')+1, message.length()-1);  // substring after MOVE (w10n)
+                    String moveCommand = message.substring(message.indexOf(',')+1);  // substring after MOVE (w10n)
                     if (moveCommand.length() > 2){ // Forward and Reverse commands
                         // Split moveCommand (eg w10n) into direction (w) + interval (how many 10s) + 'n'
                         String moveDirection = moveCommand.substring(0, 1); // w
@@ -1484,11 +1483,10 @@ public class Arena extends AppCompatActivity {
                                 break;
                             default:
                                 Log.d("Move command", "Command is not a valid turn");
-                                Log.d("this", moveCommand);
+                                Log.d("this", moveCommand);  // checking value of moveCommand
                                 break;
                         }
                     }
-
                 default:  // for outer "ROBOT/TARGET/STATUS cases
                     break;
             }
