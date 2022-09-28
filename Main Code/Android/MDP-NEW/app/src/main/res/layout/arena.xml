@@ -356,7 +356,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="24dp"
-        android:backgroundTint="#965A3A"
+        android:backgroundTint="#404252"
         android:text="Stop timer"
         android:textColor="#ffffff"
         app:layout_constraintBottom_toBottomOf="parent"
