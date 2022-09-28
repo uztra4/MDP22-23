@@ -841,6 +841,7 @@ public class Arena extends AppCompatActivity {
         car.setY(18 * SNAP_GRID_INTERVAL - SNAP_GRID_INTERVAL);
         updateXYDirText();
 
+
         // Movement Buttons
         ImageButton forwardButton = (ImageButton) findViewById(R.id.forwardButton);
         forwardButton.setOnClickListener(new View.OnClickListener(){
@@ -854,46 +855,7 @@ public class Arena extends AppCompatActivity {
                 }
 
                 // Animation
-                int orientation = (int) car.getRotation();
-                int new_x, new_y;
-                ObjectAnimator animator;
-                switch (((orientation / 90) % 4 + 4) % 4) {
-                    case 0: //North
-                        new_y = (int) car.getY() - SNAP_GRID_INTERVAL;
-                        car.setY(new_y);
-                        animator = ObjectAnimator.ofFloat(car, "y", new_y);
-                        animator.setDuration(ANIMATOR_DURATION);
-                        animator.start();
-                        updateXYDirText();
-                        break;
-                    case 1:
-                        new_x = (int) car.getX() + SNAP_GRID_INTERVAL;
-                        car.setX(new_x);
-                        animator = ObjectAnimator.ofFloat(car, "x", new_x);
-                        animator.setDuration(ANIMATOR_DURATION);
-                        animator.start();
-                        updateXYDirText();
-                        break;
-                    case 2:
-                        new_y = (int) car.getY() + SNAP_GRID_INTERVAL;
-                        car.setY(new_y);
-                        animator = ObjectAnimator.ofFloat(car, "y", new_y);
-                        animator.setDuration(ANIMATOR_DURATION);
-                        animator.start();
-                        updateXYDirText();
-                        break;
-                    case 3:
-                        new_x = (int) car.getX() - SNAP_GRID_INTERVAL;
-                        car.setX(new_x);
-                        animator = ObjectAnimator.ofFloat(car, "x", new_x);
-                        animator.setDuration(ANIMATOR_DURATION);
-                        animator.start();
-                        updateXYDirText();
-                        break;
-                    default:
-                        // Shouldn't reach this case
-                        break;
-                }
+                forwardButtonCommand();
             }
         });
 
@@ -909,46 +871,7 @@ public class Arena extends AppCompatActivity {
                 }
 
                 // Animation
-                int orientation = (int) car.getRotation();
-                int new_x, new_y;
-                ObjectAnimator animator;
-                switch (((orientation / 90) % 4 + 4) % 4) {
-                    case 0:
-                        new_y = (int) car.getY() + SNAP_GRID_INTERVAL;
-                        car.setY(new_y);
-                        animator = ObjectAnimator.ofFloat(car, "y", new_y);
-                        animator.setDuration(ANIMATOR_DURATION);
-                        animator.start();
-                        updateXYDirText();
-                        break;
-                    case 1:
-                        new_x = (int) car.getX() - SNAP_GRID_INTERVAL;
-                        car.setX(new_x);
-                        animator = ObjectAnimator.ofFloat(car, "x", new_x);
-                        animator.setDuration(ANIMATOR_DURATION);
-                        animator.start();
-                        updateXYDirText();
-                        break;
-                    case 2:
-                        new_y = (int) car.getY() - SNAP_GRID_INTERVAL;
-                        car.setY(new_y);
-                        animator = ObjectAnimator.ofFloat(car, "y", new_y);
-                        animator.setDuration(ANIMATOR_DURATION);
-                        animator.start();
-                        updateXYDirText();
-                        break;
-                    case 3:
-                        new_x = (int) car.getX() + SNAP_GRID_INTERVAL;
-                        car.setX(new_x);
-                        animator = ObjectAnimator.ofFloat(car, "x", new_x);
-                        animator.setDuration(ANIMATOR_DURATION);
-                        animator.start();
-                        updateXYDirText();
-                        break;
-                    default:
-                        // Shouldn't reach this case
-                        break;
-                }
+                reverseButtonCommand();
             }
         });
 
@@ -961,26 +884,7 @@ public class Arena extends AppCompatActivity {
                     BluetoothConnectionService.write(bytes);
                 }
 
-                int orientation = (int) car.getRotation();
-                switch (((orientation / 90) % 4 + 4) % 4) {
-                    case 0:
-                        car.setRotation(270);
-                        break;
-                    case 1:
-                        car.setRotation(0);
-                        break;
-                    case 2:
-                        car.setRotation(90);
-                        break;
-                    case 3:
-                        car.setRotation(180);
-                        break;
-                    default:
-                        // Shouldn't reach this case
-                        break;
-                }
-
-                updateXYDirText();
+                leftButtonCommand();
             }
         });
 
@@ -993,28 +897,143 @@ public class Arena extends AppCompatActivity {
                     BluetoothConnectionService.write(bytes);
                 }
 
-                int orientation = (int) car.getRotation();
-                switch (((orientation / 90) % 4 + 4) % 4) {
-                    case 0:
-                        car.setRotation(90);
-                        break;
-                    case 1:
-                        car.setRotation(180);
-                        break;
-                    case 2:
-                        car.setRotation(270);
-                        break;
-                    case 3:
-                        car.setRotation(0);
-                        break;
-                    default:
-                        // Shouldn't reach this case
-                        break;
-                }
-
-                updateXYDirText();
+                rightButtonCommand();
             }
         });
+    }
+
+    // MOVEMENT COMMANDS
+    private void forwardButtonCommand() {
+        int orientation = (int) car.getRotation();
+        int new_x, new_y;
+        ObjectAnimator animator;
+        switch (((orientation / 90) % 4 + 4) % 4) {
+            case 0: //North
+                new_y = (int) car.getY() - SNAP_GRID_INTERVAL;
+                car.setY(new_y);
+                animator = ObjectAnimator.ofFloat(car, "y", new_y);
+                animator.setDuration(ANIMATOR_DURATION);
+                animator.start();
+                updateXYDirText();
+                break;
+            case 1:
+                new_x = (int) car.getX() + SNAP_GRID_INTERVAL;
+                car.setX(new_x);
+                animator = ObjectAnimator.ofFloat(car, "x", new_x);
+                animator.setDuration(ANIMATOR_DURATION);
+                animator.start();
+                updateXYDirText();
+                break;
+            case 2:
+                new_y = (int) car.getY() + SNAP_GRID_INTERVAL;
+                car.setY(new_y);
+                animator = ObjectAnimator.ofFloat(car, "y", new_y);
+                animator.setDuration(ANIMATOR_DURATION);
+                animator.start();
+                updateXYDirText();
+                break;
+            case 3:
+                new_x = (int) car.getX() - SNAP_GRID_INTERVAL;
+                car.setX(new_x);
+                animator = ObjectAnimator.ofFloat(car, "x", new_x);
+                animator.setDuration(ANIMATOR_DURATION);
+                animator.start();
+                updateXYDirText();
+                break;
+            default:
+                // Shouldn't reach this case
+                break;
+        }
+    }
+
+
+    private void reverseButtonCommand() {
+        int orientation = (int) car.getRotation();
+        int new_x, new_y;
+        ObjectAnimator animator;
+        switch (((orientation / 90) % 4 + 4) % 4) {
+            case 0:
+                new_y = (int) car.getY() + SNAP_GRID_INTERVAL;
+                car.setY(new_y);
+                animator = ObjectAnimator.ofFloat(car, "y", new_y);
+                animator.setDuration(ANIMATOR_DURATION);
+                animator.start();
+                updateXYDirText();
+                break;
+            case 1:
+                new_x = (int) car.getX() - SNAP_GRID_INTERVAL;
+                car.setX(new_x);
+                animator = ObjectAnimator.ofFloat(car, "x", new_x);
+                animator.setDuration(ANIMATOR_DURATION);
+                animator.start();
+                updateXYDirText();
+                break;
+            case 2:
+                new_y = (int) car.getY() - SNAP_GRID_INTERVAL;
+                car.setY(new_y);
+                animator = ObjectAnimator.ofFloat(car, "y", new_y);
+                animator.setDuration(ANIMATOR_DURATION);
+                animator.start();
+                updateXYDirText();
+                break;
+            case 3:
+                new_x = (int) car.getX() + SNAP_GRID_INTERVAL;
+                car.setX(new_x);
+                animator = ObjectAnimator.ofFloat(car, "x", new_x);
+                animator.setDuration(ANIMATOR_DURATION);
+                animator.start();
+                updateXYDirText();
+                break;
+            default:
+                // Shouldn't reach this case
+                break;
+        }
+    }
+
+    public void leftButtonCommand(){
+        int orientation = (int) car.getRotation();
+        switch (((orientation / 90) % 4 + 4) % 4) {
+            case 0:
+                car.setRotation(270);
+                break;
+            case 1:
+                car.setRotation(0);
+                break;
+            case 2:
+                car.setRotation(90);
+                break;
+            case 3:
+                car.setRotation(180);
+                break;
+            default:
+                // Shouldn't reach this case
+                break;
+        }
+
+        updateXYDirText();
+    };
+
+    private void rightButtonCommand(){
+        int orientation = (int) car.getRotation();
+        switch (((orientation / 90) % 4 + 4) % 4) {
+            case 0:
+                car.setRotation(90);
+                break;
+            case 1:
+                car.setRotation(180);
+                break;
+            case 2:
+                car.setRotation(270);
+                break;
+            case 3:
+                car.setRotation(0);
+                break;
+            default:
+                // Shouldn't reach this case
+                break;
+        }
+
+        updateXYDirText();
     }
 
     private void setObstacleImage(int obstacleNumber, String image) {
@@ -1393,27 +1412,87 @@ public class Arena extends AppCompatActivity {
 
                     break;
                 case "STATUS":
+                    forwardButtonCommand();
                     String msg = " ";
                     if(message.contains("\n")){
                         msg = message.substring(message.indexOf(',')+1, message.indexOf('\n'));
                 }else{
                         msg=message.substring(message.indexOf(',')+1);
                     }
+                    if(message.contains("STOP")){
+                        Chronometer IRTimer = (Chronometer) findViewById(R.id.IRTimer);
+                        IRTimer.stop();
+                        updateStatusWindow("Image Rec Completed");
+                    }
                     updateStatusWindow(msg);
-
                     break;
-                case "STOP":
-                    Chronometer IRTimer = (Chronometer) findViewById(R.id.IRTimer);
-                    IRTimer.stop();
-                    updateStatusWindow("Ready To Start");
 
+                case "MOVE":
+                    String moveCommand = message.substring(message.indexOf(',')+1, message.length()-1);  // substring after MOVE (w10n)
+                    if (moveCommand.length() > 2){ // Forward and Reverse commands
+                        // Split moveCommand (eg w10n) into direction (w) + interval (how many 10s) + 'n'
+                        String moveDirection = moveCommand.substring(0, 1); // w
+                        Log.d("this", moveDirection);
+                        String moveInterval = moveCommand.substring(1, moveCommand.length()-1); // doesn't take n, we can leave that out of any consideration
+                        int intervals = Integer.parseInt(moveInterval) / 10;  // intervals = how many units of 10s we have to move (10 = 1 grid block)
+                        switch(moveDirection){
+                            case "w":
+                                for (int i = 0; i <intervals; i++) {
+                                    forwardButtonCommand();
+                                }
+                                break;
+                            case "s":
+                                for (int i = 0; i < intervals; i++){
+                                    reverseButtonCommand();
+                                }
+                                break;
+                            default:
+                                Log.d("Move command", "Direction is not valid");
+                                break;
+                        }
+                    }
 
-                default:
+                    else{
+                        switch (moveCommand){  // Turn commands
+                            case "ln":  // forward left (w, w, a, w, w)
+                                forwardButtonCommand();
+                                forwardButtonCommand();
+                                leftButtonCommand();
+                                forwardButtonCommand();
+                                forwardButtonCommand();
+                                break;
+                            case "rn":  //forward right (w, w, d, w, w)
+                                forwardButtonCommand();
+                                forwardButtonCommand();
+                                rightButtonCommand();
+                                forwardButtonCommand();
+                                forwardButtonCommand();
+                                break;
+                            case "Ln":  // reverse left (s, s, d, s, s)
+                                reverseButtonCommand();
+                                reverseButtonCommand();
+                                rightButtonCommand();
+                                reverseButtonCommand();
+                                reverseButtonCommand();
+                                break;
+                            case "Rn":  //  reverse right (s, s, a, s, s)
+                                reverseButtonCommand();
+                                reverseButtonCommand();
+                                leftButtonCommand();
+                                reverseButtonCommand();
+                                reverseButtonCommand();
+                                break;
+                            default:
+                                Log.d("Move command", "Command is not a valid turn");
+                                Log.d("this", moveCommand);
+                                break;
+                        }
+                    }
+
+                default:  // for outer "ROBOT/TARGET/STATUS cases
                     break;
             }
 
         }
     };
 }
-
-  //TODO: Check if bluetooth switch crashes app

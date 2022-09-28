@@ -362,4 +362,50 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
+    <FrameLayout
+        android:layout_width="fill_parent"
+
+        android:layout_height="fill_parent"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <SlidingDrawer
+            android:id="@+id/drawer"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:content="@+id/content"
+            android:handle="@+id/handle"
+            android:orientation="horizontal"
+            android:rotation="180">
+
+
+            <ImageView
+                android:id="@id/handle"
+                android:layout_width="50dip"
+                android:layout_height="50dip"
+                android:rotation="180"
+                android:src="@drawable/red_question_mark" />
+
+            <LinearLayout
+                android:id="@id/content"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="vertical"
+                android:rotation="180">
+
+                <Button
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:text="Big Big Button" />
+            </LinearLayout>
+        </SlidingDrawer>
+
+        <TextView
+            android:layout_width="50dip"
+            android:layout_height="50dip"
+            android:text="HELLO WORLD" />
+
+    </FrameLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
