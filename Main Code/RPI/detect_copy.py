@@ -26,6 +26,7 @@ Usage - formats:
 """
 
 from ast import While
+from email.mime import image
 import io
 import socket
 import struct
@@ -169,6 +170,18 @@ def run(
             gn = torch.tensor(im0.shape)[[1, 0, 1, 0]]  # normalization gain whwh
             imc = im0.copy() if save_crop else im0  # for save_crop
             annotator = Annotator(im0, line_width=line_thickness, example=str(names))
+            image_label = 0
+
+            #Look at this dict to find the image name 
+            img_map = {'11':'one','12':'two','13':'three','14':'four','15':'five','16':'six','17':'seven','18':'eight','19':'nine',
+                        '20':"Alphabet A",'21':"Alphabet B",'22':"Alphabet C",'23':"Alphabet D",'24':"Alphabet E",'25':"Alphabet F",
+                        '26':"Alphabet G",'27':"Alphabet H",'28':"Alphabet S",'29':"Alphabet T", '30':"Alphabet U", '31':"Alphabet V",
+                        '32':"Alphabet W",'33':"Alphabet X",'34':"Alphabet Y",'35':"Alphabet Z",'36':"up arrow",'37':"down arrow",
+                        '38':"right arrow",'39':"left arrow",'40':"Stop",'bullseye': 'bullseye'}
+            
+            if len(det) == 0:
+                print("no image recognised")
+                image_label = -1
             if len(det):
                 # Rescale boxes from img_size to im0 size
                 det[:, :4] = scale_coords(im.shape[2:], det[:, :4], im0.shape).round()
@@ -188,15 +201,18 @@ def run(
 
                     if save_img or save_crop or view_img:  # Add bbox to image
                         c = int(cls)  # integer class
-                        label = None if hide_labels else (names[c] if hide_conf else f'{names[c]} {conf:.2f}')
+                        label = None if hide_labels else (names[c] if hide_conf else f'{names[c]} {img_map[names[c]]} {conf:.2f}')
                         annotator.box_label(xyxy, label, color=colors(c, True))
-
-                        print("label is", label)
-                        labelList = label.split()
-                        image_label = labelList[0]
+                        
+                        if image_label != -1:
+                            image_label = names[c]
+                            print("The image label to be sent is", names[c])
 
                     if save_crop:
                         save_one_box(xyxy, imc, file=save_dir / 'crops' / names[c] / f'{p.stem}.jpg', BGR=True)
+            
+            # Print time (inference-only)
+            print(f'{s}Done. ({t3 - t2:.3f}s)')
 
             # Stream results
             im0 = annotator.result()
@@ -205,8 +221,15 @@ def run(
                 #     windows.append(p)
                 #     cv2.namedWindow(str(p), cv2.WINDOW_NORMAL | cv2.WINDOW_KEEPRATIO)  # allow window resize (Linux)
                 #     cv2.resizeWindow(str(p), im0.shape[1], im0.shape[0])
-                cv2.imshow(str(p), im0)
-                cv2.waitKey(1)  # 1 millisecond
+                pos = 0.2 #scaling factor
+                h = int(im0.shape[0]*pos) # scale h
+                w = int(im0.shape[1]*pos) # scale w
+                rsz_image = cv2.resize(im0, (w, h)) # resize image
+                cv2.namedWindow(str(p), cv2.WINDOW_NORMAL)
+                cv2.resizeWindow(str(p), w, h)
+                cv2.imshow(str(p), rsz_image)
+                cv2.waitKey(30)  # display the window infinitely until any keypress
+                # cv2.waitKey(1) # display for 1 ms
 
             # Save results (image with detections)
             if save_img:
@@ -354,10 +377,11 @@ def main(opt):
                 
 
                 image_label = run(**vars(opt))
+                #sent_label = "ALG:" + image_label
+                sent_label = image_label
 
-
-                conn.send(f'{image_label}'.encode())
-                print("Label sent successfully")
+                conn.send(f'{sent_label}'.encode())
+                print(sent_label," Label sent successfully")
 
                 
             
