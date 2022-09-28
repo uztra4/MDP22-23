@@ -1085,7 +1085,7 @@ public class Arena extends AppCompatActivity {
             byte[] bytes = stringBuilder.toString().getBytes(Charset.defaultCharset());
             BluetoothConnectionService.write(bytes);
             Toast.makeText(Arena.this, "Image Recognition Started.", Toast.LENGTH_LONG).show();
-            updateStatusWindow("Image Recognition ongoing");
+            updateStatusWindow("IR started");
 
         } else {
             Toast.makeText(Arena.this, "Please connect to Bluetooth.", Toast.LENGTH_LONG).show();
@@ -1421,7 +1421,7 @@ public class Arena extends AppCompatActivity {
                     if(message.contains("STOP")){
                         Chronometer IRTimer = (Chronometer) findViewById(R.id.IRTimer);
                         IRTimer.stop();
-                        updateStatusWindow("Image Rec Completed");
+                        updateStatusWindow("IR Completed");
                     }
                     updateStatusWindow(msg);
                     break;
