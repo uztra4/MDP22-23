@@ -14,16 +14,18 @@ public class Grid extends View {
     private static final int cellHeight = 40;
 
     private static final Paint blackPaint = new Paint();
-    private static final Paint greyPaint = new Paint();
+    private static final Paint gridBackground = new Paint();
     private static final Paint whitePaint = new Paint();
 
     public Grid(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
 
+        String uiWhite = "#F3F4F8";
         blackPaint.setColor(Color.BLACK);
-        greyPaint.setColor(Color.LTGRAY);
+        gridBackground.setColor(Color.parseColor(uiWhite));
         whitePaint.setColor(Color.WHITE);
     }
+
 
     @Override
     public void onDraw(Canvas canvas) {
@@ -33,7 +35,7 @@ public class Grid extends View {
             for (int j = 0; j < numberOfRows; j++) {
                 canvas.drawRect(i * cellWidth, j * cellHeight,
                         (i + 1) * cellWidth, (j + 1) * cellHeight,
-                        greyPaint);
+                        gridBackground);
             }
         }
 

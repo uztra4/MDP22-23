@@ -1095,30 +1095,33 @@ public class Arena extends AppCompatActivity {
         IRTimer.setBase(SystemClock.elapsedRealtime());
         IRTimer.stop();
         updateStatusWindow("Ready To Start");
+
+
+
         // Hard coded
-        obstacle1.setX(320);
-        obstacle1.setY(825);
+        obstacle1.setTranslationX(0);
+        obstacle1.setTranslationY(0);
 
-        obstacle2.setX(370);
-        obstacle2.setY(825);
+        obstacle2.setTranslationX(0);
+        obstacle2.setTranslationY(0);
 
-        obstacle3.setX(420);
-        obstacle3.setY(825);
+        obstacle3.setTranslationX(0);
+        obstacle3.setTranslationY(0);
 
-        obstacle4.setX(470);
-        obstacle4.setY(825);
+        obstacle4.setTranslationX(0);
+        obstacle4.setTranslationY(0);
 
-        obstacle5.setX(520);
-        obstacle5.setY(825);
+        obstacle5.setTranslationX(0);
+        obstacle5.setTranslationY(0);
 
-        obstacle6.setX(570);
-        obstacle6.setY(825);
+        obstacle6.setTranslationX(0);
+        obstacle6.setTranslationY(0);
 
-        obstacle7.setX(620);
-        obstacle7.setY(825);
+        obstacle7.setTranslationX(0);
+        obstacle7.setTranslationY(0);
 
-        obstacle8.setX(670);
-        obstacle8.setY(825);
+        obstacle8.setTranslationX(0);
+        obstacle8.setTranslationY(0);
 
         car.setX(0);
         car.setY(680);
@@ -1413,4 +1416,4 @@ public class Arena extends AppCompatActivity {
     };
 }
 
-  //TODO: Add different status messages dynamically to robot during test, and when to change robot status to reset after reaching last objective
+  //TODO: Check if bluetooth switch crashes app

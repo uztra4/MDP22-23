@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E5D3B3">
+    android:background="#D2D4DA">
 
     <TextView
         android:id="@+id/textView"
@@ -37,7 +37,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="28dp"
         android:layout_marginEnd="24dp"
-        android:background="#ce9a72"
+        android:background="#9496A1"
         android:gravity="bottom"
         android:padding="24dp"
         android:scrollbars="vertical"
@@ -53,7 +53,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="24dp"
-        android:backgroundTint="#965A3A"
+        android:backgroundTint="#404252"
         android:paddingHorizontal="34dp"
         android:paddingVertical="14dp"
         android:text="Send"
@@ -68,7 +68,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="24dp"
-        android:background="#ce9a72"
+        android:background="#9496A1"
         android:hint="Type message here"
         android:paddingHorizontal="24dp"
         android:paddingVertical="12dp"
