@@ -54,9 +54,7 @@ from utils.general import labels_to_image_weights
 WIFI_PORT = 5001
 HOST = '192.168.45.208'   # IP address of server (PC)
 #HOST = '172.0.0.1'
-
 PORT = WIFI_PORT  # Local port
-
 
 FILE = Path(__file__).resolve()
 ROOT = FILE.parents[0]  # YOLOv5 root directory
@@ -71,7 +69,12 @@ from utils.general import (LOGGER, Profile, check_file, check_img_size, check_im
 from utils.plots import Annotator, colors, save_one_box
 from utils.torch_utils import select_device, smart_inference_mode
 
-
+#Look at this dict to find the image name 
+IMG_MAP = {'11':'one','12':'two','13':'three','14':'four','15':'five','16':'six','17':'seven','18':'eight','19':'nine',
+            '20':"Alphabet A",'21':"Alphabet B",'22':"Alphabet C",'23':"Alphabet D",'24':"Alphabet E",'25':"Alphabet F",
+            '26':"Alphabet G",'27':"Alphabet H",'28':"Alphabet S",'29':"Alphabet T", '30':"Alphabet U", '31':"Alphabet V",
+            '32':"Alphabet W",'33':"Alphabet X",'34':"Alphabet Y",'35':"Alphabet Z",'36':"up arrow",'37':"down arrow",
+            '38':"right arrow",'39':"left arrow",'40':"Stop",'bullseye': 'bullseye'}
 
 @smart_inference_mode()
 def run(
@@ -171,17 +174,13 @@ def run(
             imc = im0.copy() if save_crop else im0  # for save_crop
             annotator = Annotator(im0, line_width=line_thickness, example=str(names))
             image_label = 0
-
-            #Look at this dict to find the image name 
-            img_map = {'11':'one','12':'two','13':'three','14':'four','15':'five','16':'six','17':'seven','18':'eight','19':'nine',
-                        '20':"Alphabet A",'21':"Alphabet B",'22':"Alphabet C",'23':"Alphabet D",'24':"Alphabet E",'25':"Alphabet F",
-                        '26':"Alphabet G",'27':"Alphabet H",'28':"Alphabet S",'29':"Alphabet T", '30':"Alphabet U", '31':"Alphabet V",
-                        '32':"Alphabet W",'33':"Alphabet X",'34':"Alphabet Y",'35':"Alphabet Z",'36':"up arrow",'37':"down arrow",
-                        '38':"right arrow",'39':"left arrow",'40':"Stop",'bullseye': 'bullseye'}
+            image_name = 'zero'
             
             if len(det) == 0:
                 print("no image recognised")
                 image_label = -1
+                image_name = 'null'
+
             if len(det):
                 # Rescale boxes from img_size to im0 size
                 det[:, :4] = scale_coords(im.shape[2:], det[:, :4], im0.shape).round()
@@ -201,11 +200,12 @@ def run(
 
                     if save_img or save_crop or view_img:  # Add bbox to image
                         c = int(cls)  # integer class
-                        label = None if hide_labels else (names[c] if hide_conf else f'{names[c]} {img_map[names[c]]} {conf:.2f}')
+                        label = None if hide_labels else (names[c] if hide_conf else f'{names[c]} {IMG_MAP[names[c]]} {conf:.2f}')
                         annotator.box_label(xyxy, label, color=colors(c, True))
                         
                         if image_label != -1:
                             image_label = names[c]
+                            image_name = IMG_MAP[names[c]]
                             print("The image label to be sent is", names[c])
 
                     if save_crop:
@@ -230,6 +230,12 @@ def run(
                 cv2.imshow(str(p), rsz_image)
                 cv2.waitKey(30)  # display the window infinitely until any keypress
                 # cv2.waitKey(1) # display for 1 ms
+                
+            if image_name != 'null' and image_name != 'bullseye':
+                img_count = 0
+                while os.path.exists("img%s.jpg" % img_count):
+                    img_count += 1
+                cv2.imwrite(f'img{img_count}.jpg', im0)
 
             # Save results (image with detections)
             if save_img:
@@ -249,6 +255,8 @@ def run(
                         save_path = str(Path(save_path).with_suffix('.mp4'))  # force *.mp4 suffix on results videos
                         vid_writer[i] = cv2.VideoWriter(save_path, cv2.VideoWriter_fourcc(*'mp4v'), fps, (w, h))
                     vid_writer[i].write(im0)
+            
+            
 
         # Print time (inference-only)
         LOGGER.info(f"{s}{'' if len(det) else '(no detections), '}{dt[1].dt * 1E3:.1f}ms")
@@ -332,6 +340,31 @@ def handle_client(conn, addr):
         print("ERORORO")
         conn.close()
 
+def collage(width, height, list_of_images):
+    rows = 2
+    n = len(list_of_images)
+    if n % 2 == 1:
+        list_of_images.append('black.jpg')
+    cols = int(n / rows) + int(n % rows > 0)
+    size = width, height
+    new_im = Image.new('RGB', (width*cols, height*rows))
+    ims = []
+    for p in list_of_images:
+        im = Image.open(p)
+        im.thumbnail(size)
+        ims.append(im)
+    i = 0
+    x = 0
+    y = 0
+    for col in range(cols):
+        for row in range(rows):
+            new_im.paste(ims[i], (x, y))
+            i += 1
+            y += height
+        x += width
+        y = 0
+    new_im.save("collage.jpg")
+
 def main(opt):
     # check_requirements(exclude=('tensorboard', 'thop'))
     # run(**vars(opt))
@@ -383,8 +416,35 @@ def main(opt):
                 conn.send(f'{sent_label}'.encode())
                 print(sent_label," Label sent successfully")
 
-                
-            
+                try:
+                    i = 0
+                    ims = []
+                    while os.path.exists("img%s.jpg" % i):
+                        ims.append(f'img{i}.jpg')
+                        i += 1
+                    # print("COUNT of images: ",i)
+                    # print("IMS\n: ",ims)
+                    if len(ims) >= 2:
+                        collage(640, 480, ims)
+                    if ims[-1] == 'black.jpg':
+                        ims = ims[:-1]
+                    num_of_obs = int(opt.obs)
+                    # and ims[(num_of_obs - 1)] == f'img{(num_of_obs - 1)}.jpg'
+                    if len(ims) == num_of_obs:
+                        for img in ims:
+                            os.remove(img)
+                        os.rename('collage.jpg', f'collage_{datetime.now().strftime("%Y%m%d%H%M%S")}.jpg')
+
+                except (ValueError, Exception):
+                    pass
+
+                finally:
+                    stitched = cv2.imread('collage.jpg')
+                    cv2.startWindowThread()
+                    cv2.namedWindow("stitched")
+                    cv2.imshow("stitched", stitched)
+                    cv2.waitKey(30)  
+                        
                 if KeyboardInterrupt:
                     print("keyboard interrupt")
                     break
