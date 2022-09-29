@@ -1,4 +1,5 @@
 from multiprocessing import Process, Value, Queue, Manager
+import string
 import time
 from datetime import datetime
 
@@ -27,7 +28,6 @@ from imutils.video import VideoStream
 # from picamera.array import PiRGBArray
 
 init(autoreset=True)
-
 
 class MultiProcessCommunication:
     def __init__(self):
@@ -86,8 +86,8 @@ class MultiProcessCommunication:
             self.read_stm_process.start()
             self.read_algorithm_process.start()
             self.read_android_process.start()
-            message_list = ["ALG", b'15,55,-90,0']
-            self.message_queue.put_nowait(self._format_for(message_list[0], message_list[1]))
+            # message_list = ["ALG", b'15,55,-90,0']
+            # self.message_queue.put_nowait(self._format_for(message_list[0], message_list[1]))
             self.write_process.start()
             self.write_android_process.start()
             startComms_dt = datetime.now().strftime('%d-%b-%Y %H:%M%S')
@@ -222,13 +222,21 @@ class MultiProcessCommunication:
                         print(Fore.LIGHTCYAN_EX + 'STM > %s , %s' % (str(message_list[0]), str(message_list[1])))
                         self.message_queue.put_nowait(self._format_for(message_list[0], message_list[1].encode(LOCALE)))
         
-                    elif message_list[0] == 'RPI' and message_list[1] == 's':
+                    elif message_list[0] == 'RPI' and message_list[1] == 'p':
                         print('scanning image...')
-                        label = imgRec()
+                        label = imgRec() #In the format of OBSTACLE_NUM:IMAGE_ID
                         label = label.split(MESSAGE_SEPARATOR, 1)
-                        
-                        print(Fore.LIGHTCYAN_EX + 'STM > %s , %s' % (str(label[0]), str(label[1])))
-                        self.message_queue.put_nowait(self._format_for(label[0], label[1].encode(LOCALE)))
+
+                        #send image id to AND
+                        if label[1]!='null' and label[1]!='bullseye':
+                            stringToAND = "TARGET," + str(label[0]) + ',' + str(label[1])
+                            print(Fore.LIGHTCYAN_EX + 'RPI > %s , %s' % ("AND"), stringToAND)
+                            self.message_queue.put_nowait(self._format_for("AND", stringToAND.encode(LOCALE)))
+
+                        #send image id to ALG
+                        print(Fore.LIGHTCYAN_EX + 'STM > %s , %s' % ("ALG"), str(label[1]))
+                        self.message_queue.put_nowait(self._format_for("ALG", str(label[1]).encode(LOCALE)))
+
 
                     else:
                         # Printing message without proper message format on RPi terminal for STM sub-team to debug
@@ -253,31 +261,26 @@ class MultiProcessCommunication:
 
                         message_list = pre_message_list.split(MESSAGE_SEPARATOR, 1)
 
-                        # Message format for Image Rec: RPI|[P,(x1,y1)_(x2,y2)_(x3,y3)] or RPI|[E,]
+                        # Sending STOPPED message to AND
                         if message_list[0] == 'RPI':
-                            if message_list[1] == 's':
-                                raw_message = self.stm.read_from_stm()
-                                raw_message_list = raw_message.decode()
-                                message_list=raw_message_list.split(MESSAGE_SEPARATOR,1)
-                                while str(message_list)!= "['w']":
-                                    print(Fore.LIGHTBLUE_EX + '[Debug] Message from STM: %s' % str(message_list))
-                                try:
-                                    print('scanning image...')
-                                #self.image_queue.put_nowait(message_list[1][-1])
-                                    label = imgRec()
-                                    label = label.split(MESSAGE_SEPARATOR, 1)
-                                    self.message_queue.put_nowait(self._format_for(label[0], label[1].encode(LOCALE)))
+                            if message_list[1] == 'STOPPED':
+                                statusSTM = "STATUS," + message_list[1]
+                                print(Fore.LIGHTCYAN_EX + 'Algo > %s , %s' % ("AND", statusSTM))
+                                self.message_queue.put_nowait(self._format_for("AND", statusSTM.encode(LOCALE)))
 
-                                except Exception as e:
-                                    print(Fore.RED + '[MultiProcess-ImageProcessor not on. Cannot scan image.] %s' % str(e))
-                                    #break
                         elif message_list[0] == 'AND':
                             print(Fore.LIGHTCYAN_EX + 'Algo > %s , %s' % (str(message_list[0]), str(message_list[1])))
                             self.to_android_message_queue.put_nowait(message_list[1].encode(LOCALE))
 
                         elif message_list[0] == 'STM':
+                            # Send to STM for movements
                             print(Fore.LIGHTCYAN_EX + 'Algo > %s , %s' % (str(message_list[0]), str(message_list[1])))
                             self.message_queue.put_nowait(self._format_for(message_list[0], message_list[1].encode(LOCALE)))
+
+                            appendedString = "MOVE," + str(message_list[1])
+                            # Send to AND to update movements
+                            print(Fore.LIGHTCYAN_EX + 'Algo > %s , %s' % ("AND", appendedString))
+                            self.message_queue.put_nowait(self._format_for("AND", appendedString.encode(LOCALE)))
 
                         else:
                             print(Fore.LIGHTBLUE_EX + '[Debug] Message from ALGO: %s' % str(message_list))
@@ -293,7 +296,6 @@ class MultiProcessCommunication:
 
                 if raw_message is None:
                     continue
-
                 raw_message_list = raw_message.decode().splitlines()
 
                 for pre_message_list in raw_message_list:
@@ -302,16 +304,30 @@ class MultiProcessCommunication:
                         message_list = pre_message_list.split(MESSAGE_SEPARATOR, 1)
 
                         if message_list[0] == 'ALG':
-                            print(Fore.LIGHTCYAN_EX + 'Android > %s , %s' % (str(message_list[0]), str(message_list[1])))
-                            assert isinstance(message_list, object)
-                            self.message_queue.put_nowait(self._format_for(message_list[0], message_list[1].encode(LOCALE)))
+                            
+                            coordinates = message_list[1].split(';',8)
+                            stringCoordinates = ""
 
+                            #sending coordinates one obstacle by one obstacle
+                            for i in range(len(coordinates)):
+                                if i == 0:
+                                    stringCoordinates = coordinates[0]
+                                else:
+                                    if len(coordinates[i]) > 1:
+                                        stringCoordinates = stringCoordinates + ',' + coordinates[i]
+                            
+                            print(Fore.LIGHTCYAN_EX + 'Android > %s , %s' % (str(message_list[0]), str(stringCoordinates)))
+                            assert isinstance(stringCoordinates, object)
+                            self.message_queue.put_nowait(self._format_for(message_list[0], stringCoordinates.encode(LOCALE)))
+                        
                         else:
                             print(Fore.LIGHTBLUE_EX + '[Debug] Message from AND: %s' % str(message_list))
                             self.message_queue.put_nowait(self._format_for(message_list[0], message_list[1].encode(LOCALE)))
+            
             except Exception as e:
                 print(Fore.RED + '[MultiProcess-READ-AND ERROR] %s' % str(e))
                 break
+
 
     def _write_target(self):
         while True:
@@ -372,7 +388,7 @@ class MultiProcessCommunication:
                     print(reply1)
                     self.camera.close()
 
-                    if  int(reply1) > 0 and int(reply1) < 31:
+                    if int(reply1) > 0 and int(reply1) < 31:
                         id_msg = 'TARGET|'+ IMAGE_OBS_ID + '|' + str(reply1)
                         self.to_android_message_queue.put_nowait(id_msg.encode(LOCALE))
                         print('ID sent to Android')

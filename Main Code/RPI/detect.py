@@ -207,7 +207,7 @@ def run(
                 cv2.namedWindow(str(p), cv2.WINDOW_NORMAL)
                 cv2.resizeWindow(str(p), w, h)
                 cv2.imshow(str(p), rsz_image)
-                cv2.waitKey(30)  # display the window infinitely until any keypress
+                cv2.waitKey(20)  # display the window infinitely until any keypress
                 # cv2.waitKey(1) # display for 1 ms
 
             if image_name != 'null' and image_name != 'bullseye':
@@ -319,7 +319,7 @@ def main(opt):
             i += 1
         # print("COUNT of images: ",i)
         # print("IMS\n: ",ims)
-        if len(ims) >= 2:
+        if len(ims) >= 1:
             collage(640, 480, ims)
         if ims[-1] == 'black.jpg':
             ims = ims[:-1]

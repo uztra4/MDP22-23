@@ -177,7 +177,6 @@ def run(
             image_name = 'zero'
             
             if len(det) == 0:
-                print("no image recognised")
                 image_label = -1
                 image_name = 'null'
 
@@ -206,7 +205,6 @@ def run(
                         if image_label != -1:
                             image_label = names[c]
                             image_name = IMG_MAP[names[c]]
-                            print("The image label to be sent is", names[c])
 
                     if save_crop:
                         save_one_box(xyxy, imc, file=save_dir / 'crops' / names[c] / f'{p.stem}.jpg', BGR=True)
@@ -221,7 +219,7 @@ def run(
                 #     windows.append(p)
                 #     cv2.namedWindow(str(p), cv2.WINDOW_NORMAL | cv2.WINDOW_KEEPRATIO)  # allow window resize (Linux)
                 #     cv2.resizeWindow(str(p), im0.shape[1], im0.shape[0])
-                pos = 0.2 #scaling factor
+                pos = 0.8 #scaling factor
                 h = int(im0.shape[0]*pos) # scale h
                 w = int(im0.shape[1]*pos) # scale w
                 rsz_image = cv2.resize(im0, (w, h)) # resize image
@@ -230,12 +228,14 @@ def run(
                 cv2.imshow(str(p), rsz_image)
                 cv2.waitKey(30)  # display the window infinitely until any keypress
                 # cv2.waitKey(1) # display for 1 ms
-                
+            
+            detected_image = "not detected"
             if image_name != 'null' and image_name != 'bullseye':
                 img_count = 0
                 while os.path.exists("img%s.jpg" % img_count):
                     img_count += 1
                 cv2.imwrite(f'img{img_count}.jpg', im0)
+                detected_image = f'img{img_count}.jpg'
 
             # Save results (image with detections)
             if save_img:
@@ -269,7 +269,7 @@ def run(
         LOGGER.info(f"Results saved to {colorstr('bold', save_dir)}{s}")
     if update:
         strip_optimizer(weights[0])  # update model (to fix SourceChangeWarning)
-    return image_label
+    return image_label, detected_image
 
 
 def parse_opt():
@@ -368,6 +368,9 @@ def collage(width, height, list_of_images):
 def main(opt):
     # check_requirements(exclude=('tensorboard', 'thop'))
     # run(**vars(opt))
+
+    obstacle_num = 0
+
     while True:
         try:
             # --- create socket ---
@@ -409,12 +412,28 @@ def main(opt):
                 t.start()
                 
 
-                image_label = run(**vars(opt))
+                image_label, detected_image = run(**vars(opt))
                 #sent_label = "ALG:" + image_label
-                sent_label = image_label
+                
+                if image_label != 'null' and image_label != 'bullseye':
+                    obstacle_num = obstacle_num + 1
+
+                elif image_label =='null':
+                    print("No object detected")
+
+                else:
+                    print("bullseye detected")
+                
+                sent_label = str(obstacle_num) + ':' + str(image_label) # String Example = "1:12"
 
                 conn.send(f'{sent_label}'.encode())
-                print(sent_label," Label sent successfully")
+                print(sent_label," is sent successfully")
+                
+                f = open(detected_image,'rb')
+                data = f.read(4096)
+                while data != bytes(''.encode()):
+                    conn.sendall(data)
+                    data = f.read(4096)
 
                 try:
                     i = 0
@@ -424,7 +443,7 @@ def main(opt):
                         i += 1
                     # print("COUNT of images: ",i)
                     # print("IMS\n: ",ims)
-                    if len(ims) >= 2:
+                    if len(ims) >= 1:
                         collage(640, 480, ims)
                     if ims[-1] == 'black.jpg':
                         ims = ims[:-1]
