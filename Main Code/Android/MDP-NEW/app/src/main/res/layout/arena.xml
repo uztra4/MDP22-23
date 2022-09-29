@@ -245,7 +245,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_begin="679dp" />
+            app:layout_constraintGuide_begin="687dp" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
@@ -362,9 +362,10 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <FrameLayout
-        android:layout_width="fill_parent"
 
+<!--    Sliding Drawer-->
+    <FrameLayout
+        android:layout_width="wrap_content"
         android:layout_height="fill_parent"
         android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
@@ -372,7 +373,7 @@
 
         <SlidingDrawer
             android:id="@+id/drawer"
-            android:layout_width="fill_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:content="@+id/content"
             android:handle="@+id/handle"
@@ -380,31 +381,41 @@
             android:rotation="180">
 
 
+
             <ImageView
                 android:id="@id/handle"
+                android:translationY="-193dp"
                 android:layout_width="50dip"
                 android:layout_height="50dip"
                 android:rotation="180"
-                android:src="@drawable/red_question_mark" />
+                android:src="@drawable/ic_baseline_camera_alt_24" />
 
             <LinearLayout
                 android:id="@id/content"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:orientation="vertical"
-                android:rotation="180">
+                android:rotation="180"
+                android:background="#282A3A">
 
-                <Button
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:text="Big Big Button" />
+                <TextView
+                    android:textAlignment="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="--------------------Snapshots-----------------"
+                    android:textSize="28dp"
+                    android:textColor="@color/white"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recylerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
             </LinearLayout>
+
+
         </SlidingDrawer>
 
-        <TextView
-            android:layout_width="50dip"
-            android:layout_height="50dip"
-            android:text="HELLO WORLD" />
 
     </FrameLayout>
 

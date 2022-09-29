@@ -4,6 +4,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.ReceiverCallNotAllowedException;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -14,10 +15,13 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.nio.charset.Charset;
 
 public class Communication extends AppCompatActivity {
+
+    RecyclerView recyclerView;
 
     private static final String TAG = "Communication->DEBUG";
     TextView showReceived;

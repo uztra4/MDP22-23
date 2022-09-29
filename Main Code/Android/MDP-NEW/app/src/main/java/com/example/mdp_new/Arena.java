@@ -9,6 +9,7 @@ import android.os.SystemClock;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.AbsListView;
 import android.widget.Button;
 import android.widget.Chronometer;
 import android.widget.ImageButton;
@@ -19,8 +20,11 @@ import android.animation.ObjectAnimator;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.nio.charset.Charset;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -231,8 +235,30 @@ public class Arena extends AppCompatActivity {
         put("43", R.drawable.red_question_mark);
     }};
 
+    // RecyclerView
+    ArrayList<String> s1 = new ArrayList<String>();
+    ArrayList<Integer> images = new ArrayList<Integer>();
+    RecyclerView recyclerView;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+//        Log.d("this", "test1");
+//        // initialise s1 and images arraylist for recyclerView
+//        s1.add("OBJECT: TEST");
+//        images.add(R.drawable.obstacle_2_s);
+//
+//        recyclerView = findViewById(R.id.recylerView);
+//        RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(this, s1, images);
+//
+//        recyclerView.setAdapter(recyclerViewAdapter);
+//        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+//
+//        Log.d("this", "test2");
+
+
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.arena);
         //messageBox = findViewById(R.id.message_box);
@@ -240,7 +266,6 @@ public class Arena extends AppCompatActivity {
 
         LocalBroadcastManager.getInstance(this).registerReceiver(myReceiver, new IntentFilter("incomingMessage"));
         obstacle1 = findViewById(R.id.obstacle1);
-
         obstacle2 = findViewById(R.id.obstacle2);
         obstacle3 = findViewById(R.id.obstacle3);
         obstacle4 = findViewById(R.id.obstacle4);
@@ -515,7 +540,7 @@ public class Arena extends AppCompatActivity {
                     default:
                         break;
                 }
-                return false;
+                return true;
             }
         });
 
@@ -557,7 +582,7 @@ public class Arena extends AppCompatActivity {
                     default:
                         break;
                 }
-                return false;
+                return true;
             }
         });
 
@@ -599,7 +624,7 @@ public class Arena extends AppCompatActivity {
                     default:
                         break;
                 }
-                return false;
+                return true;
             }
         });
 
@@ -641,7 +666,7 @@ public class Arena extends AppCompatActivity {
                     default:
                         break;
                 }
-                return false;
+                return true;
             }
         });
 
@@ -683,7 +708,7 @@ public class Arena extends AppCompatActivity {
                     default:
                         break;
                 }
-                return false;
+                return true;
             }
         });
 
@@ -725,7 +750,7 @@ public class Arena extends AppCompatActivity {
                     default:
                         break;
                 }
-                return false;
+                return true;
             }
         });
 
@@ -767,7 +792,7 @@ public class Arena extends AppCompatActivity {
                     default:
                         break;
                 }
-                return false;
+                return true;
             }
         });
 
@@ -809,7 +834,7 @@ public class Arena extends AppCompatActivity {
                     default:
                         break;
                 }
-                return false;
+                return true;
             }
         });
 
