@@ -21,6 +21,7 @@ class Robot:
                                  settings.ROBOT_SAFETY_DISTANCE,
                                  Direction.TOP,
                                  90)
+
         self._start_copy = self.pos.copy()
 
         self.hamiltonian = Hamiltonian(self, grid)
@@ -34,8 +35,41 @@ class Robot:
         self.__current_command = 0  # Index of the current command being executed.
         self.printed = False  # Never printed total time before.
 
+    def set_robot_pos(self, x, y, direction):
+        match direction:
+            case (Direction.RIGHT):
+                angle = 0
+            case (Direction.TOP):
+                angle = 90
+            case (Direction.LEFT):
+                angle = 180
+            case (Direction.BOTTOM):
+                angle = -90
+
+        self.pos = RobotPosition(x * settings.SCALING_FACTOR,
+                                 y * settings.SCALING_FACTOR,
+                                 direction,
+                                 angle)
+
+        self._start_copy = self.pos.copy()
+        self.hamiltonian = Hamiltonian(self.grid)
+        self.path_hist = []  # Stores the history of the path taken by the robot.
+
+        self.__current_command = 0  # Index of the current command being executed.
+        self.printed = False  # Never printed total time before.
+
+
     def get_current_pos(self):
         return self.pos
+
+    def start_algo_from_position(self, grid):
+        self.pos = self.get_current_pos()
+        self._start_copy = self.pos.copy()
+        self.hamiltonian = Hamiltonian(self, grid)
+        self.path_hist = []  # Stores the history of the path taken by the robot.
+
+        self.__current_command = 0  # Index of the current command being executed.
+        self.printed = False  # Never printed total time before.
 
     def convert_all_commands(self):
         """

@@ -14,6 +14,7 @@ from entities.grid.obstacle import Obstacle
 class Main:
     def __init__(self):
         self.client = None
+        self.commands = None
 
     def parse_obstacle_data(self, data) -> List[Obstacle]:
         obs = []
@@ -51,52 +52,50 @@ class Main:
                     self.client.close()
                     sys.exit(1)
             print("Connected to RPi!\n")
-        # client.send_message(["STM:w\n", "STM:a\n", "STM:d\n"])
-        # Create a server to receive information from the RPi.
-        # server = RPiServer(settings.PC_HOST, settings.PC_PORT)
-        # # Wait for the RPi to connect to the PC.
-        # try:
-        #     server.start()
-        # except OSError or KeyboardInterrupt as e:
-        #     print(e)
-        #     server.close()
-        #     client.close()
-        #     sys.exit(1)
-        #
-        # # At this point, both the RPi and the PC are connected to each other.
-        # # Create a synchronous call to wait for RPi data.
-        # data: list = server.receive_data()
-        # server.close()
 
-        print("Waiting to receive obstacle data from RPi...")
+        # Wait for message from RPI
+        print("Waiting to receive data from RPi...")
         d = self.client.receive_message()
         print("Got data from RPi:")
         d = d.decode('utf-8')
         d = d.split(',')
         print(d)
         if len(d) != 1:
-            d = [eval(i) for i in d]
             print(d)
             data = []
-            data.append(d)
+            for i in range(0, len(d), 4):
+                data.append(d[i:i + 4])
         else:
             data = d
-        #
-        # while True:
-        #     d = client.receive_message()
-        #     print(d)
-        #     if not d:
-        #         break
-        #     print("Got data from RPi:")
-        #     d = d.decode('utf-8')
-        #     d = d.split(',')
-        #     d = [eval(i) for i in d]
-        #     print(d)
-        #     data.append(d)
 
+        print(data)
+
+        for i in range(len(data)):
+            data[i][0] = 10 * int(data[i][0]) + 5
+            # 200 - flip obstacle plot according to android
+            data[i][1] = 200 - (10 * int(data[i][1]) + 5)
+            match data[i][2]:
+                case 'N':
+                    data[i][2] = 90
+                case 'S':
+                    data[i][2] = -90
+                case 'E':
+                    data[i][2] = 0
+                case 'W':
+                    data[i][2] = 180
+            data[i][3] = int(data[i][3])
+
+        # data = [[145, 35, 180, 0], [115, 85, 0, 1], [25, 155, -90, 2], [175, 175, 180, 3], [105, 115, 180, 4]]
         self.decision(self.client, data, also_run_simulator)
 
     def decision(self, client, data, also_run_simulator):
+        def isvalid(img):
+            checklist = [str(i) for i in range(32)]
+            if img in checklist:
+                return True
+            return False
+
+        # Obstacle list
         if isinstance(data[0], list):
             obstacles = self.parse_obstacle_data(data)
             if also_run_simulator:
@@ -108,21 +107,40 @@ class Main:
             app.execute()
             # Send the list of commands over.
             print("Sending list of commands to RPi...")
-            commands = app.robot.convert_all_commands()
-            print(commands)
-            client.send_message(commands)
-            # client.close()
+            self.commands = app.robot.convert_all_commands()
+            self.commands.append("RPI:STOPPED\n")
+            if len(self.commands) != 0:
+                sent_commands = self.commands[:self.commands.index("STM:pn\n") + 1]
+                self.commands = self.commands[self.commands.index("STM:pn\n") + 1:]
+                print(sent_commands)
+                print(self.commands)
+                client.send_message(sent_commands)
+                # client.close()
 
+        # String commands from Rpi
         elif isinstance(data[0], str):
-            if data[0] == "bullseye":
+            # Check valid image taken
+            if isvalid(data[0]):
+                if len(self.commands) != 0:
+                    sent_commands = self.commands[:self.commands.index("STM:pn\n") + 1]
+                    self.commands = self.commands[self.commands.index("STM:pn\n") + 1:]
+                    print(sent_commands)
+                    print(self.commands)
+                    client.send_message(sent_commands)
+            elif data[0] == "bullseye":
                 print("Sending list of commands to RPi...")
-                commands = ["STM:b030\n", "STM:r\n", "STM:f010\n", "STM:l\n", "STM:l\n", "STM:f010\n", "STM:p\n"]
-                print(commands)
-                client.send_message(commands)
+                fixed_commands = ["STM:Ln\n", "STM:w060n\n", "STM:ln\n", "STM:w025n\n", "STM:ln\n", "STM:pn\n"]
+                print(fixed_commands)
+                client.send_message(fixed_commands)
+            # If no image taken
+            elif data[0] == "-1":
+                correction_commands = ["STM:s010n\n", "STM:pn\n"]
+                print(correction_commands)
+                client.send_message(correction_commands)
 
     def run_rpi(self):
         while True:
-            self.run_minimal(False)
+            self.run_minimal(True)
             time.sleep(5)
 
 
@@ -137,5 +155,5 @@ def sim():
 
 
 if __name__ == '__main__':
-    # sim()
-    init()
+    sim()
+    # init()

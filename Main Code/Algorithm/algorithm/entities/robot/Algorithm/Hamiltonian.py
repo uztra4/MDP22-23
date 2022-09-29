@@ -7,6 +7,7 @@ from typing import Tuple
 import settings
 from entities.commands.scan_command import ScanCommand
 from entities.commands.straight_command import StraightCommand
+from entities.effects.direction import Direction
 from entities.grid.obstacle import Obstacle
 from entities.robot.Algorithm.mod_a_star import ModifiedAStar
 
@@ -32,16 +33,42 @@ class Hamiltonian:
 
         # Get the path that has the least distance travelled.
         def calc_distance(path):
+            def weight_factor(source_dir: Direction, dest_dir: Direction) -> int:
+                # Right Grid to Left Grid, Top of Grid to Bottom of Grid unlikely
+                # if same direction
+                # print(source_dir.value, dest_dir.value)
+                if source_dir.value - dest_dir.value == 0:
+                    weight = 1
+                # if opposite direction
+                elif source_dir.value - dest_dir.value == -180 or source_dir.value - dest_dir.value == 180:
+                    weight = 1.8
+                # if turn right or left
+                else:
+                    weight = 1.2
+
+                return weight
+
             # Create all target points, including the start.
             targets = [self.robot.pos.xy_pygame()]
             for obstacle in path:
                 targets.append(obstacle.target_pos.xy_pygame())
 
             dist = 0
+            multiplier = 1
             for i in range(len(targets) - 1):
-                dist += math.sqrt(((targets[i][0] - targets[i + 1][0]) ** 2) +
-                                  ((targets[i][1] - targets[i + 1][1]) ** 2))
-            print("Path = ", targets, "\nTotal distance = ", dist)
+                # Weight factor
+                if i == 0:
+                    # From start to first obstacle
+                    multiplier = weight_factor(self.robot.pos.get_dir(), path[i].target_pos.get_dir())
+                else:
+                    # From obstacle to another obstacle
+                    multiplier = weight_factor(path[i-1].target_pos.get_dir(), path[i].target_pos.get_dir())
+
+                # dist += abs(targets[i][0] - targets[i + 1][0]) + abs(targets[i][1] - targets[i + 1][1])
+                dist += multiplier * math.sqrt(((targets[i][0] - targets[i + 1][0]) ** 2) +
+                                               ((targets[i][1] - targets[i + 1][1]) ** 2))
+
+            # print("Path = ", targets, "\nTotal weighted Euclidean distance = ", dist)
             return dist
 
         print("Calculating Distance for all possible permutation\n")

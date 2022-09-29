@@ -57,6 +57,9 @@ class ModifiedAStar:
             # Check if doing this command does not bring us to any invalid position.
             after, p = self.check_valid_command(c, pos)
             if after:
+                # Increase reverse penalty
+                if c.rev:
+                    turn_penalty = turn_penalty * 3
                 neighbours.append((after, p, turn_penalty, c))
         return neighbours
 

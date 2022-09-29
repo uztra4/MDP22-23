@@ -14,7 +14,6 @@ from entities.robot.robot import Robot
 from entities.grid.position import Position
 
 
-
 class AlgoApp(ABC):
     def __init__(self, obstacles: List[Obstacle]):
         self.grid = Grid(obstacles)
@@ -129,6 +128,14 @@ class AlgoSimulator(AlgoApp):
                     pygame.display.set_caption("Simulating path!")
                     timer.Timer.start_timer()
 
+                if event.key == pygame.K_r:
+                    self.print_caption("Calculating path...")
+                    self.robot.start_algo_from_position(self.grid)
+                    # Calculate the path.
+                    self.robot.hamiltonian.plan_path()
+                    pygame.display.set_caption("Simulating path!")
+                    timer.Timer.start_timer()
+
                 # Initalise with fixed Obstacles
                 if event.key == pygame.K_1:
                     self.print_caption("Initialise World 1")
@@ -151,6 +158,12 @@ class AlgoSimulator(AlgoApp):
                 elif event.key == pygame.K_4:
                     self.print_caption("Initialise World 4")
                     self.obstacles = preGrid.getObsWorld(4)
+                    obs = self.parse_obstacle_data()
+                    self.grid = Grid(obs)
+                    self.robot = Robot(self.grid)
+                elif event.key == pygame.K_5:
+                    self.print_caption("Initialise World 5")
+                    self.obstacles = preGrid.getObsWorld(5)
                     obs = self.parse_obstacle_data()
                     self.grid = Grid(obs)
                     self.robot = Robot(self.grid)
@@ -183,6 +196,7 @@ class AlgoSimulator(AlgoApp):
         self.screen.fill(colors.WHITE, None)
 
         self.grid.draw(self.screen)
+
         self.robot.draw(self.screen)
         timer.Timer.print_timer(self.screen)
 
