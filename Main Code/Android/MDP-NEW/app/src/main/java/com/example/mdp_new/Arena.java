@@ -1070,18 +1070,18 @@ public class Arena extends AppCompatActivity {
     private void sendObstaclesEvent() {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder
-                .append("RPI:")
-                .append(getObstacleString(obstacle1)+"0")
-                .append(getObstacleString(obstacle2)+"1")
-                .append(getObstacleString(obstacle3)+"2")
-                .append(getObstacleString(obstacle4)+"3")
-                .append(getObstacleString(obstacle5)+"4")
-                .append(getObstacleString(obstacle6)+"5")
-                .append(getObstacleString(obstacle7)+"6")
-                .append(getObstacleString(obstacle8)+"7");
+                .append("ALG:")
+                .append(getObstacleString(obstacle1)+"0;")
+                .append(getObstacleString(obstacle2)+"1;")
+                .append(getObstacleString(obstacle3)+"2;")
+                .append(getObstacleString(obstacle4)+"3;")
+                .append(getObstacleString(obstacle5)+"4;")
+                .append(getObstacleString(obstacle6)+"5;")
+                .append(getObstacleString(obstacle7)+"6;")
+                .append(getObstacleString(obstacle8)+"7;");
 
         if (BluetoothConnectionService.BluetoothConnectionStatus == true) {
-            Toast.makeText(this, stringBuilder.toString(), Toast.LENGTH_LONG).show();
+            //Toast.makeText(this, stringBuilder.toString(), Toast.LENGTH_LONG).show();
             byte[] bytes = stringBuilder.toString().getBytes(Charset.defaultCharset());
             BluetoothConnectionService.write(bytes);
             Toast.makeText(Arena.this, "Image Recognition Started.", Toast.LENGTH_LONG).show();
