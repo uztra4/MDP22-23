@@ -1463,11 +1463,13 @@ public class Arena extends AppCompatActivity {
                             case "w":
                                 for (int i = 0; i <intervals; i++) {
                                     forwardButtonCommand();
+                                    Thread.sleep(500);
                                 }
                                 break;
                             case "s":
                                 for (int i = 0; i < intervals; i++){
                                     reverseButtonCommand();
+                                    Thread.sleep(500);
                                 }
                                 break;
                             default:
@@ -1480,17 +1482,27 @@ public class Arena extends AppCompatActivity {
                         switch (moveCommand){  // Turn commands
                             case "ln":  // forward left (w, w, a, w, w)
                                 forwardButtonCommand();
+                                Thread.sleep(500);
                                 forwardButtonCommand();
+                                Thread.sleep(500);
                                 leftButtonCommand();
+                                Thread.sleep(500);
                                 forwardButtonCommand();
+                                Thread.sleep(500);
                                 forwardButtonCommand();
+                                Thread.sleep(500);
                                 break;
                             case "rn":  //forward right (w, w, d, w, w)
                                 forwardButtonCommand();
+                                Thread.sleep(500);
                                 forwardButtonCommand();
+                                Thread.sleep(500);
                                 rightButtonCommand();
+                                Thread.sleep(500);
                                 forwardButtonCommand();
+                                Thread.sleep(500);
                                 forwardButtonCommand();
+                                Thread.sleep(500);
                                 break;
                             case "Ln":  // reverse left (s, s, d, s, s)
                                 reverseButtonCommand();

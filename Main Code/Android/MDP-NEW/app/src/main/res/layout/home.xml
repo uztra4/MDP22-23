@@ -14,7 +14,7 @@
         android:backgroundTint="#404252"
         android:drawableTop="@drawable/arena_icon"
         android:drawableTint="@color/white"
-        android:fontFamily="@font/ARCADECLASSIC"
+        android:fontFamily="@font/arcadeclassic"
         android:paddingTop="70dp"
         android:paddingBottom="70dp"
         android:text="Arena"
@@ -23,7 +23,7 @@
         app:cornerRadius="25dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="121dp" />
+        tools:layout_editor_absoluteY="121dp"/>
 
     <Button
         android:id="@+id/button2"
@@ -32,7 +32,7 @@
         android:backgroundTint="#404252"
         android:drawableTop="@drawable/bluetooth_icon"
         android:drawableTint="@color/white"
-        android:fontFamily="@font/ARCADECLASSIC"
+        android:fontFamily="@font/arcadeclassic"
         android:paddingTop="70dp"
         android:paddingBottom="70dp"
         android:text="Bluetooth"
@@ -53,7 +53,7 @@
         android:backgroundTint="#404252"
         android:drawableTop="@drawable/message_icon"
         android:drawableTint="@color/white"
-        android:fontFamily="@font/ARCADECLASSIC"
+        android:fontFamily="@font/arcadeclassic"
         android:paddingTop="70dp"
         android:paddingBottom="70dp"
         android:text="Communications"
