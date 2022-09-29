@@ -27,6 +27,7 @@ import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 public class Arena extends AppCompatActivity {
     private static final int SNAP_GRID_INTERVAL = 40;
@@ -928,6 +929,14 @@ public class Arena extends AppCompatActivity {
     }
 
     // MOVEMENT COMMANDS
+    private void sleepfor(int time){
+        try {
+            TimeUnit.MILLISECONDS.sleep(time);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
     private void forwardButtonCommand() {
         int orientation = (int) car.getRotation();
         int new_x, new_y;
@@ -1463,13 +1472,13 @@ public class Arena extends AppCompatActivity {
                             case "w":
                                 for (int i = 0; i <intervals; i++) {
                                     forwardButtonCommand();
-                                    Thread.sleep(500);
+//                                    sleepfor(500);
                                 }
                                 break;
                             case "s":
                                 for (int i = 0; i < intervals; i++){
                                     reverseButtonCommand();
-                                    Thread.sleep(500);
+//                                    sleepfor(500);
                                 }
                                 break;
                             default:
@@ -1482,27 +1491,27 @@ public class Arena extends AppCompatActivity {
                         switch (moveCommand){  // Turn commands
                             case "ln":  // forward left (w, w, a, w, w)
                                 forwardButtonCommand();
-                                Thread.sleep(500);
+//                                sleepfor(500);
                                 forwardButtonCommand();
-                                Thread.sleep(500);
+//                                sleepfor(500);
                                 leftButtonCommand();
-                                Thread.sleep(500);
+//                                sleepfor(500);
                                 forwardButtonCommand();
-                                Thread.sleep(500);
+//                                sleepfor(500);
                                 forwardButtonCommand();
-                                Thread.sleep(500);
+//                                sleepfor(500);
                                 break;
                             case "rn":  //forward right (w, w, d, w, w)
                                 forwardButtonCommand();
-                                Thread.sleep(500);
+//                                sleepfor(500);
                                 forwardButtonCommand();
-                                Thread.sleep(500);
+//                                sleepfor(500);
                                 rightButtonCommand();
-                                Thread.sleep(500);
+//                                sleepfor(500);
                                 forwardButtonCommand();
-                                Thread.sleep(500);
+//                                sleepfor(500);
                                 forwardButtonCommand();
-                                Thread.sleep(500);
+//                                sleepfor(500);
                                 break;
                             case "Ln":  // reverse left (s, s, d, s, s)
                                 reverseButtonCommand();
