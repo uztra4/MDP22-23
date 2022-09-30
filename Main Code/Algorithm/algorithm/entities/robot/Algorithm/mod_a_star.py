@@ -6,6 +6,7 @@ import settings
 from entities.commands.command import Command
 from entities.commands.straight_command import StraightCommand
 from entities.commands.turn_command import TurnCommand
+from entities.commands.spot_turn_command import SpotTurnCommand
 from entities.grid.grid import Grid
 from entities.grid.node import Node
 from entities.grid.position import RobotPosition
@@ -61,6 +62,18 @@ class ModifiedAStar:
                 if c.rev:
                     turn_penalty = turn_penalty * 3
                 neighbours.append((after, p, turn_penalty, c))
+
+        spot_penalty = settings.SPOT_TURN_COST
+        spot_commands = [
+            SpotTurnCommand(90),
+            SpotTurnCommand(-90)
+        ]
+        for c in spot_commands:
+            # Check if doing this command does not bring us to any invalid position.
+            after, p = self.check_valid_command(c, pos)
+            if after:
+                neighbours.append((after, p, spot_penalty, c))
+
         return neighbours
 
     def check_valid_command(self, command: Command, p: RobotPosition):

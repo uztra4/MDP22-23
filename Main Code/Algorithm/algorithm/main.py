@@ -140,7 +140,7 @@ class Main:
 
     def run_rpi(self):
         while True:
-            self.run_minimal(True)
+            self.run_minimal(False)
             time.sleep(5)
 
 

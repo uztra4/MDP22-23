@@ -36,6 +36,7 @@ OBSTACLE_SAFETY_WIDTH = ROBOT_SAFETY_DISTANCE // 3 * 4  # With respect to the ce
 
 # Path Finding Attributes
 PATH_TURN_COST = 999 * ROBOT_SPEED_PER_SECOND * ROBOT_AVERAGE_TURN_RADIUS
+SPOT_TURN_COST = 9999 * ROBOT_SPEED_PER_SECOND * ROBOT_AVERAGE_TURN_RADIUS
 # NOTE: Higher number == Lower Granularity == Faster Checking.
 # Must be an integer more than 0! Number higher than 3 not recommended.
 PATH_TURN_CHECK_GRANULARITY = 1

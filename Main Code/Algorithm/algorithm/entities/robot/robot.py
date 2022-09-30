@@ -8,6 +8,7 @@ from entities.effects.direction import Direction
 from entities.commands.command import Command
 from entities.commands.straight_command import StraightCommand
 from entities.commands.turn_command import TurnCommand
+from entities.commands.spot_turn_command import SpotTurnCommand
 from entities.grid.position import RobotPosition
 from entities.robot.Algorithm.Hamiltonian import Hamiltonian
 
@@ -108,6 +109,10 @@ class Robot:
         A negative number indicates that the robot will move in reverse, and vice versa.
         """
         StraightCommand(dist).apply_on_pos(self.pos)
+
+    def spot(self, d_angle):
+
+        SpotTurnCommand(d_angle).apply_on_pos(self.pos)
 
     def draw_simple_hamiltonian_path(self, screen):
         prev = self._start_copy.xy_pygame()
