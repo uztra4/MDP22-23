@@ -533,10 +533,10 @@ public class Arena extends AppCompatActivity {
                         obstacle1.setY(snapToY);
                         isObstacle1LongClicked = false;
                         // Bluetooth message
-                        if (BluetoothConnectionService.BluetoothConnectionStatus) {
-                            byte[] bytes = String.format("Obstacle 1 moved to %d, %d",snapToX/40,snapToY/40).getBytes(Charset.defaultCharset());
-                            BluetoothConnectionService.write(bytes);
-                        }
+//                        if (BluetoothConnectionService.BluetoothConnectionStatus) {
+//                            byte[] bytes = String.format("Obstacle 1 moved to %d, %d",snapToX/40,snapToY/40).getBytes(Charset.defaultCharset());
+//                            BluetoothConnectionService.write(bytes);
+//                        }
                         break;
                     default:
                         break;
@@ -575,10 +575,10 @@ public class Arena extends AppCompatActivity {
                         obstacle2.setY(snapToY);
                         isObstacle2LongClicked = false;
                         // Bluetooth message
-                        if (BluetoothConnectionService.BluetoothConnectionStatus) {
-                            byte[] bytes = String.format("Obstacle 2 moved to %d, %d",snapToX/40,snapToY/40).getBytes(Charset.defaultCharset());
-                            BluetoothConnectionService.write(bytes);
-                        }
+//                        if (BluetoothConnectionService.BluetoothConnectionStatus) {
+//                            byte[] bytes = String.format("Obstacle 2 moved to %d, %d",snapToX/40,snapToY/40).getBytes(Charset.defaultCharset());
+//                            BluetoothConnectionService.write(bytes);
+//                        }
                         break;
                     default:
                         break;
@@ -617,10 +617,10 @@ public class Arena extends AppCompatActivity {
                         obstacle3.setY(snapToY);
                         isObstacle3LongClicked = false;
                         // Bluetooth message
-                        if (BluetoothConnectionService.BluetoothConnectionStatus) {
-                            byte[] bytes = String.format("Obstacle 3 moved to %d, %d",snapToX/40,snapToY/40).getBytes(Charset.defaultCharset());
-                            BluetoothConnectionService.write(bytes);
-                        }
+//                        if (BluetoothConnectionService.BluetoothConnectionStatus) {
+//                            byte[] bytes = String.format("Obstacle 3 moved to %d, %d",snapToX/40,snapToY/40).getBytes(Charset.defaultCharset());
+//                            BluetoothConnectionService.write(bytes);
+//                        }
                         break;
                     default:
                         break;
@@ -659,10 +659,10 @@ public class Arena extends AppCompatActivity {
                         obstacle4.setY(snapToY);
                         isObstacle4LongClicked = false;
                         // Bluetooth message
-                        if (BluetoothConnectionService.BluetoothConnectionStatus) {
-                            byte[] bytes = String.format("Obstacle 4 moved to %d, %d",snapToX/40,snapToY/40).getBytes(Charset.defaultCharset());
-                            BluetoothConnectionService.write(bytes);
-                        }
+//                        if (BluetoothConnectionService.BluetoothConnectionStatus) {
+//                            byte[] bytes = String.format("Obstacle 4 moved to %d, %d",snapToX/40,snapToY/40).getBytes(Charset.defaultCharset());
+//                            BluetoothConnectionService.write(bytes);
+//                        }
                         break;
                     default:
                         break;
@@ -701,10 +701,10 @@ public class Arena extends AppCompatActivity {
                         obstacle5.setY(snapToY);
                         isObstacle5LongClicked = false;
                         // Bluetooth message
-                        if (BluetoothConnectionService.BluetoothConnectionStatus) {
-                            byte[] bytes = String.format("Obstacle 5 moved to %d, %d",snapToX/40,snapToY/40).getBytes(Charset.defaultCharset());
-                            BluetoothConnectionService.write(bytes);
-                        }
+//                        if (BluetoothConnectionService.BluetoothConnectionStatus) {
+//                            byte[] bytes = String.format("Obstacle 5 moved to %d, %d",snapToX/40,snapToY/40).getBytes(Charset.defaultCharset());
+//                            BluetoothConnectionService.write(bytes);
+//                        }
                         break;
                     default:
                         break;
@@ -743,10 +743,10 @@ public class Arena extends AppCompatActivity {
                         obstacle6.setY(snapToY);
                         isObstacle5LongClicked = false;
                         // Bluetooth message
-                        if (BluetoothConnectionService.BluetoothConnectionStatus) {
-                            byte[] bytes = String.format("Obstacle 6 moved to %d, %d",snapToX/40,snapToY/40).getBytes(Charset.defaultCharset());
-                            BluetoothConnectionService.write(bytes);
-                        }
+//                        if (BluetoothConnectionService.BluetoothConnectionStatus) {
+//                            byte[] bytes = String.format("Obstacle 6 moved to %d, %d",snapToX/40,snapToY/40).getBytes(Charset.defaultCharset());
+//                            BluetoothConnectionService.write(bytes);
+//                        }
                         break;
                     default:
                         break;
@@ -785,10 +785,10 @@ public class Arena extends AppCompatActivity {
                         obstacle7.setY(snapToY);
                         isObstacle5LongClicked = false;
                         // Bluetooth message
-                        if (BluetoothConnectionService.BluetoothConnectionStatus) {
-                            byte[] bytes = String.format("Obstacle 7 moved to %d, %d",snapToX/40,snapToY/40).getBytes(Charset.defaultCharset());
-                            BluetoothConnectionService.write(bytes);
-                        }
+//                        if (BluetoothConnectionService.BluetoothConnectionStatus) {
+//                            byte[] bytes = String.format("Obstacle 7 moved to %d, %d",snapToX/40,snapToY/40).getBytes(Charset.defaultCharset());
+//                            BluetoothConnectionService.write(bytes);
+//                        }
                         break;
                     default:
                         break;
@@ -827,10 +827,10 @@ public class Arena extends AppCompatActivity {
                         obstacle8.setY(snapToY);
                         isObstacle5LongClicked = false;
                         // Bluetooth message
-                        if (BluetoothConnectionService.BluetoothConnectionStatus) {
-                            byte[] bytes = String.format("Obstacle 8 moved to %d, %d",snapToX/40,snapToY/40).getBytes(Charset.defaultCharset());
-                            BluetoothConnectionService.write(bytes);
-                        }
+//                        if (BluetoothConnectionService.BluetoothConnectionStatus) {
+//                            byte[] bytes = String.format("Obstacle 8 moved to %d, %d",snapToX/40,snapToY/40).getBytes(Charset.defaultCharset());
+//                            BluetoothConnectionService.write(bytes);
+//                        }
                         break;
                     default:
                         break;
@@ -1097,7 +1097,7 @@ public class Arena extends AppCompatActivity {
     private void stopTimerButton() {
         Chronometer IRTimer = (Chronometer) findViewById(R.id.IRTimer);
         IRTimer.stop();
-        updateStatusWindow("Ready To Start");
+        updateStatusWindow("Ready");
 //        updateStatusWindow("Image Recognition Stopped");
     }
 
@@ -1118,7 +1118,7 @@ public class Arena extends AppCompatActivity {
             //Toast.makeText(this, stringBuilder.toString(), Toast.LENGTH_LONG).show();
             byte[] bytes = stringBuilder.toString().getBytes(Charset.defaultCharset());
             BluetoothConnectionService.write(bytes);
-            Toast.makeText(Arena.this, "Image Recognition Started.", Toast.LENGTH_LONG).show();
+            Toast.makeText(Arena.this, "Obstacles sent", Toast.LENGTH_LONG).show();
             updateStatusWindow("IR started");
 
         } else {
@@ -1147,7 +1147,7 @@ public class Arena extends AppCompatActivity {
         Chronometer IRTimer = (Chronometer) findViewById(R.id.IRTimer);  // Reset Timer
         IRTimer.setBase(SystemClock.elapsedRealtime());
         IRTimer.stop();
-        updateStatusWindow("Ready To Start");
+        updateStatusWindow("Ready");
 
 
 
@@ -1211,37 +1211,39 @@ public class Arena extends AppCompatActivity {
     }
 
     private void setPreset1Button() {
-        updateStatusWindow("Ready To Start");
+        updateStatusWindow("Ready");
 
-        obstacle1.setX(600);
-        obstacle1.setY(200);
+        obstacle1.setX(200);
+        obstacle1.setY(440);
         obstacle1.setRotation(180);
         obstacle1.setImageResource(resources.get("o1s"));
 
         obstacle2.setX(600);
-        obstacle2.setY(600);
-        obstacle2.setImageResource(resources.get("o2n"));
+        obstacle2.setY(640);
+        obstacle2.setRotation(270);
+        obstacle2.setImageResource(resources.get("o2w"));
 
         obstacle3.setX(480);
-        obstacle3.setY(400);
+        obstacle3.setY(440);
         obstacle3.setRotation(90);
         obstacle3.setImageResource(resources.get("o3e"));
 
-        obstacle4.setX(240);
-        obstacle4.setY(280);
-        obstacle4.setRotation(270);
-        obstacle4.setImageResource(resources.get("o4w"));
+        obstacle4.setX(600);
+        obstacle4.setY(200);
+        obstacle4.setRotation(180);
+        obstacle4.setImageResource(resources.get("o4s"));
 
-        obstacle5.setX(240);
-        obstacle5.setY(480);
-        obstacle5.setRotation(180);
-        obstacle5.setImageResource(resources.get("o5s"));
+
+        obstacle5.setX(280);
+        obstacle5.setY(240);
+        obstacle5.setRotation(270);
+        obstacle5.setImageResource(resources.get("o5w"));
 
         Toast.makeText(this, "Preset 1 Applied", Toast.LENGTH_LONG).show();
     }
 
     private void setPreset2Button() {
-        updateStatusWindow("Ready To Start");
+        updateStatusWindow("Ready");
 
         obstacle1.setX(280);
         obstacle1.setY(360);
@@ -1262,27 +1264,32 @@ public class Arena extends AppCompatActivity {
     }
 
     private void setPreset3Button() {
-        updateStatusWindow("Ready To Start");
+        updateStatusWindow("Ready");
 
-        obstacle1.setX(200);
-        obstacle1.setY(360);
-        obstacle1.setRotation(270);
-        obstacle1.setImageResource(resources.get("o1w"));
+        obstacle1.setX(40);
+        obstacle1.setY(80);
+        obstacle1.setRotation(180);
+        obstacle1.setImageResource(resources.get("o1s"));
 
-        obstacle2.setX(400);
-        obstacle2.setY(160);
+        obstacle2.setX(240);
+        obstacle2.setY(320);
         obstacle2.setRotation(270);
         obstacle2.setImageResource(resources.get("o2w"));
 
-        obstacle3.setX(720);
-        obstacle3.setY(320);
-        obstacle3.setRotation(0);
-        obstacle3.setImageResource(resources.get("o3n"));
+        obstacle3.setX(640);
+        obstacle3.setY(600);
+        obstacle3.setRotation(270);
+        obstacle3.setImageResource(resources.get("o3w"));
 
-        obstacle4.setX(400);
-        obstacle4.setY(520);
-        obstacle4.setRotation(180);
-        obstacle4.setImageResource(resources.get("o4s"));
+        obstacle4.setX(440);
+        obstacle4.setY(400);
+        obstacle4.setRotation(90);
+        obstacle4.setImageResource(resources.get("o4e"));
+
+        obstacle5.setX(600);
+        obstacle5.setY(160);
+        obstacle5.setRotation(180);
+        obstacle5.setImageResource(resources.get("o5s"));
 
         Toast.makeText(this, "Preset 3 Applied", Toast.LENGTH_LONG).show();
     }
@@ -1489,7 +1496,9 @@ public class Arena extends AppCompatActivity {
 
                     else{
                         switch (moveCommand){  // Turn commands
-                            case "ln":  // forward left (w, w, a, w, w)
+                            case "ln":  // forward left (w, w,w, a, w, w, w)
+                                forwardButtonCommand();
+//                                sleepfor(500);
                                 forwardButtonCommand();
 //                                sleepfor(500);
                                 forwardButtonCommand();
@@ -1500,8 +1509,12 @@ public class Arena extends AppCompatActivity {
 //                                sleepfor(500);
                                 forwardButtonCommand();
 //                                sleepfor(500);
+                                forwardButtonCommand();
+//                                sleepfor(500);
                                 break;
-                            case "rn":  //forward right (w, w, d, w, w)
+                            case "rn":  //forward right (w,w, w, d, w, w,w)
+                                forwardButtonCommand();
+//                                sleepfor(500);
                                 forwardButtonCommand();
 //                                sleepfor(500);
                                 forwardButtonCommand();
@@ -1512,18 +1525,24 @@ public class Arena extends AppCompatActivity {
 //                                sleepfor(500);
                                 forwardButtonCommand();
 //                                sleepfor(500);
+                                forwardButtonCommand();
+//                                sleepfor(500);
                                 break;
-                            case "Ln":  // reverse left (s, s, d, s, s)
+                            case "Ln":  // reverse left (s, s, s, d, s, s, s)
+                                reverseButtonCommand();
                                 reverseButtonCommand();
                                 reverseButtonCommand();
                                 rightButtonCommand();
                                 reverseButtonCommand();
                                 reverseButtonCommand();
+                                reverseButtonCommand();
                                 break;
-                            case "Rn":  //  reverse right (s, s, a, s, s)
+                            case "Rn":  //  reverse right (s, s, s, a, s, s, s)
+                                reverseButtonCommand();
                                 reverseButtonCommand();
                                 reverseButtonCommand();
                                 leftButtonCommand();
+                                reverseButtonCommand();
                                 reverseButtonCommand();
                                 reverseButtonCommand();
                                 break;
