@@ -9,8 +9,8 @@
 
     <TextView
         android:id="@+id/connStatusTextView"
-        android:layout_width="250dp"
-        android:layout_height="46dp"
+        android:layout_width="333dp"
+        android:layout_height="70dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="24dp"
@@ -128,13 +128,15 @@
 
     <ListView
         android:id="@+id/otherDevicesListView"
-        android:layout_width="694dp"
+        android:layout_width="0dp"
         android:layout_height="285dp"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="24dp"
+        android:layout_marginBottom="10dp"
         android:background="#9496A1"
         android:padding="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/connectBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5">

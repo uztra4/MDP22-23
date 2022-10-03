@@ -226,11 +226,31 @@ public class Arena extends AppCompatActivity {
         put("35w",R.drawable.alphabet_z_w);
 
         put("36", R.drawable.arrow_up);
+        put("36n",R.drawable.arrow_up_n);
+        put("36e",R.drawable.arrow_up_e);
+        put("36w",R.drawable.arrow_up_w);
+        put("36s",R.drawable.arrow_up_s);
         put("37", R.drawable.arrow_down);
+        put("37n", R.drawable.arrow_down_n);
+        put("37e", R.drawable.arrow_down_e);
+        put("37w", R.drawable.arrow_down_w);
+        put("37s", R.drawable.arrow_down_s);
         put("39", R.drawable.arrow_left);
+        put("39n", R.drawable.arrow_left_n);
+        put("39e", R.drawable.arrow_left_e);
+        put("39w", R.drawable.arrow_left_w);
+        put("39s", R.drawable.arrow_left_s);
         put("38", R.drawable.arrow_right);
+        put("38n", R.drawable.arrow_right_n);
+        put("38e", R.drawable.arrow_right_e);
+        put("38s", R.drawable.arrow_right_s);
+        put("38w", R.drawable.arrow_right_w);
         put("41", R.drawable.bullseye);
         put("40", R.drawable.circle);
+        put("40n", R.drawable.circle);
+        put("40s", R.drawable.circle);
+        put("40e", R.drawable.circle);
+        put("40w", R.drawable.circle);
 
         put("42", R.drawable.yellow_question_mark);
         put("43", R.drawable.red_question_mark);
@@ -1448,9 +1468,16 @@ public class Arena extends AppCompatActivity {
                 case "TARGET":
                     int obstacleNumber = Character.getNumericValue(message.charAt(7));
                     String solution = message.substring(9);
+                    Log.d("soltag","Solution value"+solution);
+                    if (Integer.parseInt(solution)==-1){
+                        Toast.makeText(Arena.this,"Image not recognized", Toast.LENGTH_SHORT).show();
+                        Chronometer IRTimer = (Chronometer) findViewById(R.id.IRTimer);
+                        IRTimer.stop();
+                        updateStatusWindow("IR Completed");
+                    }
+                    else{
                     setObstacleImage(obstacleNumber,solution);
-                    Toast.makeText(Arena.this, "Obstacle "+obstacleNumber+"changed to Target ID: "+ solution, Toast.LENGTH_SHORT).show();
-
+                    Toast.makeText(Arena.this, "Obstacle "+obstacleNumber+" changed to Target ID: "+ solution, Toast.LENGTH_SHORT).show();}
                     break;
                 case "STATUS":
                     String msg = " ";
@@ -1459,12 +1486,12 @@ public class Arena extends AppCompatActivity {
                 }else{
                         msg=message.substring(message.indexOf(',')+1);
                     }
-                    if(message.contains("STOP")){
+                    if(message.contains("STOPPED")){
                         Chronometer IRTimer = (Chronometer) findViewById(R.id.IRTimer);
                         IRTimer.stop();
                         updateStatusWindow("IR Completed");
-                    }
-                    updateStatusWindow(msg);
+                    }else{
+                    updateStatusWindow(msg);}
                     break;
 
                 case "MOVE":
@@ -1546,7 +1573,13 @@ public class Arena extends AppCompatActivity {
                                 reverseButtonCommand();
                                 reverseButtonCommand();
                                 break;
-                            default:
+                            case "x": //spot turn left
+                                leftButtonCommand();
+                                break;
+                            case "X"://spot turn right
+                                rightButtonCommand();
+                                break;
+                                default:
                                 Log.d("Move command", "Command is not a valid turn");
                                 Log.d("this", moveCommand);  // checking value of moveCommand
                                 break;
