@@ -65,25 +65,25 @@ class Main:
             data = []
             for i in range(0, len(d), 4):
                 data.append(d[i:i + 4])
+
+            for i in range(len(data)):
+                data[i][0] = 10 * int(data[i][0]) + 5
+                # 200 - flip obstacle plot according to android
+                data[i][1] = 200 - (10 * int(data[i][1])) - 5
+                match data[i][2]:
+                    case 'N':
+                        data[i][2] = 90
+                    case 'S':
+                        data[i][2] = -90
+                    case 'E':
+                        data[i][2] = 0
+                    case 'W':
+                        data[i][2] = 180
+                data[i][3] = int(data[i][3])
         else:
             data = d
 
         print(data)
-
-        for i in range(len(data)):
-            data[i][0] = 10 * int(data[i][0]) + 5
-            # 200 - flip obstacle plot according to android
-            data[i][1] = 200 - (10 * int(data[i][1]) + 5)
-            match data[i][2]:
-                case 'N':
-                    data[i][2] = 90
-                case 'S':
-                    data[i][2] = -90
-                case 'E':
-                    data[i][2] = 0
-                case 'W':
-                    data[i][2] = 180
-            data[i][3] = int(data[i][3])
 
         # data = [[145, 35, 180, 0], [115, 85, 0, 1], [25, 155, -90, 2], [175, 175, 180, 3], [105, 115, 180, 4]]
         self.decision(self.client, data, also_run_simulator)
@@ -122,8 +122,11 @@ class Main:
             # Check valid image taken
             if isvalid(data[0]):
                 if len(self.commands) != 0:
-                    sent_commands = self.commands[:self.commands.index("STM:pn\n") + 1]
-                    self.commands = self.commands[self.commands.index("STM:pn\n") + 1:]
+                    if "STM:pn\n" in self.commands:
+                        sent_commands = self.commands[:self.commands.index("STM:pn\n") + 1]
+                        self.commands = self.commands[self.commands.index("STM:pn\n") + 1:]
+                    else:
+                        sent_commands = self.commands
                     print(sent_commands)
                     print(self.commands)
                     client.send_message(sent_commands)
