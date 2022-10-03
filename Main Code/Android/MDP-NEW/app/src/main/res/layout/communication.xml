@@ -13,7 +13,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
         android:fontFamily="@font/jockey_one_regular"
-        android:text="Communications"
+        android:text="Messages"
         android:textColor="@color/black"
         android:textSize="28dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -21,12 +21,12 @@
 
     <TextView
         android:id="@+id/textView4"
-        android:layout_width="117dp"
-        android:layout_height="36dp"
+        android:layout_width="363dp"
+        android:layout_height="29dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="4dp"
         android:fontFamily="@font/jockey_one_regular"
-        android:text="MDP Group 45"
+        android:text="Send and receive messages from RPI"
         android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -39,7 +39,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="28dp"
         android:layout_marginEnd="24dp"
-        android:background="#F5B10D"
+        android:background="#FCE2A4"
         android:gravity="bottom"
         android:padding="24dp"
         android:scrollbars="vertical"
@@ -72,7 +72,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="24dp"
-        android:background="#F5B10D"
+        android:background="#FCE2A4"
         android:fontFamily="@font/jockey_one_regular"
         android:hint="Type message here"
         android:paddingHorizontal="24dp"
@@ -84,15 +84,15 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="186dp"
-        android:layout_height="91dp"
+        android:layout_width="113dp"
+        android:layout_height="71dp"
         android:layout_marginEnd="24dp"
         app:layout_constraintBottom_toTopOf="@+id/chatlog_tv"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.942"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/textView"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.4"
+        app:layout_constraintVertical_bias="0.521"
         app:srcCompat="@drawable/speech_bubble" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
