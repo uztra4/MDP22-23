@@ -50,7 +50,7 @@ class SpotTurnCommand(Command):
     def convert_to_message(self):
         if self.angle > 0:
             # This is spot turn left
-            return "STM:gn\n"
+            return "STM:xn\n"
         elif self.angle < 0:
             # This is spot turn right
-            return "STM:hn\n"
+            return "STM:Xn\n"

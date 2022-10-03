@@ -90,7 +90,8 @@ class Main:
 
     def decision(self, client, data, also_run_simulator):
         def isvalid(img):
-            checklist = [str(i) for i in range(32)]
+            # Obstacle string 11-39
+            checklist = [str(i) for i in range(41)]
             if img in checklist:
                 return True
             return False
@@ -158,5 +159,5 @@ def sim():
 
 
 if __name__ == '__main__':
-    sim()
-    # init()
+    # sim()
+    init()
