@@ -15,9 +15,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home);
-        Button comms_button = findViewById(R.id.button1);
-        Button bluetooth_button = findViewById(R.id.button2);
-        Button arena_button = findViewById(R.id.button3);
+        ImageButton comms_button = findViewById(R.id.button1);
+        ImageButton bluetooth_button = findViewById(R.id.button2);
+        ImageButton arena_button = findViewById(R.id.button3);
 
         comms_button.setOnClickListener(v -> openCommsView());
         bluetooth_button.setOnClickListener(v -> openBluetoothView());

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#D2D4DA">
+    android:background="#D6F0FC">
 
     <TextView
         android:id="@+id/textView"
@@ -39,7 +39,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="28dp"
         android:layout_marginEnd="24dp"
-        android:background="#9496A1"
+        android:background="#F5B10D"
         android:gravity="bottom"
         android:padding="24dp"
         android:scrollbars="vertical"
@@ -72,7 +72,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="24dp"
-        android:background="#9496A1"
+        android:background="#F5B10D"
         android:fontFamily="@font/jockey_one_regular"
         android:hint="Type message here"
         android:paddingHorizontal="24dp"
@@ -81,5 +81,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/chatlog_tv" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="186dp"
+        android:layout_height="91dp"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/chatlog_tv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.942"
+        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.4"
+        app:srcCompat="@drawable/speech_bubble" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

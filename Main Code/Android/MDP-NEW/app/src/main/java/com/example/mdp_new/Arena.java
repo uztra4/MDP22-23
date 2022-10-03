@@ -1470,14 +1470,11 @@ public class Arena extends AppCompatActivity {
                     String solution = message.substring(9);
                     Log.d("soltag","Solution value"+solution);
                     if (Integer.parseInt(solution)==-1){
-                        Toast.makeText(Arena.this,"Image not recognized", Toast.LENGTH_SHORT).show();
-                        Chronometer IRTimer = (Chronometer) findViewById(R.id.IRTimer);
-                        IRTimer.stop();
-                        updateStatusWindow("IR Completed");
+                        Toast.makeText(Arena.this,"Image not recognized, trying again", Toast.LENGTH_LONG).show();
                     }
                     else{
                     setObstacleImage(obstacleNumber,solution);
-                    Toast.makeText(Arena.this, "Obstacle "+obstacleNumber+" changed to Target ID: "+ solution, Toast.LENGTH_SHORT).show();}
+                    Toast.makeText(Arena.this, "Obstacle "+obstacleNumber+" changed to Target ID: "+ solution, Toast.LENGTH_LONG).show();}
                     break;
                 case "STATUS":
                     String msg = " ";
@@ -1573,19 +1570,19 @@ public class Arena extends AppCompatActivity {
                                 reverseButtonCommand();
                                 reverseButtonCommand();
                                 break;
-                            case "x": //spot turn left
+                            case "xn": //spot turn left
                                 leftButtonCommand();
                                 break;
-                            case "X"://spot turn right
+                            case "Xn"://spot turn right
                                 rightButtonCommand();
                                 break;
-                                default:
+                            default:
                                 Log.d("Move command", "Command is not a valid turn");
                                 Log.d("this", moveCommand);  // checking value of moveCommand
                                 break;
                         }
                     }
-                default:  // for outer "ROBOT/TARGET/STATUS cases
+                default:  // for outer "ROBOT/TARGET/STATUS/MOVE cases
                     break;
             }
 

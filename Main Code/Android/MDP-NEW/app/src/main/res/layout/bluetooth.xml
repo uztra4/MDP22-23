@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#D2D4DA">
+    android:background="#D6F0FC">
 
 
     <TextView
         android:id="@+id/connStatusTextView"
-        android:layout_width="333dp"
-        android:layout_height="70dp"
+        android:layout_width="339dp"
+        android:layout_height="78dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="24dp"
@@ -21,10 +21,11 @@
         android:text="Disconnected"
         android:textAlignment="viewEnd"
         android:textAllCaps="true"
-        android:textColor="@color/black"
+        android:textColor="@color/design_default_color_error"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/textView"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -75,7 +76,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="104dp"
         android:layout_marginEnd="24dp"
-        android:backgroundTint="#404252"
+        android:backgroundTint="#1B70EA"
         android:fontFamily="@font/jockey_one_regular"
         android:paddingHorizontal="34dp"
         android:paddingVertical="14dp"
@@ -105,8 +106,8 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="24dp"
-        android:background="#9496A1"
-        android:listSelector="#5B5D6B"
+        android:background="#9BD5EF"
+        android:listSelector="#539ABB"
         android:padding="10dp"
         android:scrollbars="vertical"
         app:layout_constraintEnd_toEndOf="parent"
@@ -134,7 +135,8 @@
         android:layout_marginTop="10dp"
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="10dp"
-        android:background="#9496A1"
+        android:background="#9BD5EF"
+        android:listSelector="#539ABB"
         android:padding="10dp"
         app:layout_constraintBottom_toTopOf="@+id/connectBtn"
         app:layout_constraintEnd_toEndOf="parent"
@@ -149,7 +151,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="24dp"
-        android:backgroundTint="#404252"
+        android:backgroundTint="#1B70EA"
         android:fontFamily="@font/jockey_one_regular"
         android:paddingHorizontal="34dp"
         android:paddingVertical="14dp"

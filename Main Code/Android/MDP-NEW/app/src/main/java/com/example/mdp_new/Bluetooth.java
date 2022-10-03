@@ -2,6 +2,7 @@ package com.example.mdp_new;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Color;
 import android.os.Bundle;
 
 import android.Manifest;
@@ -227,9 +228,9 @@ public class Bluetooth extends AppCompatActivity {
 
         connStatusTextView = (TextView) findViewById(R.id.connStatusTextView);
         connStatus ="Disconnected";
-        sharedPreferences = getApplicationContext().getSharedPreferences("Shared Preferences", Context.MODE_PRIVATE);
+/*        sharedPreferences = getApplicationContext().getSharedPreferences("Shared Preferences", Context.MODE_PRIVATE);
         if (sharedPreferences.contains("connStatus"))
-            connStatus = sharedPreferences.getString("connStatus", "");
+            connStatus = sharedPreferences.getString("connStatus", "");*/
 
         connStatusTextView.setText(connStatus);
 
@@ -430,6 +431,7 @@ public class Bluetooth extends AppCompatActivity {
                 Toast.makeText(Bluetooth.this, "Device now connected to "+mDevice.getName(), Toast.LENGTH_SHORT).show();
                 editor.putString("connStatus", "Connected to " + mDevice.getName());
                 connStatusTextView.setText("Connected to " + mDevice.getName());
+                connStatusTextView.setTextColor(Color.parseColor("#6BDE42"));
             }
             else if(status.equals("disconnected") && retryConnection == false){
                 Log.d(TAG, "mBroadcastReceiver5: Disconnected from "+mDevice.getName());
@@ -443,6 +445,7 @@ public class Bluetooth extends AppCompatActivity {
                 editor.putString("connStatus", "Disconnected");
 
                 connStatusTextView.setText("Disconnected");
+                connStatusTextView.setTextColor(Color.parseColor("#b00020"));
                 editor.commit();
 
                 try {
