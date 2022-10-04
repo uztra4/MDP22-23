@@ -309,39 +309,40 @@ def collage(width, height, list_of_images):
     new_im.save("collage.jpg")
 
 def main(opt):
-    check_requirements(exclude=('tensorboard', 'thop'))
-    image_label = run(**vars(opt))
-    try:
-        i = 0
-        ims = []
-        while os.path.exists("img%s.jpg" % i):
-            ims.append(f'img{i}.jpg')
-            i += 1
-        # print("COUNT of images: ",i)
-        # print("IMS\n: ",ims)
-        if len(ims) >= 1:
-            collage(640, 480, ims)
-        if ims[-1] == 'black.jpg':
-            ims = ims[:-1]
-        num_of_obs = int(opt.obs)
-        # and ims[(num_of_obs - 1)] == f'img{(num_of_obs - 1)}.jpg'
-        if len(ims) == num_of_obs:
-            for img in ims:
-                os.remove(img)
-            os.rename('collage.jpg', f'collage_{datetime.now().strftime("%Y%m%d%H%M%S")}.jpg')
+    while True:
+        check_requirements(exclude=('tensorboard', 'thop'))
+        image_label = run(**vars(opt))
+        try:
+            i = 0
+            ims = []
+            while os.path.exists("img%s.jpg" % i):
+                ims.append(f'img{i}.jpg')
+                i += 1
+            # print("COUNT of images: ",i)
+            # print("IMS\n: ",ims)
+            if len(ims) >= 1:
+                collage(640, 480, ims)
+            if ims[-1] == 'black.jpg':
+                ims = ims[:-1]
+            num_of_obs = int(opt.obs)
+            # and ims[(num_of_obs - 1)] == f'img{(num_of_obs - 1)}.jpg'
+            if len(ims) == num_of_obs:
+                for img in ims:
+                    os.remove(img)
+                os.rename('collage.jpg', f'collage_{datetime.now().strftime("%Y%m%d%H%M%S")}.jpg')
+            
+            
+        except (ValueError, Exception):
+            pass
         
+        finally:
+            stitched = cv2.imread('collage.jpg')
+            cv2.startWindowThread()
+            cv2.namedWindow("stitched")
+            cv2.imshow("stitched", stitched)
+            cv2.waitKey(30)  
         
-    except (ValueError, Exception):
-        pass
-    
-    finally:
-        stitched = cv2.imread('collage.jpg')
-        cv2.startWindowThread()
-        cv2.namedWindow("stitched")
-        cv2.imshow("stitched", stitched)
-        cv2.waitKey(30)  
-        
-    return image_label
+        return image_label
 
 
 if __name__ == "__main__":

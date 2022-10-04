@@ -177,7 +177,7 @@ def run(
             image_name = 'zero'
             
             if len(det) == 0:
-                image_label = -1
+                image_label = '-1'
                 image_name = 'null'
 
             if len(det):
@@ -201,6 +201,7 @@ def run(
                         c = int(cls)  # integer class
                         label = None if hide_labels else (names[c] if hide_conf else f'{names[c]} {IMG_MAP[names[c]]} {conf:.2f}')
                         annotator.box_label(xyxy, label, color=colors(c, True))
+                        print("The label is: ", label)
                         
                         if image_label != -1:
                             image_label = names[c]
@@ -210,7 +211,7 @@ def run(
                         save_one_box(xyxy, imc, file=save_dir / 'crops' / names[c] / f'{p.stem}.jpg', BGR=True)
             
             # Print time (inference-only)
-            print(f'{s}Done. ({t3 - t2:.3f}s)')
+            # print(f'{s}Done. ({t3 - t2:.3f}s)')
 
             # Stream results
             im0 = annotator.result()
@@ -226,7 +227,7 @@ def run(
                 cv2.namedWindow(str(p), cv2.WINDOW_NORMAL)
                 cv2.resizeWindow(str(p), w, h)
                 cv2.imshow(str(p), rsz_image)
-                cv2.waitKey(30)  # display the window infinitely until any keypress
+                cv2.waitKey(10)  # display the window infinitely until any keypress
                 # cv2.waitKey(1) # display for 1 ms
             
             detected_image = "not detected"
@@ -415,11 +416,13 @@ def main(opt):
                 image_label, detected_image = run(**vars(opt))
                 #sent_label = "ALG:" + image_label
                 
-                if image_label != 'null' and image_label != 'bullseye':
+                if image_label != '-1' and image_label != 'bullseye':
                     obstacle_num = obstacle_num + 1
+                    print("Obstacle number is", obstacle_num)
 
                 elif image_label =='null':
-                    print("No object detected")
+                    print("No object detected", image_label)
+                    print("Obstacle number is", obstacle_num)
 
                 else:
                     print("bullseye detected")
@@ -449,20 +452,24 @@ def main(opt):
                         ims = ims[:-1]
                     num_of_obs = int(opt.obs)
                     # and ims[(num_of_obs - 1)] == f'img{(num_of_obs - 1)}.jpg'
+                    print("The number of images: ", len(ims))
                     if len(ims) == num_of_obs:
                         for img in ims:
                             os.remove(img)
                         os.rename('collage.jpg', f'collage_{datetime.now().strftime("%Y%m%d%H%M%S")}.jpg')
+                    print("Image Stitched successfully")
 
                 except (ValueError, Exception):
+                    print("SOME ERRRROR")
                     pass
 
                 finally:
+                    print("showing stitched image")
                     stitched = cv2.imread('collage.jpg')
                     cv2.startWindowThread()
                     cv2.namedWindow("stitched")
                     cv2.imshow("stitched", stitched)
-                    cv2.waitKey(30)  
+                    cv2.waitKey(10)  
                         
                 if KeyboardInterrupt:
                     print("keyboard interrupt")
