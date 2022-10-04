@@ -239,7 +239,7 @@
             android:fontFamily="@font/arcadeclassic"
             android:paddingHorizontal="15dp"
             android:paddingVertical="12dp"
-            android:text="3"
+            android:text="Save"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
             app:layout_constraintStart_toEndOf="@+id/preset2Button"

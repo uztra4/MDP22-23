@@ -19,6 +19,7 @@ import android.widget.Toast;
 import android.animation.ObjectAnimator;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.res.TypedArrayUtils;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -26,8 +27,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
+
+
 
 public class Arena extends AppCompatActivity {
     private static final int SNAP_GRID_INTERVAL = 40;
@@ -42,7 +46,7 @@ public class Arena extends AppCompatActivity {
 
     private int sequence = 0;
 
-    Button IRButton, SPButton, resetButton, preset1Button, preset2Button, preset3Button, timerButton;
+    Button IRButton, SPButton, resetButton, preset1Button, preset2Button, preset3Button, timerButton, save_button;
     TextView statusWindow;  //Added statusWindow to declarations
     ImageView obstacle1, obstacle2, obstacle3, obstacle4, obstacle5, obstacle6, obstacle7, obstacle8;
     ImageView car;
@@ -877,9 +881,9 @@ public class Arena extends AppCompatActivity {
         IRButton.setOnClickListener(view -> sendObstaclesEvent());
         SPButton.setOnClickListener(view-> beginSPTask());
         resetButton.setOnClickListener(view -> resetObstaclesButton());
-        preset1Button.setOnClickListener(view -> setPreset1Button());
-        preset2Button.setOnClickListener(view -> setPreset2Button());
-        preset3Button.setOnClickListener(view -> setPreset3Button());
+        preset1Button.setOnClickListener(view -> setPreset2Button());
+        preset2Button.setOnClickListener(view -> setPreset1Button());
+        preset3Button.setOnClickListener(view -> SaveButton());
         timerButton.setOnClickListener(view -> stopTimerButton());
 
         // Initialize car to bottom left
@@ -1230,60 +1234,8 @@ public class Arena extends AppCompatActivity {
         Toast.makeText(this, "Map Reset", Toast.LENGTH_LONG).show();
     }
 
+
     private void setPreset1Button() {
-        updateStatusWindow("Ready");
-
-        obstacle1.setX(200);
-        obstacle1.setY(440);
-        obstacle1.setRotation(180);
-        obstacle1.setImageResource(resources.get("o1s"));
-
-        obstacle2.setX(600);
-        obstacle2.setY(640);
-        obstacle2.setRotation(270);
-        obstacle2.setImageResource(resources.get("o2w"));
-
-        obstacle3.setX(480);
-        obstacle3.setY(440);
-        obstacle3.setRotation(90);
-        obstacle3.setImageResource(resources.get("o3e"));
-
-        obstacle4.setX(600);
-        obstacle4.setY(200);
-        obstacle4.setRotation(180);
-        obstacle4.setImageResource(resources.get("o4s"));
-
-
-        obstacle5.setX(280);
-        obstacle5.setY(240);
-        obstacle5.setRotation(270);
-        obstacle5.setImageResource(resources.get("o5w"));
-
-        Toast.makeText(this, "Preset 1 Applied", Toast.LENGTH_LONG).show();
-    }
-
-    private void setPreset2Button() {
-        updateStatusWindow("Ready");
-
-        obstacle1.setX(280);
-        obstacle1.setY(360);
-        obstacle1.setRotation(180);
-        obstacle1.setImageResource(resources.get("o1s"));
-
-        obstacle2.setX(720);
-        obstacle2.setY(560);
-        obstacle2.setRotation(270);
-        obstacle2.setImageResource(resources.get("o2w"));
-
-        obstacle3.setX(480);
-        obstacle3.setY(400);
-        obstacle3.setRotation(90);
-        obstacle3.setImageResource(resources.get("o3e"));
-
-        Toast.makeText(this, "Preset 2 Applied", Toast.LENGTH_LONG).show();
-    }
-
-    private void setPreset3Button() {
         updateStatusWindow("Ready");
 
         obstacle1.setX(40);
@@ -1296,23 +1248,250 @@ public class Arena extends AppCompatActivity {
         obstacle2.setRotation(270);
         obstacle2.setImageResource(resources.get("o2w"));
 
-        obstacle3.setX(640);
-        obstacle3.setY(600);
-        obstacle3.setRotation(270);
-        obstacle3.setImageResource(resources.get("o3w"));
+        obstacle3.setX(360);
+        obstacle3.setY(720);
+        obstacle3.setRotation(0);
+        obstacle3.setImageResource(resources.get("o3n"));
 
-        obstacle4.setX(440);
-        obstacle4.setY(400);
-        obstacle4.setRotation(90);
-        obstacle4.setImageResource(resources.get("o4e"));
+        obstacle4.setX(640);
+        obstacle4.setY(600);
+        obstacle4.setRotation(270);
+        obstacle4.setImageResource(resources.get("o4w"));
 
-        obstacle5.setX(600);
-        obstacle5.setY(160);
-        obstacle5.setRotation(180);
-        obstacle5.setImageResource(resources.get("o5s"));
+        obstacle5.setX(440);
+        obstacle5.setY(400);
+        obstacle5.setRotation(90);
+        obstacle5.setImageResource(resources.get("o5e"));
 
-        Toast.makeText(this, "Preset 3 Applied", Toast.LENGTH_LONG).show();
+        obstacle6.setX(600);
+        obstacle6.setY(160);
+        obstacle6.setRotation(180);
+        obstacle6.setImageResource(resources.get("o6s"));
+
+        Toast.makeText(this, "Preset 2 Applied", Toast.LENGTH_LONG).show();
     }
+    public String[][] SavedPreset = {};
+
+    private void setPreset2Button() {
+        if (SavedPreset.length ==0){
+            Toast.makeText(this,"No saved preset found",Toast.LENGTH_SHORT).show();
+        }
+        else {
+            String[] obstacle1data = SavedPreset[0];
+            obstacle1.setX(Integer.parseInt(obstacle1data[0]));
+            obstacle1.setY(Integer.parseInt(obstacle1data[1]));
+            Log.d("tag", "obstacle1 should be at " + obstacle1data[0] + "," + obstacle1data[1]);
+            switch (obstacle1data[2]) {
+                case ("N"):
+                    obstacle1.setRotation(0);
+                    obstacle1.setImageResource(resources.get("o1n"));
+                    break;
+                case ("E"):
+                    obstacle1.setRotation(90);
+                    obstacle1.setImageResource(resources.get("o1e"));
+                    break;
+                case ("S"):
+                    obstacle1.setRotation(180);
+                    obstacle1.setImageResource(resources.get("o1s"));
+                    break;
+                case ("W"):
+                    obstacle1.setRotation(270);
+                    obstacle1.setImageResource(resources.get("o1w"));
+                    break;
+                default:
+                    break;
+            }
+            String[] obstacle2data = SavedPreset[1];
+            obstacle2.setX(Integer.parseInt(obstacle2data[0]));
+            obstacle2.setY(Integer.parseInt(obstacle2data[1]));
+            Log.d("tag", "obstacle2 should be at " + obstacle2data[0] + "," + obstacle2data[1]);
+            switch (obstacle2data[2]) {
+                case ("N"):
+                    obstacle2.setRotation(0);
+                    obstacle2.setImageResource(resources.get("o2n"));
+                    break;
+                case ("E"):
+                    obstacle2.setRotation(90);
+                    obstacle2.setImageResource(resources.get("o2e"));
+                    break;
+                case ("S"):
+                    obstacle2.setRotation(180);
+                    obstacle2.setImageResource(resources.get("o2s"));
+                    break;
+                case ("W"):
+                    obstacle2.setRotation(270);
+                    obstacle2.setImageResource(resources.get("o2w"));
+                    break;
+                default:
+                    break;
+        }
+            String[] obstacle3data = SavedPreset[2];
+            obstacle3.setX(Integer.parseInt(obstacle3data[0]));
+            obstacle3.setY(Integer.parseInt(obstacle3data[1]));
+            Log.d("tag", "obstacle3 should be at " + obstacle3data[0] + "," + obstacle3data[1]);
+            switch (obstacle3data[2]) {
+                case ("N"):
+                    obstacle3.setRotation(0);
+                    obstacle3.setImageResource(resources.get("o3n"));
+                    break;
+                case ("E"):
+                    obstacle3.setRotation(90);
+                    obstacle3.setImageResource(resources.get("o3e"));
+                    break;
+                case ("S"):
+                    obstacle3.setRotation(180);
+                    obstacle3.setImageResource(resources.get("o3s"));
+                    break;
+                case ("W"):
+                    obstacle3.setRotation(270);
+                    obstacle3.setImageResource(resources.get("o3w"));
+                    break;
+                default:
+                    break;
+            }
+            String[] obstacle4data = SavedPreset[3];
+            obstacle4.setX(Integer.parseInt(obstacle4data[0]));
+            obstacle4.setY(Integer.parseInt(obstacle4data[1]));
+            Log.d("tag", "obstacle4 should be at " + obstacle4data[0] + "," + obstacle4data[1]);
+            switch (obstacle4data[2]) {
+                case ("N"):
+                    obstacle4.setRotation(0);
+                    obstacle4.setImageResource(resources.get("o4n"));
+                    break;
+                case ("E"):
+                    obstacle4.setRotation(90);
+                    obstacle4.setImageResource(resources.get("o4e"));
+                    break;
+                case ("S"):
+                    obstacle4.setRotation(180);
+                    obstacle4.setImageResource(resources.get("o4s"));
+                    break;
+                case ("W"):
+                    obstacle4.setRotation(270);
+                    obstacle4.setImageResource(resources.get("o4w"));
+                    break;
+                default:
+                    break;
+            }
+            String[] obstacle5data = SavedPreset[4];
+            obstacle5.setX(Integer.parseInt(obstacle5data[0]));
+            obstacle5.setY(Integer.parseInt(obstacle5data[1]));
+            Log.d("tag", "obstacle5 should be at " + obstacle5data[0] + "," + obstacle5data[1]);
+            switch (obstacle5data[2]) {
+                case ("N"):
+                    obstacle5.setRotation(0);
+                    obstacle5.setImageResource(resources.get("o5n"));
+                    break;
+                case ("E"):
+                    obstacle5.setRotation(90);
+                    obstacle5.setImageResource(resources.get("o5e"));
+                    break;
+                case ("S"):
+                    obstacle5.setRotation(180);
+                    obstacle5.setImageResource(resources.get("o5s"));
+                    break;
+                case ("W"):
+                    obstacle5.setRotation(270);
+                    obstacle5.setImageResource(resources.get("o5w"));
+                    break;
+                default:
+                    break;
+            }
+            String[] obstacle6data = SavedPreset[5];
+            obstacle6.setX(Integer.parseInt(obstacle6data[0]));
+            obstacle6.setY(Integer.parseInt(obstacle6data[1]));
+            Log.d("tag", "obstacle6 should be at " + obstacle6data[0] + "," + obstacle6data[1]);
+            switch (obstacle6data[2]) {
+                case ("N"):
+                    obstacle6.setRotation(0);
+                    obstacle6.setImageResource(resources.get("o6n"));
+                    break;
+                case ("E"):
+                    obstacle6.setRotation(90);
+                    obstacle6.setImageResource(resources.get("o6e"));
+                    break;
+                case ("S"):
+                    obstacle6.setRotation(180);
+                    obstacle6.setImageResource(resources.get("o6s"));
+                    break;
+                case ("W"):
+                    obstacle6.setRotation(270);
+                    obstacle6.setImageResource(resources.get("o6w"));
+                    break;
+                default:
+                    break;
+            }
+            String[] obstacle7data = SavedPreset[6];
+            obstacle7.setX(Integer.parseInt(obstacle7data[0]));
+            obstacle7.setY(Integer.parseInt(obstacle7data[1]));
+            Log.d("tag", "obstacle7 should be at " + obstacle7data[0] + "," + obstacle7data[1]);
+            switch (obstacle7data[2]) {
+                case ("N"):
+                    obstacle7.setRotation(0);
+                    obstacle7.setImageResource(resources.get("o7n"));
+                    break;
+                case ("E"):
+                    obstacle7.setRotation(90);
+                    obstacle7.setImageResource(resources.get("o7e"));
+                    break;
+                case ("S"):
+                    obstacle7.setRotation(180);
+                    obstacle7.setImageResource(resources.get("o7s"));
+                    break;
+                case ("W"):
+                    obstacle7.setRotation(270);
+                    obstacle7.setImageResource(resources.get("o7w"));
+                    break;
+                default:
+                    break;
+            }
+            String[] obstacle8data = SavedPreset[7];
+            obstacle8.setX(Integer.parseInt(obstacle8data[0]));
+            obstacle8.setY(Integer.parseInt(obstacle8data[1]));
+            Log.d("tag", "obstacle8 should be at " + obstacle8data[0] + "," + obstacle8data[1]);
+            switch (obstacle8data[2]) {
+                case ("N"):
+                    obstacle8.setRotation(0);
+                    obstacle8.setImageResource(resources.get("o8n"));
+                    break;
+                case ("E"):
+                    obstacle8.setRotation(90);
+                    obstacle8.setImageResource(resources.get("o8e"));
+                    break;
+                case ("S"):
+                    obstacle8.setRotation(180);
+                    obstacle8.setImageResource(resources.get("o8s"));
+                    break;
+                case ("W"):
+                    obstacle8.setRotation(270);
+                    obstacle8.setImageResource(resources.get("o8w"));
+                    break;
+                default:
+                    break;
+            }
+
+        Toast.makeText(this, "Preset 2 Applied", Toast.LENGTH_SHORT).show();
+    }
+    }
+
+    private void SaveButton() {
+        SavedPreset=savedObstacles();
+        Toast.makeText(this, "Preset 1 Applied", Toast.LENGTH_LONG).show();
+    }
+
+
+    private String[][] savedObstacles(){
+        String[][] SavedPreset={getObstacleLocation(obstacle1).split(","),getObstacleLocation(obstacle2).split(","),getObstacleLocation(obstacle3).split(","),
+                getObstacleLocation(obstacle4).split(","),getObstacleLocation(obstacle5).split(","),getObstacleLocation(obstacle6).split(","),
+                getObstacleLocation(obstacle7).split(","),getObstacleLocation(obstacle8).split(",")};
+        Log.d("tag","saved Obstacle data"+SavedPreset);
+        return SavedPreset;
+    }
+
+    private String getObstacleLocation(ImageView obstacle) {
+        Toast.makeText(this, "Preset saved",Toast.LENGTH_SHORT).show();
+        return (int)obstacle.getX()+","+(int) obstacle.getY()+","+getImageOrientation(obstacle);
+        }
 
     private String getObstacleString(ImageView obstacle) {
         if((int) (obstacle.getX() / 40) > 19 || ((int) obstacle.getY() / 40) > 19){
@@ -1470,7 +1649,7 @@ public class Arena extends AppCompatActivity {
                     String solution = message.substring(9);
                     Log.d("soltag","Solution value"+solution);
                     if (Integer.parseInt(solution)==-1){
-                        Toast.makeText(Arena.this,"Image not recognized, trying again", Toast.LENGTH_LONG).show();
+                        Toast.makeText(Arena.this,"Image not recognized, trying again", Toast.LENGTH_SHORT).show();
                     }
                     else{
                     setObstacleImage(obstacleNumber,solution);
