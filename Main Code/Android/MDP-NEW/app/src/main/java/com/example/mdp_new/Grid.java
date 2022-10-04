@@ -50,11 +50,14 @@ public class Grid extends View {
         }
 
         // Draw vertical grid axis
-        for (int i = 0; i < numberOfRows; i++) {
-            canvas.drawText(String.valueOf(i), cellWidth * 10 + 5, cellHeight * i + 15, blackPaint);
+        for (int i = numberOfRows-1; i >=0; i--) {
+            canvas.drawText(String.valueOf(i), 0, cellHeight * (numberOfRows-i-1) + 15, blackPaint);
         }
 
         for (int i = 0; i < numberOfColumns; i++) {
+            if(i==0){
+                continue;
+            }
             canvas.drawText(String.valueOf(i), cellWidth * i + 5, cellHeight * 10 + 15, blackPaint);
         }
     }
