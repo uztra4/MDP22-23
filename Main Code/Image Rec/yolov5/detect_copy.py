@@ -371,13 +371,13 @@ def main(opt):
     # run(**vars(opt))
 
     obstacle_num = 0
+    count_miss = 0
 
     while True:
         try:
             # --- create socket ---
             print("Starting server")
             print('[DEBUG] create socket')
-            results = ""
 
             # s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             s = socket.socket()  # default value is (socket.AF_INET, socket.SOCK_STREAM) so you don't have to use it
@@ -418,15 +418,21 @@ def main(opt):
                 
                 if image_label != '-1' and image_label != 'bullseye':
                     obstacle_num = obstacle_num + 1
+                    count_miss = 0
                     print("Obstacle number is", obstacle_num)
 
-                elif image_label =='null':
-                    print("No object detected", image_label)
-                    print("Obstacle number is", obstacle_num)
+                elif image_label =='-1':
+                    print("No object detected")
+                    count_miss = count_miss + 1
+                    print("didnt detect for:", count_miss)
+                    if count_miss == 2:
+                        obstacle_num = obstacle_num + 1
+                        count_miss = 0
 
                 else:
                     print("bullseye detected")
-                
+
+
                 sent_label = str(obstacle_num) + ':' + str(image_label) # String Example = "1:12"
 
                 conn.send(f'{sent_label}'.encode())
