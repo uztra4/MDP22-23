@@ -15,6 +15,7 @@ class Main:
     def __init__(self):
         self.client = None
         self.commands = None
+        self.count = 0
 
     def parse_obstacle_data(self, data) -> List[Obstacle]:
         obs = []
@@ -122,15 +123,46 @@ class Main:
         elif isinstance(data[0], str):
             # Check valid image taken
             if isvalid(data[0]):
-                if len(self.commands) != 0:
-                    if "STM:pn\n" in self.commands:
-                        sent_commands = self.commands[:self.commands.index("STM:pn\n") + 1]
-                        self.commands = self.commands[self.commands.index("STM:pn\n") + 1:]
-                    else:
-                        sent_commands = self.commands
-                    print(sent_commands)
-                    print(self.commands)
-                    client.send_message(sent_commands)
+                if self.count == 0:
+                    if len(self.commands) != 0:
+                        if "STM:pn\n" in self.commands:
+                            sent_commands = self.commands[:self.commands.index("STM:pn\n") + 1]
+                            self.commands = self.commands[self.commands.index("STM:pn\n") + 1:]
+                        else:
+                            sent_commands = self.commands
+                        print(sent_commands)
+                        print(self.commands)
+                        client.send_message(sent_commands)
+
+                elif self.count == 1:
+                    self.count = 0
+                    amended_commands = ["STM:w010n\n"]
+                    if len(self.commands) != 0:
+                        if "STM:pn\n" in self.commands:
+                            sent_commands = self.commands[:self.commands.index("STM:pn\n") + 1]
+                            self.commands = self.commands[self.commands.index("STM:pn\n") + 1:]
+                        else:
+                            sent_commands = self.commands
+                        amended_commands = amended_commands + sent_commands
+                        print("Amended commands: ", amended_commands)
+                        print(self.commands)
+                        client.send_message(amended_commands)
+
+                elif self.count == 2:
+                    self.count = 0
+                    amended_commands = ["STM:w020n\n"]
+                    if len(self.commands) != 0:
+                        if "STM:pn\n" in self.commands:
+                            sent_commands = self.commands[:self.commands.index("STM:pn\n") + 1]
+                            self.commands = self.commands[self.commands.index("STM:pn\n") + 1:]
+                        else:
+                            sent_commands = self.commands
+                        amended_commands = amended_commands + sent_commands
+                        print("Amended commands: ", amended_commands)
+                        print(self.commands)
+                        client.send_message(amended_commands)
+
+            # Not valid data
             elif data[0] == "bullseye":
                 print("Sending list of commands to RPi...")
                 fixed_commands = ["STM:Ln\n", "STM:w060n\n", "STM:ln\n", "STM:w025n\n", "STM:ln\n", "STM:pn\n"]
@@ -138,9 +170,25 @@ class Main:
                 client.send_message(fixed_commands)
             # If no image taken
             elif data[0] == "-1":
-                correction_commands = ["STM:s010n\n", "STM:pn\n"]
-                print(correction_commands)
-                client.send_message(correction_commands)
+                if self.count == 2:
+                    self.count = 0
+                    amended_commands = ["STM:w020n\n"]
+                    if len(self.commands) != 0:
+                        if "STM:pn\n" in self.commands:
+                            sent_commands = self.commands[:self.commands.index("STM:pn\n") + 1]
+                            self.commands = self.commands[self.commands.index("STM:pn\n") + 1:]
+                        else:
+                            sent_commands = self.commands
+                        amended_commands = amended_commands + sent_commands
+                        print("Amended commands: ", amended_commands)
+                        print(self.commands)
+                        client.send_message(amended_commands)
+
+                else:
+                    self.count += 1
+                    correction_commands = ["STM:s010n\n", "STM:pn\n"]
+                    print(correction_commands)
+                    client.send_message(correction_commands)
 
     def run_rpi(self):
         while True:
