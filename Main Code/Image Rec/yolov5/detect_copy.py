@@ -465,34 +465,18 @@ def main(opt):
                         os.rename('collage.jpg', f'collage_{datetime.now().strftime("%Y%m%d%H%M%S")}.jpg')
                     print("Image Stitched successfully")
 
-                    print("showing stitched image")
-                    pos = 0.5 #scaling factor
-                    stitched = cv2.imread('collage.jpg')
-                    h = int(stitched.shape[0]*pos) # scale h
-                    w = int(stitched.shape[1]*pos) # scale w
-                    rsz_image = cv2.resize(stitched, (w, h)) # resize image
-                    cv2.startWindowThread()
-                    cv2.namedWindow("stitched", cv2.WINDOW_NORMAL)
-                    cv2.resizeWindow("stitched",640,480)
-                    cv2.imshow("stitched", rsz_image)
-                    cv2.waitKey(10)
 
                 except (ValueError, Exception):
                     print("SOME ERRRROR")
                     pass
 
-                # finally:
-                #     print("showing stitched image")
-                #     pos = 0.5 #scaling factor
-                #     stitched = cv2.imread('collage.jpg')
-                #     h = int(stitched.shape[0]*pos) # scale h
-                #     w = int(stitched.shape[1]*pos) # scale w
-                #     rsz_image = cv2.resize(stitched, (w, h)) # resize image
-                #     cv2.startWindowThread()
-                #     cv2.namedWindow("stitched", cv2.WINDOW_NORMAL)
-                #     cv2.resizeWindow("stitched",640,480)
-                #     cv2.imshow("stitched", rsz_image)
-                #     cv2.waitKey(10)
+                finally:
+                    print("showing stitched image")
+                    stitched = cv2.imread('collage.jpg')
+                    cv2.startWindowThread()
+                    cv2.namedWindow("stitched")
+                    cv2.imshow("stitched", stitched)
+                    cv2.waitKey(30)  
                         
                 if KeyboardInterrupt:
                     print("keyboard interrupt")
