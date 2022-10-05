@@ -179,6 +179,12 @@ class AlgoSimulator(AlgoApp):
                     obs = self.parse_obstacle_data()
                     self.grid = Grid(obs)
                     self.robot = Robot(self.grid)
+                elif event.key == pygame.K_0:
+                    self.print_caption("Initialise World 0")
+                    self.obstacles = preGrid.getObsWorld(0)
+                    obs = self.parse_obstacle_data()
+                    self.grid = Grid(obs)
+                    self.robot = Robot(self.grid)
 
     def print_caption(self, message):
         font = pygame.font.SysFont("arial", 35)
