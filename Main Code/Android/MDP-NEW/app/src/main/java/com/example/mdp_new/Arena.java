@@ -4,8 +4,10 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.SystemClock;
+import android.provider.Settings;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
@@ -18,6 +20,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.animation.ObjectAnimator;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.res.TypedArrayUtils;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
@@ -32,9 +35,63 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 
-
 public class Arena extends AppCompatActivity {
+    float[] obs1save = new float[2];
+    float[] obs2save = new float[2];
+    float[] obs3save = new float[2];
+    float[] obs4save = new float[2];
+    float[] obs5save = new float[2];
+    float[] obs6save = new float[2];
+    float[] obs7save = new float[2];
+    float[] obs8save = new float[2];
+    float[] carsave = new float[2];
+
+    public static final String SHARED_PREFS = "sharedPrefs";
+    public static final String obs1xString = "Obstacle 1x String";
+    public static final String obs1yString = "Obstacle 1y String";
+    public static final String carXString = "carX String";
+    public static final String carYString = "carY String";
+
+    public static Boolean firstStart = true;
+
+//    protected void onSaveInstanceState(Bundle outState){
+//        super.onSaveInstanceState(outState);
+//        Log.d("LOG_TAG", "In Save Instance State");
+//        outState.putFloat("saveInstance obs1x", findViewById(R.id.obstacle1).getX());
+//        outState.putFloat("obs1y", findViewById(R.id.obstacle1).getY());
+//    }
+//
+//    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+//        Log.d("LOG_TAG", "In Restore Instance State");
+//        obstacle1.setX(savedInstanceState.getFloat("obs1x"));
+//        obstacle1.setY(savedInstanceState.getFloat("obs1y"));
+//
+//    }
+
+    public void saveData(){
+        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+
+        editor.putFloat(obs1xString, findViewById(R.id.obstacle1).getTranslationX());
+        editor.putFloat(obs1yString, findViewById(R.id.obstacle1).getTranslationY());
+        Log.d("saveData", "obs1x: " + Float.toString(obstacle1.getTranslationX()));
+        editor.putFloat("carXString", findViewById(R.id.car).getTranslationX());
+        editor.putFloat("carYString", findViewById(R.id.car).getTranslationY());
+
+        editor.apply();
+    }
+
+    public void loadData(){
+        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
+        obstacle1.setX(sharedPreferences.getFloat(obs1xString, 0.0f));
+        obstacle1.setY(sharedPreferences.getFloat(obs1yString, 0.0f));
+        car.setX(sharedPreferences.getFloat("carXString", 0.0f));
+        car.setY(sharedPreferences.getFloat("carYString", 0.0f));
+        Log.d("LoadData", "obs1x: " + Float.toString(sharedPreferences.getFloat(obs1xString, 0.0f)));
+    }
+
     private static final int SNAP_GRID_INTERVAL = 40;
+
 
     private static final int ANIMATOR_DURATION = 1000;
 
@@ -43,6 +100,10 @@ public class Arena extends AppCompatActivity {
     private boolean isObstacle3LongClicked = false;
     private boolean isObstacle4LongClicked = false;
     private boolean isObstacle5LongClicked = false;
+
+
+
+
 
     private int sequence = 0;
 
@@ -61,6 +122,7 @@ public class Arena extends AppCompatActivity {
         put("turnLeft", "0902");
         put("turnRight", "0903");
     }};
+    // TRY ADDING FINAL STATIC FLOATS TO ASSIGN OBSTACLE COORDINATES INSTEAD OF JUST PUBLIC ARRAYS
 
     Map<String, Integer> resources = new HashMap<String, Integer>() {{
         put("o1n", R.drawable.obstacle_1_n);
@@ -265,9 +327,54 @@ public class Arena extends AppCompatActivity {
     ArrayList<Integer> images = new ArrayList<Integer>();
     RecyclerView recyclerView;
 
+//    protected void onResume(){
+//        super.onResume();
+//        Log.d("onresume", "OnResume() called");
+//////        obstacle1.setX(obs1save[0]);
+//////        obstacle1.setY(obs1save[1]);
+////        obstacle1.setX(savedInstanceState.getFloat("obs1x"));
+////        Log.d("ADebugTag", "Value: " + Float.toString(savedInstanceState.getFloat("obs1x")));
+//        loadData();
+//    }
+
+
+
+    protected void onPause(){
+        super.onPause();
+        Log.d("onpause", "OnPause() called");
+////        float obs1x = obstacle1.getX();
+////        float obs1y = obstacle1.getY();
+//        outState.putFloat("obs1x", obstacle1.getX());
+//        outState.putFloat("obs1y", obstacle1.getY());
+//
+////        obs1save[0] = obstacle1.getX();
+////        obs1save[1] = obstacle1.getY();
+//        Log.d("ADebugTag", "Value: " + Float.toString(SharedPreferences));
+        saveData();
+    }
+
+//    SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
+//    SharedPreferences.Editor editor = sharedPreferences.edit();
+//
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+//        if (firstStart == false){
+//            Log.d("firstStart", Boolean.toString(firstStart));
+//            // Load Data
+//            loadData();
+//        }
+//
+//        else{
+//
+//        }
+//
+//
+//        Log.d("LOG", TEST);
+
+
+
 //        Log.d("this", "test1");
 //        // initialise s1 and images arraylist for recyclerView
 //        s1.add("OBJECT: TEST");
@@ -285,7 +392,18 @@ public class Arena extends AppCompatActivity {
 
 
         super.onCreate(savedInstanceState);
+
+        Log.d("onCreate", "onCreate called");
+        // Restore saved instance state
+
         setContentView(R.layout.arena);
+
+
+
+
+
+//        loadData();
+
         //messageBox = findViewById(R.id.message_box);
         // Obstacles
 
@@ -298,6 +416,23 @@ public class Arena extends AppCompatActivity {
         obstacle6 = findViewById(R.id.obstacle6);
         obstacle7 = findViewById(R.id.obstacle7);
         obstacle8 = findViewById(R.id.obstacle8);
+//        saveData();
+
+//        if (firstStart == false){
+//            Log.d("firstStart", Boolean.toString(firstStart));
+//            // Load Data
+//            loadData();
+//        }
+//        else {
+//            Log.d("firstStart", Boolean.toString(firstStart));
+//            firstStart = false;
+//            saveData();
+//        }
+
+
+        Log.d("OBSTACLE1", "X: " + Float.toString(obstacle1.getX()));
+
+
 
         obstacles = new HashMap<Integer, ImageView>() {{
             put(1, obstacle1);
@@ -891,6 +1026,17 @@ public class Arena extends AppCompatActivity {
         car.setY(18 * SNAP_GRID_INTERVAL - SNAP_GRID_INTERVAL);
         updateXYDirText();
 
+        if (firstStart == false){
+            Log.d("firstStart", Boolean.toString(firstStart));
+            // Load Data
+            loadData();
+        }
+        else {
+            Log.d("firstStart", Boolean.toString(firstStart));
+            firstStart = false;
+            saveData();
+        }
+
 
         // Movement Buttons
         ImageButton forwardButton = (ImageButton) findViewById(R.id.forwardButton);
@@ -950,6 +1096,10 @@ public class Arena extends AppCompatActivity {
                 rightButtonCommand();
             }
         });
+
+
+
+
     }
 
     // MOVEMENT COMMANDS
@@ -1176,8 +1326,10 @@ public class Arena extends AppCompatActivity {
 
 
         // Hard coded
+        Log.d("RESET BUTTON", "BEFORE OBSTACLE 1 X: " + obstacle1.getX());
         obstacle1.setTranslationX(0);
         obstacle1.setTranslationY(0);
+        Log.d("RESET BUTTON", "AFTER OBSTACLE 1 X: " + obstacle1.getX());
 
         obstacle2.setTranslationX(0);
         obstacle2.setTranslationY(0);
@@ -1764,6 +1916,7 @@ public class Arena extends AppCompatActivity {
                 default:  // for outer "ROBOT/TARGET/STATUS/MOVE cases
                     break;
             }
+
 
         }
     };

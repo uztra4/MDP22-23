@@ -4,13 +4,16 @@ package com.example.mdp_new;
 import android.content.Intent;
 import android.content.ReceiverCallNotAllowedException;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivity extends AppCompatActivity {
 
+public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,6 +25,14 @@ public class MainActivity extends AppCompatActivity {
         comms_button.setOnClickListener(v -> openCommsView());
         bluetooth_button.setOnClickListener(v -> openBluetoothView());
         arena_button.setOnClickListener(v -> openArenaView());
+
+        //  Use LayoutInflater to get other views (arena)
+        LayoutInflater myLayoutInflater = getLayoutInflater();
+        View arenaView = myLayoutInflater.inflate(R.layout.arena, null);
+
+        // Now we can access arena's elements throught arenaView
+        ImageView obs1 = (ImageView) arenaView.findViewById(R.id.obstacle1);
+
     }
 
 
