@@ -104,56 +104,60 @@
             app:srcCompat="@drawable/obstacle_8_n" />
 
         <ImageButton
-            android:id="@+id/forwardButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="44dp"
-            android:backgroundTint=" #1B70EA"
-            android:paddingHorizontal="34dp"
-            android:paddingVertical="14dp"
-            android:src="@drawable/up_icon"
-            app:layout_constraintBottom_toBottomOf="@+id/rightButton"
-            app:layout_constraintStart_toStartOf="@+id/guideline2" />
-
-        <ImageButton
-            android:id="@+id/reverseButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/forwardButton"
-            android:layout_marginTop="44dp"
-            android:backgroundTint="#1B70EA"
-            android:paddingHorizontal="34dp"
-            android:paddingVertical="14dp"
-            android:src="@drawable/down_icon"
-            app:layout_constraintStart_toStartOf="@+id/forwardButton"
-            app:layout_constraintTop_toTopOf="@+id/guideline3" />
-
-        <ImageButton
             android:id="@+id/leftButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="55dp"
+            android:layout_height="59dp"
             android:layout_below="@id/forwardButton"
-            android:layout_marginRight="15dp"
-            android:backgroundTint="#1B70EA"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="48dp"
+            android:backgroundTint="#D6F0FC"
             android:paddingHorizontal="34dp"
             android:paddingVertical="14dp"
-            android:src="@drawable/left_icon"
+            android:src="@drawable/blue_arrow_left"
             app:layout_constraintEnd_toStartOf="@+id/rightButton"
-            app:layout_constraintTop_toTopOf="@+id/guideline3" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/rightButton" />
 
         <ImageButton
             android:id="@+id/rightButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="52dp"
-            android:layout_marginTop="-40dp"
+            android:layout_width="55dp"
+            android:layout_height="59dp"
+            android:layout_marginStart="54dp"
+            android:layout_marginTop="50dp"
             android:layout_toRightOf="@id/leftButton"
-            android:backgroundTint="#1B70EA"
+            android:backgroundTint="#D6F0FC"
             android:paddingHorizontal="34dp"
             android:paddingVertical="14dp"
-            android:src="@drawable/right_icon"
-            app:layout_constraintStart_toStartOf="@+id/guideline2"
-            app:layout_constraintTop_toTopOf="@+id/guideline3" />
+            android:src="@drawable/blue_arrow_right"
+            app:layout_constraintStart_toEndOf="@+id/leftButton"
+            app:layout_constraintTop_toTopOf="@+id/forwardButton" />
+
+        <ImageButton
+            android:id="@+id/forwardButton"
+            android:layout_width="73dp"
+            android:layout_height="55dp"
+            android:layout_marginStart="85dp"
+            android:layout_marginTop="615dp"
+            android:backgroundTint="#D6F0FC"
+            android:paddingHorizontal="34dp"
+            android:paddingVertical="14dp"
+            android:src="@drawable/blue_arrow"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/reverseButton"
+            android:layout_width="73dp"
+            android:layout_height="55dp"
+            android:layout_below="@+id/forwardButton"
+            android:layout_marginStart="85dp"
+            android:layout_marginTop="51dp"
+            android:backgroundTint="#D6F0FC"
+            android:paddingHorizontal="34dp"
+            android:paddingVertical="14dp"
+            android:src="@drawable/blue_arrow_down"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/forwardButton" />
 
         <Button
             android:id="@+id/IRButton"
