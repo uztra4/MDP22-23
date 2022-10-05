@@ -1561,8 +1561,9 @@ public class Arena extends AppCompatActivity {
     private void updateXYDirText() {
         int x = (int) (car.getX() + SNAP_GRID_INTERVAL)/SNAP_GRID_INTERVAL;
         int y = (int) (car.getY() + SNAP_GRID_INTERVAL)/SNAP_GRID_INTERVAL;
+        int new_y= 20-y-1;
         car_x.setText(String.valueOf(x));
-        car_y.setText(String.valueOf(y));
+        car_y.setText(String.valueOf(new_y));
 
         int direction = (int)car.getRotation();
 
