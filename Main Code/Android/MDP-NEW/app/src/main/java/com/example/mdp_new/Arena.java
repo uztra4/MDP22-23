@@ -29,6 +29,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.nio.charset.Charset;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -1287,10 +1288,11 @@ public class Arena extends AppCompatActivity {
                 .append(getObstacleString(obstacle6)+"5;")
                 .append(getObstacleString(obstacle7)+"6;")
                 .append(getObstacleString(obstacle8)+"7;");
+        String IRstart = "ALG:START";
 
         if (BluetoothConnectionService.BluetoothConnectionStatus == true) {
             //Toast.makeText(this, stringBuilder.toString(), Toast.LENGTH_LONG).show();
-            byte[] bytes = stringBuilder.toString().getBytes(Charset.defaultCharset());
+            byte[] bytes = IRstart.getBytes(Charset.defaultCharset());
             BluetoothConnectionService.write(bytes);
             Toast.makeText(Arena.this, "Obstacles sent", Toast.LENGTH_LONG).show();
             updateStatusWindow("IR started");
@@ -1622,13 +1624,65 @@ public class Arena extends AppCompatActivity {
                     break;
             }
 
-        Toast.makeText(this, "Preset 2 Applied", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Preset 1 Applied", Toast.LENGTH_SHORT).show();
     }
     }
 
+    private void setObstacles(String[] obstaclesPreset) {
+        if (obstaclesPreset.length == 0) {
+            Toast.makeText(this, "No saved preset found", Toast.LENGTH_SHORT).show();
+        } else {
+            for (int i = 0; i < obstaclesPreset.length; i++) {
+                int obstaclenum=i+1;
+                String[] obsdata= obstaclesPreset[i].split(",");
+                Log.d("array length","Obstaclepreset length is "+obstaclesPreset.length);
+                Log.d("Arena.this","obstacle "+obstaclenum+" data is "+Arrays.toString(obsdata));
+
+                obstacles.get(obstaclenum).setX(Integer.parseInt(obsdata[0])*40);
+                obstacles.get(obstaclenum).setY(Integer.parseInt(obsdata[1])*40);
+                switch (obsdata[2]) {
+                    case ("N"):
+                        obstacles.get(obstaclenum).setRotation(0);
+                        obstacles.get(obstaclenum).setImageResource(resources.get("o" +obstaclenum+ "n"));
+                        break;
+                    case ("E"):
+                        obstacles.get(obstaclenum).setRotation(90);
+                        obstacles.get(obstaclenum).setImageResource(resources.get("o" + obstaclenum + "e"));
+                        break;
+                    case ("S"):
+                        obstacles.get(obstaclenum).setRotation(180);
+                        obstacles.get(obstaclenum).setImageResource(resources.get("o" + obstaclenum + "s"));
+                        break;
+                    case ("W"):
+                        obstacles.get(obstaclenum).setRotation(270);
+                        obstacles.get(obstaclenum).setImageResource(resources.get("o" + obstaclenum + "w"));
+                        break;
+                    default:
+                        break;
+
+                }
+            }
+        }
+    }
     private void SaveButton() {
         SavedPreset=savedObstacles();
-        Toast.makeText(this, "Preset 1 Applied", Toast.LENGTH_LONG).show();
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder
+                .append("ALG:")
+                .append(getObstacleString(obstacle1)+"0;")
+                .append(getObstacleString(obstacle2)+"1;")
+                .append(getObstacleString(obstacle3)+"2;")
+                .append(getObstacleString(obstacle4)+"3;")
+                .append(getObstacleString(obstacle5)+"4;")
+                .append(getObstacleString(obstacle6)+"5;")
+                .append(getObstacleString(obstacle7)+"6;")
+                .append(getObstacleString(obstacle8)+"7;");
+
+        if (BluetoothConnectionService.BluetoothConnectionStatus == true) {
+            //Toast.makeText(this, stringBuilder.toString(), Toast.LENGTH_LONG).show();
+            byte[] bytes = stringBuilder.toString().getBytes(Charset.defaultCharset());
+            BluetoothConnectionService.write(bytes);
+            Toast.makeText(Arena.this, "Obstacles sent", Toast.LENGTH_LONG).show();}
     }
 
 
@@ -1636,6 +1690,7 @@ public class Arena extends AppCompatActivity {
         String[][] SavedPreset={getObstacleLocation(obstacle1).split(","),getObstacleLocation(obstacle2).split(","),getObstacleLocation(obstacle3).split(","),
                 getObstacleLocation(obstacle4).split(","),getObstacleLocation(obstacle5).split(","),getObstacleLocation(obstacle6).split(","),
                 getObstacleLocation(obstacle7).split(","),getObstacleLocation(obstacle8).split(",")};
+        //{1,2,N,2,3,E}
         Log.d("tag","saved Obstacle data"+SavedPreset);
         return SavedPreset;
     }
@@ -1822,7 +1877,12 @@ public class Arena extends AppCompatActivity {
                     }else{
                     updateStatusWindow(msg);}
                     break;
-
+                case "PLOT":
+                    String receivedmsg =message.substring(message.indexOf(",")+1); //string after PLOT,
+                    String [] obstaclesPreset=receivedmsg.split(";"); //create 2d array for obstacle data\
+                    Log.d("log","obstacle data is "+ Arrays.toString(obstaclesPreset) );
+                    setObstacles(obstaclesPreset);
+                    break;
                 case "MOVE":
                     String moveCommand = message.substring(message.indexOf(',')+1);  // substring after MOVE (w10n)
                     if (moveCommand.length() > 2){ // Forward and Reverse commands
