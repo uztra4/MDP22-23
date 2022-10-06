@@ -52,7 +52,8 @@ from utils.general import labels_to_image_weights
 
 # --- constants ---
 WIFI_PORT = 5001
-HOST = '192.168.45.208'   # IP address of server (PC)
+# HOST = '192.168.45.208'   # IP address of server (PC)
+HOST = '192.168.45.68'   # IP address of server (PC)
 #HOST = '172.0.0.1'
 PORT = WIFI_PORT  # Local port
 

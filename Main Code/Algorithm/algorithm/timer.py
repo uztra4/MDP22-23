@@ -23,7 +23,7 @@ class Timer:
         seconds = int(cls.ticks / 1000 % 60)
         minutes = int(cls.ticks / 60000 % 24)
         out = '{minutes:02d}:{seconds:02d}:{millis:03d}'.format(minutes=minutes, millis=millis, seconds=seconds)
-        font.render_to(screen, (settings.GRID_LENGTH + 25, settings.GRID_LENGTH / 2), out, pygame.Color('dodgerblue'))
+        font.render_to(screen, (settings.GRID_LENGTH + 40, settings.GRID_LENGTH / 2), out, pygame.Color('dodgerblue'))
 
     @classmethod
     def start_timer(cls):
