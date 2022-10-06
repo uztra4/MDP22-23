@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.provider.Settings;
@@ -37,22 +38,9 @@ import java.util.concurrent.TimeUnit;
 
 
 public class Arena extends AppCompatActivity {
-    float[] obs1save = new float[2];
-    float[] obs2save = new float[2];
-    float[] obs3save = new float[2];
-    float[] obs4save = new float[2];
-    float[] obs5save = new float[2];
-    float[] obs6save = new float[2];
-    float[] obs7save = new float[2];
-    float[] obs8save = new float[2];
-    float[] carsave = new float[2];
+
 
     public static final String SHARED_PREFS = "sharedPrefs";
-    public static final String obs1xString = "Obstacle 1x String";
-    public static final String obs1yString = "Obstacle 1y String";
-    public static final String carXString = "carX String";
-    public static final String carYString = "carY String";
-
     public static Boolean firstStart = true;
 
 //    protected void onSaveInstanceState(Bundle outState){
@@ -73,22 +61,85 @@ public class Arena extends AppCompatActivity {
         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
 
-        editor.putFloat(obs1xString, findViewById(R.id.obstacle1).getTranslationX());
-        editor.putFloat(obs1yString, findViewById(R.id.obstacle1).getTranslationY());
-        Log.d("saveData", "obs1x: " + Float.toString(obstacle1.getTranslationX()));
-        editor.putFloat("carXString", findViewById(R.id.car).getTranslationX());
-        editor.putFloat("carYString", findViewById(R.id.car).getTranslationY());
+        editor.putFloat("obs1X", findViewById(R.id.obstacle1).getTranslationX());
+        editor.putFloat("obs1Y", findViewById(R.id.obstacle1).getTranslationY());
+        editor.putFloat("obs1Rotation", findViewById(R.id.obstacle1).getRotation());
+        Log.d("saveData", "obs1X: " + Float.toString(obstacle1.getTranslationX()));
 
+        editor.putFloat("obs2X", findViewById(R.id.obstacle2).getTranslationX());
+        editor.putFloat("obs2Y", findViewById(R.id.obstacle2).getTranslationY());
+        editor.putFloat("obs2Rotation", findViewById(R.id.obstacle2).getRotation());
+
+
+        editor.putFloat("obs3X", findViewById(R.id.obstacle3).getTranslationX());
+        editor.putFloat("obs3Y", findViewById(R.id.obstacle3).getTranslationY());
+        editor.putFloat("obs3Rotation", findViewById(R.id.obstacle3).getRotation());
+
+        editor.putFloat("obs4X", findViewById(R.id.obstacle4).getTranslationX());
+        editor.putFloat("obs4Y", findViewById(R.id.obstacle4).getTranslationY());
+        editor.putFloat("obs4Rotation", findViewById(R.id.obstacle4).getRotation());
+
+
+        editor.putFloat("obs5X", findViewById(R.id.obstacle5).getTranslationX());
+        editor.putFloat("obs5Y", findViewById(R.id.obstacle5).getTranslationY());
+        editor.putFloat("obs5Rotation", findViewById(R.id.obstacle5).getRotation());
+
+        editor.putFloat("obs6X", findViewById(R.id.obstacle6).getTranslationX());
+        editor.putFloat("obs6Y", findViewById(R.id.obstacle6).getTranslationY());
+        editor.putFloat("obs6Rotation", findViewById(R.id.obstacle6).getRotation());
+
+        editor.putFloat("obs7X", findViewById(R.id.obstacle7).getTranslationX());
+        editor.putFloat("obs7Y", findViewById(R.id.obstacle7).getTranslationY());
+        editor.putFloat("obs7Rotation", findViewById(R.id.obstacle7).getRotation());
+
+        editor.putFloat("obs8X", findViewById(R.id.obstacle8).getTranslationX());
+        editor.putFloat("obs8Y", findViewById(R.id.obstacle8).getTranslationY());
+        editor.putFloat("obs8Rotation", findViewById(R.id.obstacle8).getRotation());
+
+        editor.putFloat("carX", findViewById(R.id.car).getTranslationX());
+        editor.putFloat("carY", findViewById(R.id.car).getTranslationY());
+        editor.putFloat("carRotation", findViewById(R.id.car).getRotation());
         editor.apply();
     }
 
     public void loadData(){
         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
-        obstacle1.setX(sharedPreferences.getFloat(obs1xString, 0.0f));
-        obstacle1.setY(sharedPreferences.getFloat(obs1yString, 0.0f));
-        car.setX(sharedPreferences.getFloat("carXString", 0.0f));
-        car.setY(sharedPreferences.getFloat("carYString", 0.0f));
-        Log.d("LoadData", "obs1x: " + Float.toString(sharedPreferences.getFloat(obs1xString, 0.0f)));
+        obstacle1.setX(sharedPreferences.getFloat("obs1X", 0.0f));
+        obstacle1.setY(sharedPreferences.getFloat("obs1Y", 0.0f));
+        obstacle1.setRotation((sharedPreferences.getFloat("obs1Rotation", 0.0f)));
+
+        obstacle2.setX(sharedPreferences.getFloat("obs2X", 0.0f));
+        obstacle2.setY(sharedPreferences.getFloat("obs2Y", 0.0f));
+        obstacle2.setRotation((sharedPreferences.getFloat("obs2Rotation", 0.0f)));
+
+        obstacle3.setX(sharedPreferences.getFloat("obs3X", 0.0f));
+        obstacle3.setY(sharedPreferences.getFloat("obs3Y", 0.0f));
+        obstacle3.setRotation((sharedPreferences.getFloat("obs3Rotation", 0.0f)));
+
+        obstacle4.setX(sharedPreferences.getFloat("obs4X", 0.0f));
+        obstacle4.setY(sharedPreferences.getFloat("obs4Y", 0.0f));
+        obstacle4.setRotation((sharedPreferences.getFloat("obs4Rotation", 0.0f)));
+
+        obstacle5.setX(sharedPreferences.getFloat("obs5X", 0.0f));
+        obstacle5.setY(sharedPreferences.getFloat("obs5Y", 0.0f));
+        obstacle5.setRotation((sharedPreferences.getFloat("obs5Rotation", 0.0f)));
+
+        obstacle6.setX(sharedPreferences.getFloat("obs6X", 0.0f));
+        obstacle6.setY(sharedPreferences.getFloat("obs6Y", 0.0f));
+        obstacle6.setRotation((sharedPreferences.getFloat("obs6Rotation", 0.0f)));
+
+        obstacle7.setX(sharedPreferences.getFloat("obs7X", 0.0f));
+        obstacle7.setY(sharedPreferences.getFloat("obs7Y", 0.0f));
+        obstacle7.setRotation((sharedPreferences.getFloat("obs7Rotation", 0.0f)));
+
+        obstacle8.setX(sharedPreferences.getFloat("obs8X", 0.0f));
+        obstacle8.setY(sharedPreferences.getFloat("obs8Y", 0.0f));
+        obstacle8.setRotation((sharedPreferences.getFloat("obs8Rotation", 0.0f)));
+
+        car.setX(sharedPreferences.getFloat("carX", 0.0f));
+        car.setY(sharedPreferences.getFloat("carY", 0.0f));
+        car.setRotation(sharedPreferences.getFloat("carRotation", 0.0f));
+        Log.d("LoadData", "obs1X: " + Float.toString(sharedPreferences.getFloat("obs1X", 0.0f)));
     }
 
     private static final int SNAP_GRID_INTERVAL = 40;
