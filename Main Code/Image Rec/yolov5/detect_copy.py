@@ -421,19 +421,16 @@ def main(opt):
                     count_miss = 0
                     print("Obstacle number is", obstacle_num)
 
-                elif image_label =='-1':
-                    print("No object detected")
+                elif image_label =='-1' or image_label == 'bullseye':
+                    print("No object detected/bullseye detected.")
                     count_miss = count_miss + 1
                     print("didnt detect for:", count_miss)
+                    image_label = '-1'
                     if count_miss == 3:
                         obstacle_num = obstacle_num + 1
                         count_miss = 0
 
-                else:
-                    print("bullseye detected")
-
-
-                sent_label = str(obstacle_num) + ':' + str(image_label) # String Example = "1:12"
+                sent_label = str(obstacle_num) + ':' + str(image_label) # String Example = "1:12", "2:-1", "3:bullseye"
 
                 conn.send(f'{sent_label}'.encode())
                 print(sent_label," is sent successfully")
@@ -473,9 +470,13 @@ def main(opt):
                 finally:
                     print("showing stitched image")
                     stitched = cv2.imread('collage.jpg')
-                    cv2.startWindowThread()
-                    cv2.namedWindow("stitched")
-                    cv2.imshow("stitched", stitched)
+                    h = int(stitched.shape[0]*pos) # scale h
+                    w = int(stitched.shape[1]*pos) # scale w
+                    pos = 0.4 #scaling factor
+                    im = cv2.resize(stitched, (w, h)) 
+                    cv2.namedWindow("stitched", cv2.WINDOW_NORMAL)
+                    cv2.resizeWindow("stitched", w, h)
+                    cv2.imshow("stitched", im)
                     cv2.waitKey(30)  
                         
                 if KeyboardInterrupt:
