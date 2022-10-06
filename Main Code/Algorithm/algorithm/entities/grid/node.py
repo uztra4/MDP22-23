@@ -51,10 +51,10 @@ class Node:
         bottom = y_pygame + settings.GRID_CELL_LENGTH // 2
 
         # Draw
-        pygame.draw.line(screen, colors.SILVER, (left, top), (left, bottom))  # Left border
-        pygame.draw.line(screen, colors.SILVER, (left, top), (right, top))  # Top border
-        pygame.draw.line(screen, colors.SILVER, (right, top), (right, bottom))  # Right border
-        pygame.draw.line(screen, colors.SILVER, (left, bottom), (right, bottom))  # Bottom border
+        pygame.draw.line(screen, colors.PLATINUM, (left, top), (left, bottom))  # Left border
+        pygame.draw.line(screen, colors.PLATINUM, (left, top), (right, top))  # Top border
+        pygame.draw.line(screen, colors.PLATINUM, (right, top), (right, bottom))  # Right border
+        pygame.draw.line(screen, colors.PLATINUM, (left, bottom), (right, bottom))  # Bottom border
 
     def draw(self, screen):
         # Draw self

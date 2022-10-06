@@ -69,15 +69,29 @@ class Grid:
         # Check if position too close to the border.
         # NOTE: We allow the robot to overextend the border a little!
         # We do this by setting the limit to be GRID_CELL_LENGTH rather than ROBOT_SAFETY_DISTANCE
-        if (pos.y < settings.GRID_CELL_LENGTH or
-            pos.y > settings.GRID_LENGTH - settings.GRID_CELL_LENGTH) or \
-                (pos.x < settings.GRID_CELL_LENGTH or
-                 pos.x > settings.GRID_LENGTH - settings.GRID_CELL_LENGTH):
+        if (pos.y < 0 or
+            pos.y > settings.GRID_LENGTH) or \
+                (pos.x < 0 or
+                 pos.x > settings.GRID_LENGTH):
             return False
+
+        # if (pos.y < settings.GRID_CELL_LENGTH or
+        #     pos.y > settings.GRID_LENGTH - settings.GRID_CELL_LENGTH) or \
+        #         (pos.x < settings.GRID_CELL_LENGTH or
+        #          pos.x > settings.GRID_LENGTH - settings.GRID_CELL_LENGTH):
+        #     return False
         return True
 
     @classmethod
     def draw_arena_borders(cls, screen):
+
+        # Draw thicker lines on multipers of 2
+        for i in range(1, settings.GRID_LENGTH // settings.GRID_CELL_LENGTH):
+            if i % 5 == 0:
+                pygame.draw.line(screen, colors.DARK_GRAY, (0, 0 + i * settings.GRID_CELL_LENGTH),
+                                 (settings.GRID_LENGTH, 0 + i * settings.GRID_CELL_LENGTH))
+                pygame.draw.line(screen, colors.DARK_GRAY, (0 + i * settings.GRID_CELL_LENGTH, 0),
+                                 (0 + i * settings.GRID_CELL_LENGTH, settings.GRID_LENGTH))
         """
         Draw the arena borders.
         """
@@ -89,6 +103,15 @@ class Grid:
         pygame.draw.line(screen, colors.RED, (0, 0), (0, settings.GRID_LENGTH))
         # Draw right border
         pygame.draw.line(screen, colors.RED, (settings.GRID_LENGTH, 0), (settings.GRID_LENGTH, settings.GRID_LENGTH))
+
+
+        # Draw numbers on side of grid
+        font = pygame.freetype.SysFont(None, 18)
+        font.origin = True
+        for i in range(settings.GRID_LENGTH//settings.GRID_CELL_LENGTH):
+            font.render_to(screen, (i*settings.GRID_CELL_LENGTH+8, settings.GRID_LENGTH + 25), f"{i}", pygame.Color('DarkBlue'))
+        for j in range(settings.GRID_LENGTH//settings.GRID_CELL_LENGTH):
+            font.render_to(screen, (settings.GRID_LENGTH + 10, settings.GRID_LENGTH - j* settings.GRID_CELL_LENGTH - 8), f"{j}", pygame.Color('DarkBlue'))
 
     def draw_obstacles(self, screen):
         for ob in self.obstacles:

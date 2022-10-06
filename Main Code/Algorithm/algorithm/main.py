@@ -207,5 +207,5 @@ def sim():
 
 
 if __name__ == '__main__':
-    # sim()
-    init()
+    sim()
+    # init()
