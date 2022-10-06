@@ -23,6 +23,9 @@ class Hamiltonian:
         # Create all the commands required to finish the course.
         self.commands = deque()
 
+    def get_simple_hamiltonian(self):
+        return self.simple_hamiltonian
+
     def compute_simple_hamiltonian_path(self) -> Tuple[Obstacle]:
         """
         Get the Hamiltonian Path to all points with the best possible effort.

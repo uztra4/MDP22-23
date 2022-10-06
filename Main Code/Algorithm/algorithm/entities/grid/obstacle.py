@@ -79,14 +79,143 @@ class Obstacle:
         """
         offset = -5 * settings.SCALING_FACTOR
 
-        if self.pos.direction == Direction.TOP:
-            return RobotPosition(self.pos.x, self.pos.y + settings.OBSTACLE_SAFETY_WIDTH + settings.OBSTACLE_LENGTH + offset, Direction.BOTTOM)
-        elif self.pos.direction == Direction.BOTTOM:
-            return RobotPosition(self.pos.x, self.pos.y - settings.OBSTACLE_SAFETY_WIDTH - settings.OBSTACLE_LENGTH - offset, Direction.TOP)
-        elif self.pos.direction == Direction.LEFT:
-            return RobotPosition(self.pos.x - settings.OBSTACLE_SAFETY_WIDTH - settings.OBSTACLE_LENGTH - offset, self.pos.y, Direction.RIGHT)
+        if self.pos.y//settings.SCALING_FACTOR - 5 == 0 and self.pos.x//settings.SCALING_FACTOR - 5 == 0:
+            if self.pos.direction == Direction.TOP:
+                return RobotPosition(self.pos.x + 10 * settings.SCALING_FACTOR,
+                                     self.pos.y + settings.OBSTACLE_SAFETY_WIDTH + settings.OBSTACLE_LENGTH + offset,
+                                     Direction.BOTTOM)
+            elif self.pos.direction == Direction.BOTTOM:
+                return RobotPosition(self.pos.x,
+                                     self.pos.y - settings.OBSTACLE_SAFETY_WIDTH - settings.OBSTACLE_LENGTH - offset,
+                                     Direction.TOP)
+            elif self.pos.direction == Direction.LEFT:
+                return RobotPosition(self.pos.x - settings.OBSTACLE_SAFETY_WIDTH - settings.OBSTACLE_LENGTH - offset,
+                                     self.pos.y, Direction.RIGHT)
+            else:
+                return RobotPosition(self.pos.x + settings.OBSTACLE_SAFETY_WIDTH + settings.OBSTACLE_LENGTH + offset,
+                                     self.pos.y + 10 * settings.SCALING_FACTOR, Direction.LEFT)
+
+        elif self.pos.y//settings.SCALING_FACTOR - 5 == 190 and self.pos.x//settings.SCALING_FACTOR - 5 == 0:
+            if self.pos.direction == Direction.TOP:
+                return RobotPosition(self.pos.x,
+                                     self.pos.y + settings.OBSTACLE_SAFETY_WIDTH + settings.OBSTACLE_LENGTH + offset,
+                                     Direction.BOTTOM)
+            elif self.pos.direction == Direction.BOTTOM:
+                return RobotPosition(self.pos.x + 10 * settings.SCALING_FACTOR,
+                                     self.pos.y - settings.OBSTACLE_SAFETY_WIDTH - settings.OBSTACLE_LENGTH - offset,
+                                     Direction.TOP)
+            elif self.pos.direction == Direction.LEFT:
+                return RobotPosition(self.pos.x - settings.OBSTACLE_SAFETY_WIDTH - settings.OBSTACLE_LENGTH - offset,
+                                     self.pos.y, Direction.RIGHT)
+            else:
+                return RobotPosition(self.pos.x + settings.OBSTACLE_SAFETY_WIDTH + settings.OBSTACLE_LENGTH + offset,
+                                     self.pos.y - 10 * settings.SCALING_FACTOR, Direction.LEFT)
+
+        elif self.pos.y//settings.SCALING_FACTOR - 5 == 190 and self.pos.x//settings.SCALING_FACTOR - 5 == 190:
+            if self.pos.direction == Direction.TOP:
+                return RobotPosition(self.pos.x,
+                                     self.pos.y + settings.OBSTACLE_SAFETY_WIDTH + settings.OBSTACLE_LENGTH + offset,
+                                     Direction.BOTTOM)
+            elif self.pos.direction == Direction.BOTTOM:
+                return RobotPosition(self.pos.x - 10 * settings.SCALING_FACTOR,
+                                     self.pos.y - settings.OBSTACLE_SAFETY_WIDTH - settings.OBSTACLE_LENGTH - offset,
+                                     Direction.TOP)
+            elif self.pos.direction == Direction.LEFT:
+                return RobotPosition(self.pos.x - settings.OBSTACLE_SAFETY_WIDTH - settings.OBSTACLE_LENGTH - offset,
+                                     self.pos.y - 10 * settings.SCALING_FACTOR, Direction.RIGHT)
+            else:
+                return RobotPosition(self.pos.x + settings.OBSTACLE_SAFETY_WIDTH + settings.OBSTACLE_LENGTH + offset,
+                                     self.pos.y, Direction.LEFT)
+
+        elif self.pos.y//settings.SCALING_FACTOR - 5 == 0 and self.pos.x//settings.SCALING_FACTOR - 5 == 190:
+            if self.pos.direction == Direction.TOP:
+                return RobotPosition(self.pos.x - 10 * settings.SCALING_FACTOR,
+                                     self.pos.y + settings.OBSTACLE_SAFETY_WIDTH + settings.OBSTACLE_LENGTH + offset,
+                                     Direction.BOTTOM)
+            elif self.pos.direction == Direction.BOTTOM:
+                return RobotPosition(self.pos.x,
+                                     self.pos.y - settings.OBSTACLE_SAFETY_WIDTH - settings.OBSTACLE_LENGTH - offset,
+                                     Direction.TOP)
+            elif self.pos.direction == Direction.LEFT:
+                return RobotPosition(self.pos.x - settings.OBSTACLE_SAFETY_WIDTH - settings.OBSTACLE_LENGTH - offset,
+                                     self.pos.y + 10 * settings.SCALING_FACTOR, Direction.RIGHT)
+            else:
+                return RobotPosition(self.pos.x + settings.OBSTACLE_SAFETY_WIDTH + settings.OBSTACLE_LENGTH + offset,
+                                     self.pos.y, Direction.LEFT)
+
+        elif self.pos.y//settings.SCALING_FACTOR - 5 == 0:
+            if self.pos.direction == Direction.TOP:
+                return RobotPosition(self.pos.x,
+                                     self.pos.y + settings.OBSTACLE_SAFETY_WIDTH + settings.OBSTACLE_LENGTH + offset,
+                                     Direction.BOTTOM)
+            elif self.pos.direction == Direction.BOTTOM:
+                return RobotPosition(self.pos.x,
+                                     self.pos.y - settings.OBSTACLE_SAFETY_WIDTH - settings.OBSTACLE_LENGTH - offset,
+                                     Direction.TOP)
+            elif self.pos.direction == Direction.LEFT:
+                return RobotPosition(self.pos.x - settings.OBSTACLE_SAFETY_WIDTH - settings.OBSTACLE_LENGTH - offset,
+                                     self.pos.y + 10 * settings.SCALING_FACTOR, Direction.RIGHT)
+            else:
+                return RobotPosition(self.pos.x + settings.OBSTACLE_SAFETY_WIDTH + settings.OBSTACLE_LENGTH + offset,
+                                     self.pos.y + 10 * settings.SCALING_FACTOR, Direction.LEFT)
+
+        elif self.pos.y//settings.SCALING_FACTOR - 5 == 190:
+            if self.pos.direction == Direction.TOP:
+                return RobotPosition(self.pos.x,
+                                     self.pos.y + settings.OBSTACLE_SAFETY_WIDTH + settings.OBSTACLE_LENGTH + offset,
+                                     Direction.BOTTOM)
+            elif self.pos.direction == Direction.BOTTOM:
+                return RobotPosition(self.pos.x,
+                                     self.pos.y - settings.OBSTACLE_SAFETY_WIDTH - settings.OBSTACLE_LENGTH - offset,
+                                     Direction.TOP)
+            elif self.pos.direction == Direction.LEFT:
+                return RobotPosition(self.pos.x - settings.OBSTACLE_SAFETY_WIDTH - settings.OBSTACLE_LENGTH - offset,
+                                     self.pos.y - 10 * settings.SCALING_FACTOR, Direction.RIGHT)
+            else:
+                return RobotPosition(self.pos.x + settings.OBSTACLE_SAFETY_WIDTH + settings.OBSTACLE_LENGTH + offset,
+                                     self.pos.y - 10 * settings.SCALING_FACTOR, Direction.LEFT)
+
+        elif self.pos.x//settings.SCALING_FACTOR - 5 == 0:
+            if self.pos.direction == Direction.TOP:
+                return RobotPosition(self.pos.x + 10 * settings.SCALING_FACTOR,
+                                     self.pos.y + settings.OBSTACLE_SAFETY_WIDTH + settings.OBSTACLE_LENGTH + offset,
+                                     Direction.BOTTOM)
+            elif self.pos.direction == Direction.BOTTOM:
+                return RobotPosition(self.pos.x + 10 * settings.SCALING_FACTOR,
+                                     self.pos.y - settings.OBSTACLE_SAFETY_WIDTH - settings.OBSTACLE_LENGTH - offset,
+                                     Direction.TOP)
+            elif self.pos.direction == Direction.LEFT:
+                return RobotPosition(self.pos.x - settings.OBSTACLE_SAFETY_WIDTH - settings.OBSTACLE_LENGTH - offset,
+                                     self.pos.y, Direction.RIGHT)
+            else:
+                return RobotPosition(self.pos.x + settings.OBSTACLE_SAFETY_WIDTH + settings.OBSTACLE_LENGTH + offset,
+                                     self.pos.y, Direction.LEFT)
+
+        elif self.pos.x//settings.SCALING_FACTOR - 5 == 190:
+            if self.pos.direction == Direction.TOP:
+                return RobotPosition(self.pos.x - 10 * settings.SCALING_FACTOR,
+                                     self.pos.y + settings.OBSTACLE_SAFETY_WIDTH + settings.OBSTACLE_LENGTH + offset,
+                                     Direction.BOTTOM)
+            elif self.pos.direction == Direction.BOTTOM:
+                return RobotPosition(self.pos.x - 10 * settings.SCALING_FACTOR,
+                                     self.pos.y - settings.OBSTACLE_SAFETY_WIDTH - settings.OBSTACLE_LENGTH - offset,
+                                     Direction.TOP)
+            elif self.pos.direction == Direction.LEFT:
+                return RobotPosition(self.pos.x - settings.OBSTACLE_SAFETY_WIDTH - settings.OBSTACLE_LENGTH - offset,
+                                     self.pos.y, Direction.RIGHT)
+            else:
+                return RobotPosition(self.pos.x + settings.OBSTACLE_SAFETY_WIDTH + settings.OBSTACLE_LENGTH + offset,
+                                     self.pos.y, Direction.LEFT)
+
         else:
-            return RobotPosition(self.pos.x + settings.OBSTACLE_SAFETY_WIDTH + settings.OBSTACLE_LENGTH + offset, self.pos.y, Direction.LEFT)
+            if self.pos.direction == Direction.TOP:
+                return RobotPosition(self.pos.x, self.pos.y + settings.OBSTACLE_SAFETY_WIDTH + settings.OBSTACLE_LENGTH + offset, Direction.BOTTOM)
+            elif self.pos.direction == Direction.BOTTOM:
+                return RobotPosition(self.pos.x, self.pos.y - settings.OBSTACLE_SAFETY_WIDTH - settings.OBSTACLE_LENGTH - offset, Direction.TOP)
+            elif self.pos.direction == Direction.LEFT:
+                return RobotPosition(self.pos.x - settings.OBSTACLE_SAFETY_WIDTH - settings.OBSTACLE_LENGTH - offset, self.pos.y, Direction.RIGHT)
+            else:
+                return RobotPosition(self.pos.x + settings.OBSTACLE_SAFETY_WIDTH + settings.OBSTACLE_LENGTH + offset, self.pos.y, Direction.LEFT)
 
     def draw_self(self, screen):
         # Draw the obstacle onto the grid.
