@@ -77,7 +77,7 @@ class Obstacle:
 
         The object will also store the angle that the robot should face.
         """
-        offset = -5 * settings.SCALING_FACTOR
+        offset = 0 * settings.SCALING_FACTOR
 
         if self.pos.direction == Direction.TOP:
             return RobotPosition(self.pos.x, self.pos.y + settings.OBSTACLE_SAFETY_WIDTH + settings.OBSTACLE_LENGTH + offset, Direction.BOTTOM)
