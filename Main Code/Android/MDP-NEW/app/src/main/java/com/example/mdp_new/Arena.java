@@ -1138,10 +1138,11 @@ public class Arena extends AppCompatActivity {
                 .append(getObstacleString(obstacle6)+"5;")
                 .append(getObstacleString(obstacle7)+"6;")
                 .append(getObstacleString(obstacle8)+"7;");
+        String IRstart = "ALG:START";
 
         if (BluetoothConnectionService.BluetoothConnectionStatus == true) {
             //Toast.makeText(this, stringBuilder.toString(), Toast.LENGTH_LONG).show();
-            byte[] bytes = stringBuilder.toString().getBytes(Charset.defaultCharset());
+            byte[] bytes = IRstart.getBytes(Charset.defaultCharset());
             BluetoothConnectionService.write(bytes);
             Toast.makeText(Arena.this, "Obstacles sent", Toast.LENGTH_LONG).show();
             updateStatusWindow("IR started");
@@ -1471,7 +1472,7 @@ public class Arena extends AppCompatActivity {
                     break;
             }
 
-        Toast.makeText(this, "Preset 2 Applied", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Preset 1 Applied", Toast.LENGTH_SHORT).show();
     }
     }
 
@@ -1513,7 +1514,23 @@ public class Arena extends AppCompatActivity {
     }
     private void SaveButton() {
         SavedPreset=savedObstacles();
-        Toast.makeText(this, "Preset 1 Applied", Toast.LENGTH_LONG).show();
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder
+                .append("ALG:")
+                .append(getObstacleString(obstacle1)+"0;")
+                .append(getObstacleString(obstacle2)+"1;")
+                .append(getObstacleString(obstacle3)+"2;")
+                .append(getObstacleString(obstacle4)+"3;")
+                .append(getObstacleString(obstacle5)+"4;")
+                .append(getObstacleString(obstacle6)+"5;")
+                .append(getObstacleString(obstacle7)+"6;")
+                .append(getObstacleString(obstacle8)+"7;");
+
+        if (BluetoothConnectionService.BluetoothConnectionStatus == true) {
+            //Toast.makeText(this, stringBuilder.toString(), Toast.LENGTH_LONG).show();
+            byte[] bytes = stringBuilder.toString().getBytes(Charset.defaultCharset());
+            BluetoothConnectionService.write(bytes);
+            Toast.makeText(Arena.this, "Obstacles sent", Toast.LENGTH_LONG).show();}
     }
 
 
