@@ -470,13 +470,9 @@ def main(opt):
                 finally:
                     print("showing stitched image")
                     stitched = cv2.imread('collage.jpg')
-                    h = int(stitched.shape[0]*pos) # scale h
-                    w = int(stitched.shape[1]*pos) # scale w
-                    pos = 0.4 #scaling factor
-                    im = cv2.resize(stitched, (w, h)) 
-                    cv2.namedWindow("stitched", cv2.WINDOW_NORMAL)
-                    cv2.resizeWindow("stitched", w, h)
-                    cv2.imshow("stitched", im)
+                    cv2.startWindowThread()
+                    cv2.namedWindow("stitched")
+                    cv2.imshow("stitched", stitched)
                     cv2.waitKey(30)  
                         
                 if KeyboardInterrupt:
