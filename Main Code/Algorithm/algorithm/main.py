@@ -110,11 +110,11 @@ class Main:
             # Send the list of commands over.
             obs_priority = app.robot.hamiltonian.get_simple_hamiltonian()
             print(obs_priority)
-            obs_str = "AND:"
+            obs_str = "RPI:PLOT,"
             for i in range(len(obs_priority)):
                 if isinstance(obs_priority[i], Obstacle):
                     x = obs_priority[i].pos.x//settings.SCALING_FACTOR // 10
-                    y = (200 - (obs_priority[i].pos.y // settings.SCALING_FACTOR) + 5) // 10
+                    y = (200 - (obs_priority[i].pos.y // settings.SCALING_FACTOR) - 5) // 10
                     match obs_priority[i].pos.direction:
                         case Direction.TOP:
                             direction = "N"
@@ -125,11 +125,25 @@ class Main:
                         case Direction.LEFT:
                             direction = "W"
                     obs_str = obs_str + str(x) + "," + str(y) + "," + direction + ";"
+            obs_str = obs_str[:-1] + "\n"
             print(obs_str)
             print("Sending list of commands to RPi...")
             self.commands = app.robot.convert_all_commands()
             self.commands.append("RPI:STOPPED\n")
-            client.send_message(obs_str)
+            client.send_message([obs_str])
+
+            # print("Sending list of commands to RPi...")
+            # self.commands = app.robot.convert_all_commands()
+            # self.commands.append("RPI:STOPPED\n")
+            #
+            # if len(self.commands) != 0:
+            #     sent_commands = self.commands[:self.commands.index("STM:pn\n") + 1]
+            #     self.commands = self.commands[self.commands.index("STM:pn\n") + 1:]
+            #     print(sent_commands)
+            #     print(self.commands)
+            #     client.send_message(sent_commands)
+            #     # client.close()
+
 
         # String commands from Rpi
         elif isinstance(data[0], str):
