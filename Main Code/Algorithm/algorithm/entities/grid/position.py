@@ -11,6 +11,7 @@ class Position:
         Most of the time, we do not need to set angle. Should only be used for the robot.
         Note that the angle should be in DEGREES.
         """
+
         self.x = x
         self.y = y
         self.direction = direction
