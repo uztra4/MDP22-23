@@ -1368,6 +1368,10 @@ public class Arena extends AppCompatActivity {
         } else {
             Toast.makeText(Arena.this, "Please connect to Bluetooth.", Toast.LENGTH_LONG).show();
         }
+        Chronometer IRTimer = (Chronometer) findViewById(R.id.IRTimer);
+        long elapsedRealtime = SystemClock.elapsedRealtime();
+        IRTimer.setBase(elapsedRealtime);
+        IRTimer.start();
     }
 
     private void resetObstaclesButton() {
