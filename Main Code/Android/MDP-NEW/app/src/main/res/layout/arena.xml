@@ -20,7 +20,7 @@
         android:id="@+id/car"
         android:layout_width="120px"
         android:layout_height="120px"
-        app:srcCompat="@drawable/robot"
+        app:srcCompat="@drawable/retrocar"
         tools:ignore="MissingConstraints" />
 
 
