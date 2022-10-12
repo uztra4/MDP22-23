@@ -99,6 +99,11 @@ public class Arena extends AppCompatActivity {
         editor.putFloat("carX", findViewById(R.id.car).getTranslationX());
         editor.putFloat("carY", findViewById(R.id.car).getTranslationY());
         editor.putFloat("carRotation", findViewById(R.id.car).getRotation());
+        int x = (int) (car.getX() + SNAP_GRID_INTERVAL)/SNAP_GRID_INTERVAL;
+        int y = (int) (car.getY() + SNAP_GRID_INTERVAL)/SNAP_GRID_INTERVAL;
+        editor.putString("x_tv", String.valueOf(car_x.getText()));
+        editor.putString("y_tv", String.valueOf(car_y.getText()));
+        editor.putString("car_dir", String.valueOf(car_dir.getText()));
         editor.apply();
     }
 
@@ -139,6 +144,10 @@ public class Arena extends AppCompatActivity {
         car.setX(sharedPreferences.getFloat("carX", 0.0f));
         car.setY(sharedPreferences.getFloat("carY", 0.0f));
         car.setRotation(sharedPreferences.getFloat("carRotation", 0.0f));
+
+        car_x.setText((sharedPreferences.getString("x_tv", "")));
+        car_y.setText((sharedPreferences.getString("y_tv","")));
+        car_dir.setText((sharedPreferences.getString("car_dir","")));
         Log.d("LoadData", "obs1X: " + Float.toString(sharedPreferences.getFloat("obs1X", 0.0f)));
     }
 
