@@ -42,7 +42,7 @@ class Main:
         if self.client is None:
             print(f"Attempting to connect to {settings.RPI_HOST}:{settings.RPI_PORT}")
             self.client = RPiClient(settings.RPI_HOST, settings.RPI_PORT)
-            # Wait to connect to RPi.
+        #     Wait to connect to RPi.
             while True:
                 try:
                     self.client.connect()
@@ -108,16 +108,42 @@ class Main:
             app.init()
             app.execute()
             # Send the list of commands over.
+            obs_priority = app.robot.hamiltonian.get_simple_hamiltonian()
+            print(obs_priority)
+            obs_str = "RPI:PLOT,"
+            for i in range(len(obs_priority)):
+                if isinstance(obs_priority[i], Obstacle):
+                    x = obs_priority[i].pos.x//settings.SCALING_FACTOR // 10
+                    y = (200 - (obs_priority[i].pos.y // settings.SCALING_FACTOR) - 5) // 10
+                    match obs_priority[i].pos.direction:
+                        case Direction.TOP:
+                            direction = "N"
+                        case Direction.BOTTOM:
+                            direction = "S"
+                        case Direction.RIGHT:
+                            direction = "E"
+                        case Direction.LEFT:
+                            direction = "W"
+                    obs_str = obs_str + str(x) + "," + str(y) + "," + direction + ";"
+            obs_str = obs_str[:-1] + "\n"
+            print(obs_str)
             print("Sending list of commands to RPi...")
             self.commands = app.robot.convert_all_commands()
             self.commands.append("RPI:STOPPED\n")
-            if len(self.commands) != 0:
-                sent_commands = self.commands[:self.commands.index("STM:pn\n") + 1]
-                self.commands = self.commands[self.commands.index("STM:pn\n") + 1:]
-                print(sent_commands)
-                print(self.commands)
-                client.send_message(sent_commands)
-                # client.close()
+            client.send_message([obs_str])
+
+            # print("Sending list of commands to RPi...")
+            # self.commands = app.robot.convert_all_commands()
+            # self.commands.append("RPI:STOPPED\n")
+            #
+            # if len(self.commands) != 0:
+            #     sent_commands = self.commands[:self.commands.index("STM:pn\n") + 1]
+            #     self.commands = self.commands[self.commands.index("STM:pn\n") + 1:]
+            #     print(sent_commands)
+            #     print(self.commands)
+            #     client.send_message(sent_commands)
+            #     # client.close()
+
 
         # String commands from Rpi
         elif isinstance(data[0], str):
@@ -162,12 +188,23 @@ class Main:
                         print(self.commands)
                         client.send_message(amended_commands)
 
+            # Start sending algo commands
+            elif data[0] == "START":
+                if len(self.commands) != 0:
+                    sent_commands = self.commands[:self.commands.index("STM:pn\n") + 1]
+                    self.commands = self.commands[self.commands.index("STM:pn\n") + 1:]
+                    print(sent_commands)
+                    print(self.commands)
+                    client.send_message(sent_commands)
+                    # client.close()
+
             # Not valid data
             elif data[0] == "bullseye":
                 print("Sending list of commands to RPi...")
                 fixed_commands = ["STM:Ln\n", "STM:w060n\n", "STM:ln\n", "STM:w025n\n", "STM:ln\n", "STM:pn\n"]
                 print(fixed_commands)
                 client.send_message(fixed_commands)
+
             # If no image taken
             elif data[0] == "-1":
                 if self.count == 2:
@@ -207,5 +244,5 @@ def sim():
 
 
 if __name__ == '__main__':
-    sim()
-    # init()
+    # sim()
+    init()
