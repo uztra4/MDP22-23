@@ -1,10 +1,3 @@
-/*
- * IMU.c
- *
- *  Created on: Sep 13, 2022
- *      Author: zchan021
- */
-
 #include "ICM20948.h"
 #include <string.h>
 #include <stdio.h>
@@ -324,9 +317,6 @@ HAL_StatusTypeDef IMU_GyroRead(ICM20948 *dev)
 	dev->gyro[0] = 0.0152671755725191f * gyroRawSigned[0];
 	dev->gyro[1] = 0.0152671755725191f * gyroRawSigned[1];
 	dev->gyro[2] = 0.0152671755725191f * gyroRawSigned[2];
-//	dev->gyro[0] = gyroDiff[0]/65.5;
-//	dev->gyro[1] = gyroDiff[1]/65.5;
-//	dev->gyro[2] = gyroDiff[2]/65.5;
 
 	return ret;
 
@@ -419,6 +409,5 @@ void invMSInit()
 }
 
 */
-
 
 
