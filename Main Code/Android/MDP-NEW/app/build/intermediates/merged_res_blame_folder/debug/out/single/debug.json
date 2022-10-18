@@ -1,0 +1,954 @@
+[
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_guideline.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\guideline.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_alphabet_z_w.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\alphabet_z_w.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_alphabet_y_w.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\alphabet_y_w.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_alphabet_s.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\alphabet_s.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_alphabet_x_w.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\alphabet_x_w.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_arrow_up_w.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\arrow_up_w.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_alphabet_v_w.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\alphabet_v_w.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_alphabet_u_w.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\alphabet_u_w.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_alphabet_w_w.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\alphabet_w_w.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_alphabet_d.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\alphabet_d.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_alphabet_e.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\alphabet_e.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_circle.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\circle.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_arrow_down_e.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\arrow_down_e.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_number_9.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\number_9.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_arrow_right_e.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\arrow_right_e.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_left_icon.xml.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\left_icon.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_bluetooth_button.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\bluetooth_button.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_alphabet_c_w.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\alphabet_c_w.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_alphabet_b_w.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\alphabet_b_w.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_obstacle_1_w.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\obstacle_1_w.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_alphabet_a_w.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\alphabet_a_w.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_alphabet_e_w.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\alphabet_e_w.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_alphabet_d_w.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\alphabet_d_w.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_obstacle_3_w.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\obstacle_3_w.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\layout_arena.xml.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\layout\\arena.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_obstacle_2_w.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\obstacle_2_w.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_obstacle_4_w.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\obstacle_4_w.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_alphabet_b.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\alphabet_b.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_arrow_right_w.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\arrow_right_w.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_arrow_down_s.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\arrow_down_s.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_number_8.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\number_8.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_alphabet_h_w.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\alphabet_h_w.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_alphabet_g_w.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\alphabet_g_w.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_alphabet_f_w.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\alphabet_f_w.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_alphabet_u.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\alphabet_u.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_right_icon.xml.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\right_icon.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_number_2_n.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\number_2_n.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_number_1_n.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\number_1_n.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_alphabet_s_w.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\alphabet_s_w.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_arrow_left.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\arrow_left.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xhdpi_ic_launcher_adaptive_fore.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_adaptive_fore.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_alphabet_t_w.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\alphabet_t_w.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_arena_icon.xml.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\arena_icon.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_number_5_n.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\number_5_n.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_blue_arrow_right.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\blue_arrow_right.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_number_4_n.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\number_4_n.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_number_3_n.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\number_3_n.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_alphabet_g.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\alphabet_g.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_number_9_n.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\number_9_n.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\font_jockey_one_regular.ttf.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\font\\jockey_one_regular.ttf"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_circle_n.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\circle_n.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_number_6_n.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\number_6_n.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_arrow_up.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\arrow_up.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_down_icon.xml.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\down_icon.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_number_8_n.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\number_8_n.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_number_7_n.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\number_7_n.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_alphabet_c_n.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\alphabet_c_n.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_alphabet_v.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\alphabet_v.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_alphabet_d_n.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\alphabet_d_n.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_speech_bubble.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\speech_bubble.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_alphabet_a_n.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\alphabet_a_n.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_alphabet_h_n.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\alphabet_h_n.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_alphabet_f_n.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\alphabet_f_n.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_car.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\car.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_alphabet_a.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\alphabet_a.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_number_8_w.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\number_8_w.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_arrow_left_n.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\arrow_left_n.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\layout_home.xml.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\layout\\home.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_number_6.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\number_6.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_number_2_w.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\number_2_w.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_alphabet_t_n.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\alphabet_t_n.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxxhdpi_ic_launcher_adaptive_back.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_adaptive_back.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_yellow_question_mark.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\yellow_question_mark.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_number_6_w.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\number_6_w.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_alphabet_x_n.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\alphabet_x_n.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_alphabet_v_n.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\alphabet_v_n.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_obstacle_7_w.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\obstacle_7_w.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_obstacle_5_w.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\obstacle_5_w.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_number_4_w.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\number_4_w.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_alphabet_g_e.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\alphabet_g_e.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_robot.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\robot.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_obstacle_6_s.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\obstacle_6_s.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_arrow_right_s.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\arrow_right_s.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_obstacle_1_e.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\obstacle_1_e.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_alphabet_f.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\alphabet_f.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_bg.xml.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\bg.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xhdpi_ic_launcher_adaptive_back.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_adaptive_back.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_alphabet_f_s.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\alphabet_f_s.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_obstacle_2_s.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\obstacle_2_s.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_obstacle_3_e.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\obstacle_3_e.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_obstacle_5_e.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\obstacle_5_e.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_obstacle_8_s.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\obstacle_8_s.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_alphabet_h_s.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\alphabet_h_s.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_obstacle_7_e.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\obstacle_7_e.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\layout_device_adapter_view.xml.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\layout\\device_adapter_view.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_alphabet_z_n.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\alphabet_z_n.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_bluetooth_button_modified.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\bluetooth_button_modified.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_number_1.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\number_1.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxhdpi_ic_launcher_adaptive_back.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_adaptive_back.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_obstacle_4_s.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\obstacle_4_s.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxhdpi_ic_launcher_adaptive_fore.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_adaptive_fore.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_arrow_down_w.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\arrow_down_w.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\layout_my_row.xml.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\layout\\my_row.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_alphabet_w.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\alphabet_w.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_alphabet_u_e.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\alphabet_u_e.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_alphabet_s_e.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\alphabet_s_e.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_arrow_down.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\arrow_down.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_alphabet_v_s.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\alphabet_v_s.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_alphabet_z_s.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\alphabet_z_s.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\layout_communication.xml.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\layout\\communication.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_alphabet_x_s.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\alphabet_x_s.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_arrow_up_e.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\arrow_up_e.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_number_7.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\number_7.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_obstacle_8_n.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\obstacle_8_n.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_alphabet_w_e.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\alphabet_w_e.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_alphabet_y_e.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\alphabet_y_e.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_alphabet_t_s.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\alphabet_t_s.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_number_3.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\number_3.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_arrow_right.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\arrow_right.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_bluetooth_icon.xml.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\bluetooth_icon.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_obstacle_1_n.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\obstacle_1_n.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_obstacle_2_n.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\obstacle_2_n.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_messages_button_modified.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\messages_button_modified.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\mipmap-mdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_obstacle_7_n.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\obstacle_7_n.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_alphabet_z.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\alphabet_z.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_obstacle_6_n.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\obstacle_6_n.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_obstacle_5_n.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\obstacle_5_n.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_arrow_right_n.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\arrow_right_n.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_number_6_e.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\number_6_e.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_obstacle_3_n.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\obstacle_3_n.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_obstacle_4_n.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\obstacle_4_n.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_number_5_e.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\number_5_e.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_number_4_e.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\number_4_e.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_arrow_down_n.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\arrow_down_n.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_number_8_s.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\number_8_s.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_number_9_s.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\number_9_s.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_number_6_s.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\number_6_s.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_number_7_s.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\number_7_s.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_number_2.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\number_2.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_number_5_s.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\number_5_s.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_number_7_e.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\number_7_e.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_number_4_s.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\number_4_s.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_circle_e.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\circle_e.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_number_8_e.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\number_8_e.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_number_9_e.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\number_9_e.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_arrow_purple.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\arrow_purple.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_bg2.xml.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\bg2.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_alphabet_b_s.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\alphabet_b_s.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_alphabet_a_s.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\alphabet_a_s.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_arrow_up_n.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\arrow_up_n.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_alphabet_c_s.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\alphabet_c_s.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_alphabet_y.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\alphabet_y.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_alphabet_e_s.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\alphabet_e_s.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_baseline_camera_alt_24.xml.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\ic_baseline_camera_alt_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_circle_s.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\circle_s.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_message_icon.xml.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\message_icon.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_alphabet_d_s.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\alphabet_d_s.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_arrow_left_s.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\arrow_left_s.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_alphabet_e_e.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\alphabet_e_e.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_alphabet_c_e.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\alphabet_c_e.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_alphabet_f_e.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\alphabet_f_e.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_alphabet_b_e.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\alphabet_b_e.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_alphabet_x.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\alphabet_x.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_alphabet_d_e.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\alphabet_d_e.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_number_1_s.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\number_1_s.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_number_3_s.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\number_3_s.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_number_2_s.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\number_2_s.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_circle_w.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\circle_w.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_alphabet_a_e.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\alphabet_a_e.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_blue_arrow_left.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\blue_arrow_left.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_number_2_e.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\number_2_e.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_number_3_e.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\number_3_e.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_number_1_e.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\number_1_e.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_arrow_left_e.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\arrow_left_e.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_bullseye.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\bullseye.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_up_icon.xml.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\up_icon.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable-v24_chatbox_bg.xml.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable-v24\\chatbox_bg.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_blue_arrow.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\blue_arrow.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_alphabet_b_n.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\alphabet_b_n.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_messages_button.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\messages_button.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_alphabet_e_n.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\alphabet_e_n.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxxhdpi_ic_launcher_adaptive_fore.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_adaptive_fore.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_alphabet_g_n.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\alphabet_g_n.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_number_9_w.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\number_9_w.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_retrocar.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\retrocar.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_number_1_w.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\number_1_w.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_alphabet_s_n.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\alphabet_s_n.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_alphabet_u_n.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\alphabet_u_n.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_number_5_w.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\number_5_w.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_alphabet_w_n.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\alphabet_w_n.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_red_question_mark.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\red_question_mark.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_number_7_w.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\number_7_w.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_obstacle_6_w.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\obstacle_6_w.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\font_arcade_classic.xml.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\font\\arcade_classic.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_arena_button_modified.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\arena_button_modified.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_alphabet_h.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\alphabet_h.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_obstacle_8_w.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\obstacle_8_w.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_number_5.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\number_5.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\mipmap-mdpi_ic_launcher_adaptive_back.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_adaptive_back.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_number_3_w.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\number_3_w.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\mipmap-hdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_alphabet_h_e.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\alphabet_h_e.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_obstacle_7_s.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\obstacle_7_s.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_obstacle_5_s.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\obstacle_5_s.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_obstacle_2_e.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\obstacle_2_e.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_obstacle_4_e.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\obstacle_4_e.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_obstacle_1_s.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\obstacle_1_s.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_alphabet_g_s.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\alphabet_g_s.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\mipmap-hdpi_ic_launcher_adaptive_back.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_adaptive_back.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_obstacle_8_e.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\obstacle_8_e.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\layout_bluetooth.xml.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\layout\\bluetooth.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_arrow_left_w.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\arrow_left_w.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_obstacle_6_e.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\obstacle_6_e.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_alphabet_y_n.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\alphabet_y_n.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\font_arcadeclassic.ttf.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\font\\arcadeclassic.ttf"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_obstacle_3_s.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\obstacle_3_s.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_alphabet_y_s.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\alphabet_y_s.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_arena_button.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\arena_button.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v24\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_alphabet_v_e.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\alphabet_v_e.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_alphabet_w_s.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\alphabet_w_s.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\mipmap-hdpi_ic_launcher_adaptive_fore.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_adaptive_fore.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_number_4.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\number_4.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_alphabet_t_e.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\alphabet_t_e.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\mipmap-mdpi_ic_launcher_adaptive_fore.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_adaptive_fore.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_alphabet_s_s.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\alphabet_s_s.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_alphabet_z_e.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\alphabet_z_e.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_alphabet_t.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\alphabet_t.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_alphabet_c.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\alphabet_c.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_alphabet_u_s.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\alphabet_u_s.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_arrow_up_s.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\arrow_up_s.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_blue_arrow_down.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\blue_arrow_down.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\build\\intermediates\\merged_res\\debug\\drawable_alphabet_x_e.png.flat",
+        "source": "C:\\Users\\User\\Documents\\MDP22-23\\Main Code\\Android\\MDP-NEW\\app\\src\\main\\res\\drawable\\alphabet_x_e.png"
+    }
+]
