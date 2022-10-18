@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.mdp_new"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="21"
+        android:targetSdkVersion="32" />
+
+    <uses-feature
+        android:name="android.hardware.bluetooth"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADVERTISE" />
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+    <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
+
+    <application
+        android:allowBackup="true"
+        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+        android:debuggable="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="MDP Group 45"
+        android:supportsRtl="true"
+        android:testOnly="true"
+        android:theme="@style/Theme.MDPNEW" >
+        <activity
+            android:name="com.example.mdp_new.MainActivity"
+            android:exported="true"
+            android:label="MDP Group 45" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.mdp_new.Bluetooth"
+            android:exported="true"
+            android:label="Bluetooth"
+            android:parentActivityName="com.example.mdp_new.MainActivity" />
+        <activity
+            android:name="com.example.mdp_new.Communication"
+            android:exported="true"
+            android:label="Communication"
+            android:parentActivityName="com.example.mdp_new.MainActivity" />
+        <activity
+            android:name="com.example.mdp_new.Arena"
+            android:exported="true"
+            android:label="Arena"
+            android:parentActivityName="com.example.mdp_new.MainActivity" />
+
+        <provider
+            android:name="androidx.startup.InitializationProvider"
+            android:authorities="com.example.mdp_new.androidx-startup"
+            android:exported="false" >
+            <meta-data
+                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+                android:value="androidx.startup" />
+            <meta-data
+                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+                android:value="androidx.startup" />
+        </provider>
+    </application>
+
+</manifest>
