@@ -1107,7 +1107,7 @@ public class Arena extends AppCompatActivity {
 
                 // Bluetooth message
                 if (BluetoothConnectionService.BluetoothConnectionStatus) {
-                    byte[] bytes = "STM:w10n".getBytes(Charset.defaultCharset());
+                    byte[] bytes = "STM:w100n".getBytes(Charset.defaultCharset());
                     BluetoothConnectionService.write(bytes);
                 }
 
@@ -1123,7 +1123,7 @@ public class Arena extends AppCompatActivity {
 
                 // Bluetooth message
                 if (BluetoothConnectionService.BluetoothConnectionStatus) {
-                    byte[] bytes = "STM:s10n".getBytes(Charset.defaultCharset());
+                    byte[] bytes = "STM:s100n".getBytes(Charset.defaultCharset());
                     BluetoothConnectionService.write(bytes);
                 }
 
@@ -1137,7 +1137,7 @@ public class Arena extends AppCompatActivity {
             public void onClick(View v){
                 Log.d("COMMS DEBUG","left");
                 if (BluetoothConnectionService.BluetoothConnectionStatus) {
-                    byte[] bytes = "STM:a".getBytes(Charset.defaultCharset());
+                    byte[] bytes = "STM:ln".getBytes(Charset.defaultCharset());
                     BluetoothConnectionService.write(bytes);
                 }
 
@@ -1150,7 +1150,7 @@ public class Arena extends AppCompatActivity {
             public void onClick(View v) {
                 Log.d("COMMS DEBUG", "right");
                 if (BluetoothConnectionService.BluetoothConnectionStatus) {
-                    byte[] bytes = "STM:d".getBytes(Charset.defaultCharset());
+                    byte[] bytes = "STM:rn".getBytes(Charset.defaultCharset());
                     BluetoothConnectionService.write(bytes);
                 }
 
