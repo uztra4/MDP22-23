@@ -79,6 +79,11 @@ class Obstacle:
         """
         offset = -5 * settings.SCALING_FACTOR
 
+        """Boundary checking
+        Cases include Side boundaries and Corners
+        Robot target position are adjusted accordingly
+        
+        """
         if self.pos.y//settings.SCALING_FACTOR - 5 == 0 and self.pos.x//settings.SCALING_FACTOR - 5 == 0:
             if self.pos.direction == Direction.TOP:
                 return RobotPosition(self.pos.x + 10 * settings.SCALING_FACTOR,

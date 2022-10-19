@@ -244,5 +244,9 @@ def sim():
 
 
 if __name__ == '__main__':
+    """
+    Simulator 
+    Rpi Connection
+    """
     # sim()
     init()

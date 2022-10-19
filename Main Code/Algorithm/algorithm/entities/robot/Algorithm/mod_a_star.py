@@ -60,10 +60,11 @@ class ModifiedAStar:
             if after:
                 # Increase reverse penalty
                 if c.rev:
-                    turn_penalty = turn_penalty * 9
+                    turn_penalty = turn_penalty * 5
                 neighbours.append((after, p, turn_penalty, c))
 
-        spot_penalty = settings.SPOT_TURN_COST
+        # adjust spot turn penalty here
+        spot_penalty = settings.SPOT_TURN_COST * 1
         spot_commands = [
             SpotTurnCommand(90),
             SpotTurnCommand(-90)
